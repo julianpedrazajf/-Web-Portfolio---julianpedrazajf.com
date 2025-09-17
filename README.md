@@ -14,22 +14,7 @@ Built with **React**, **Vite**, and **Tailwind CSS**.
 - Donation options (Stripe/PayPal integration)
 - Responsive, modern, and easy to navigate
 
-## 🚀 Getting Started
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-
-3. **Build for production:**
-   ```bash
-   npm run build
-   ```
 
 ## 🛠️ Tech Stack
 
@@ -39,16 +24,7 @@ Built with **React**, **Vite**, and **Tailwind CSS**.
 - [EmailJS](https://www.emailjs.com/) or [Formspree](https://formspree.io/) (contact form)
 - [Stripe](https://stripe.com/) / [PayPal](https://paypal.com/) (donations)
 
-## 📂 Project Structure
 
-```
-src/
-  components/      # Reusable UI components
-  pages/           # Main site pages
-  assets/          # Images and static assets
-  App.jsx          # Main app component
-  main.jsx         # Entry point
-```
 
 ## 📄 License
 
