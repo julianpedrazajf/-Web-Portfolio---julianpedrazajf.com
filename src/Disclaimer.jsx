@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ShaderBackground from "./ShaderBackground";
 
 const disclaimers = {
   en: {
@@ -34,9 +35,11 @@ export default function Disclaimer({ onContinue }) {
     placeItems: "center",
     minHeight: "100vh",
     width: "100vw",
-    backgroundColor: "#212121",
+    // backgroundColor: "#212121", // Remove to show shader
     padding: "1rem",
     margin: 0,
+    position: "relative",
+    zIndex: 1,
   };
 
   const cardStyle = {
@@ -99,38 +102,41 @@ export default function Disclaimer({ onContinue }) {
   };
 
   return (
-    <div style={containerStyle}>
-      <div style={cardStyle}>
-        <h1 style={titleStyle}>{d.title}</h1>
-        <div>
-          {d.legal.map((line, i) => (
-            <p key={i} style={textStyle}>
-              {line}
-            </p>
-          ))}
-        </div>
-        <div style={buttonContainerStyle}>
-          <button
-            style={toggleButtonStyle}
-            onClick={() => setLang(lang === "en" ? "es" : "en")}
-            aria-label="Toggle language"
-          >
-            {d.toggle}
-          </button>
-          <button
-            style={continueButtonStyle}
-            onClick={onContinue}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "#FF004D";
-              e.target.style.color = "#323232";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "#A0153E";
-              e.target.style.color = "#212121";
-            }}
-          >
-            {d.continue}
-          </button>
+    <div style={{ position: "relative", minHeight: "100vh", width: "100vw", overflow: "hidden" }}>
+      <ShaderBackground />
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h1 style={titleStyle}>{d.title}</h1>
+          <div>
+            {d.legal.map((line, i) => (
+              <p key={i} style={textStyle}>
+                {line}
+              </p>
+            ))}
+          </div>
+          <div style={buttonContainerStyle}>
+            <button
+              style={toggleButtonStyle}
+              onClick={() => setLang(lang === "en" ? "es" : "en")}
+              aria-label="Toggle language"
+            >
+              {d.toggle}
+            </button>
+            <button
+              style={continueButtonStyle}
+              onClick={onContinue}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#FF004D";
+                e.target.style.color = "#323232";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "#A0153E";
+                e.target.style.color = "#212121";
+              }}
+            >
+              {d.continue}
+            </button>
+          </div>
         </div>
       </div>
     </div>
