@@ -43,14 +43,14 @@ export default function Disclaimer({ onContinue }) {
     backgroundColor: "#323232",
     padding: "2rem",
     borderRadius: "1rem",
-    border: "2px solid #0D7377",
+    border: "2px solid #A0153E",
     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
     maxWidth: "32rem",
     width: "100%",
   };
 
   const titleStyle = {
-    color: "#14FFEC",
+    color: "#FF004D",
     fontSize: "1.875rem",
     fontWeight: "800",
     marginBottom: "1.5rem",
@@ -59,7 +59,7 @@ export default function Disclaimer({ onContinue }) {
   };
 
   const textStyle = {
-    color: "#14FFEC",
+    color: "#FF004D",
     fontSize: "1rem",
     lineHeight: "1.75",
     backgroundColor: "rgba(33, 33, 33, 0.7)",
@@ -77,7 +77,7 @@ export default function Disclaimer({ onContinue }) {
   };
 
   const toggleButtonStyle = {
-    color: "#0D7377",
+    color: "#A0153E",
     textDecoration: "underline",
     fontWeight: "600",
     backgroundColor: "transparent",
@@ -87,12 +87,12 @@ export default function Disclaimer({ onContinue }) {
   };
 
   const continueButtonStyle = {
-    backgroundColor: "#0D7377",
+    backgroundColor: "#A0153E",
     color: "#212121",
     padding: "0.5rem 1.5rem",
     borderRadius: "0.5rem",
     fontWeight: "700",
-    border: "2px solid #14FFEC",
+    border: "2px solid #FF004D",
     cursor: "pointer",
     fontSize: "1rem",
     transition: "all 0.2s",
@@ -121,11 +121,11 @@ export default function Disclaimer({ onContinue }) {
             style={continueButtonStyle}
             onClick={onContinue}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "#14FFEC";
+              e.target.style.backgroundColor = "#FF004D";
               e.target.style.color = "#323232";
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "#0D7377";
+              e.target.style.backgroundColor = "#A0153E";
               e.target.style.color = "#212121";
             }}
           >
