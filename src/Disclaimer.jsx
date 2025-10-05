@@ -29,26 +29,105 @@ export default function Disclaimer({ onContinue }) {
   const [lang, setLang] = useState("en");
   const d = disclaimers[lang];
 
+  const containerStyle = {
+    display: "grid",
+    placeItems: "center",
+    minHeight: "100vh",
+    width: "100vw",
+    backgroundColor: "#212121",
+    padding: "1rem",
+    margin: 0,
+  };
+
+  const cardStyle = {
+    backgroundColor: "#323232",
+    padding: "2rem",
+    borderRadius: "1rem",
+    border: "2px solid #0D7377",
+    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+    maxWidth: "32rem",
+    width: "100%",
+  };
+
+  const titleStyle = {
+    color: "#14FFEC",
+    fontSize: "1.875rem",
+    fontWeight: "800",
+    marginBottom: "1.5rem",
+    textAlign: "center",
+    letterSpacing: "0.05em",
+  };
+
+  const textStyle = {
+    color: "#14FFEC",
+    fontSize: "1rem",
+    lineHeight: "1.75",
+    backgroundColor: "rgba(33, 33, 33, 0.7)",
+    borderRadius: "0.5rem",
+    padding: "1rem",
+    marginBottom: "1.25rem",
+  };
+
+  const buttonContainerStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "1rem",
+    marginTop: "2rem",
+  };
+
+  const toggleButtonStyle = {
+    color: "#0D7377",
+    textDecoration: "underline",
+    fontWeight: "600",
+    backgroundColor: "transparent",
+    border: "none",
+    cursor: "pointer",
+    fontSize: "1rem",
+  };
+
+  const continueButtonStyle = {
+    backgroundColor: "#0D7377",
+    color: "#212121",
+    padding: "0.5rem 1.5rem",
+    borderRadius: "0.5rem",
+    fontWeight: "700",
+    border: "2px solid #14FFEC",
+    cursor: "pointer",
+    fontSize: "1rem",
+    transition: "all 0.2s",
+  };
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-xl w-full bg-white p-8 rounded shadow">
-        <h1 className="text-2xl font-bold mb-4">{d.title}</h1>
-        <div className="mb-6 space-y-3">
+    <div style={containerStyle}>
+      <div style={cardStyle}>
+        <h1 style={titleStyle}>{d.title}</h1>
+        <div>
           {d.legal.map((line, i) => (
-            <p key={i} className="text-gray-700">{line}</p>
+            <p key={i} style={textStyle}>
+              {line}
+            </p>
           ))}
         </div>
-        <div className="flex justify-between">
+        <div style={buttonContainerStyle}>
           <button
-            className="text-blue-600 underline"
+            style={toggleButtonStyle}
             onClick={() => setLang(lang === "en" ? "es" : "en")}
             aria-label="Toggle language"
           >
             {d.toggle}
           </button>
           <button
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            style={continueButtonStyle}
             onClick={onContinue}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "#14FFEC";
+              e.target.style.color = "#323232";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "#0D7377";
+              e.target.style.color = "#212121";
+            }}
           >
             {d.continue}
           </button>
