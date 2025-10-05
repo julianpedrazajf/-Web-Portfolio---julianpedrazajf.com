@@ -9,8 +9,8 @@ module.exports = {
       colors: {
         dark1: "#212121",
         dark2: "#323232",
-        teal:  "#0D7377",
-        accent: "#14FFEC",
+        teal:  "#A0153E",
+        accent: "#FF004D",
       },
     },
   },
