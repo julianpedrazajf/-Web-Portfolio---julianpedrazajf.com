@@ -5,7 +5,7 @@ const disclaimers = {
   en: {
     title: "Disclaimer",
     legal: [
-      "The information on this website is for informational purposes only. It does not represent a guarantee, offer, or define the specific role, conditions, or commitments of either party. \n This site does not specify the exact role Julian may be applying for but serves as a reference to better match his profile with the right service or opportunity, for the mutual benefit of both parties. By continuing, you acknowledge that you have read and understood this notice.",
+      "The information on this website is for informational purposes only. It does not represent a guarantee, offer, or define the specific role, conditions, or commitments of either party. This site does not specify the exact role Julian may be applying for but serves as a reference to better match his profile with the right service or opportunity, for the mutual benefit of both parties. By continuing, you acknowledge that you have read and understood this notice.",
     ],
     continue: "Continue",
     toggle: "Español",
@@ -47,6 +47,7 @@ export default function Disclaimer({ onContinue }) {
     maxWidth: "52rem",
     width: "100%",
     textAlign: "center",
+    boxShadow:  "-10px -10px 58px #0e0f0eff, 10px 10px 58px #0e0f0eff",
   };
 
   const titleStyle = {
