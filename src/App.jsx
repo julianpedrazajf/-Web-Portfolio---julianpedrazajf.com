@@ -1,9 +1,16 @@
-import Disclaimer from './Disclaimer.jsx'
+
+import React, { useState } from 'react';
+import Disclaimer from './Disclaimer.jsx';
+import Home from './Home.jsx';
 
 function App() {
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
+
   return (
-    <Disclaimer onContinue={() => alert('Continue clicked!')} />
-  )
+    showDisclaimer
+      ? <Disclaimer onContinue={() => setShowDisclaimer(false)} />
+      : <Home />
+  );
 }
 
-export default App
+export default App;
