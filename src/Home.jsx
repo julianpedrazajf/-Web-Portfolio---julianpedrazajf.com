@@ -1,55 +1,31 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 export default function Home() {
   return (
     <main style={{ minHeight: "100vh", width: "100vw", background: "#f5f6fa" }}>
       {/* Hero Section */}
       <section style={{ padding: "3rem 1rem", textAlign: "center" }}>
-        <h1 style={{ fontSize: "2.5rem", fontWeight: 800 }}>Julian Pedraza</h1>
-        <p style={{ fontSize: "1.25rem", margin: "1rem auto", maxWidth: 600 }}>
-          Quick introduction about me goes here. (Replace this with your own intro!)
-        </p>
+        <h1 style={{ fontSize: "2.5rem", fontWeight: 800 }}>Julian's Portfolio</h1>
         <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ color: "#24292f", fontWeight: 600 }}>
-          Visit my GitHub
+          https://github.com/julianpedrazajf <br /> 
         </a>
+
+          {/* Navigation Bar */}
+      <Navbar />
+      
+        {/* Introducción (versión 3 - narrativa personal) */}
+        <div style={{ fontSize: "1.25rem", margin: "1rem auto", maxWidth: 600, textAlign: "left", display: "inline-block", lineHeight: 1.6 }}>
+          <p style={{ marginBottom: 12 }}>
+            Me llamo Julian. Me guía la búsqueda del conocimiento y el deseo de servir: aprendo de libros, tecnología y la experiencia humana, y aplico lo que sé para crear y ayudar.
+          </p>
+          <p style={{ marginBottom: 0 }}>
+            En este espacio encontrarás mi trabajo y la intención detrás de él: ser útil donde haga falta —tanto en proyectos profesionales como en tareas más cotidianas o personales. Si algo de esto resuena contigo, me encantaría conversar.
+          </p>
+        </div>
       </section>
 
-      {/* What I Can Offer */}
-      <section style={{ padding: "2rem 1rem", maxWidth: 800, margin: "0 auto" }}>
-        <h2 style={{ fontSize: "1.5rem", fontWeight: 700 }}>What I Can Offer</h2>
-        <p style={{ marginTop: 8 }}>
-          (Describe your skills, services, or areas of expertise here)
-        </p>
-      </section>
 
-      {/* Navigation Menu */}
-      <nav style={{ padding: "2rem 1rem", maxWidth: 900, margin: "0 auto" }}>
-        <h2 style={{ fontSize: "1.25rem", fontWeight: 700 }}>Navigation</h2>
-        <ul style={{ display: "flex", flexWrap: "wrap", gap: 16, listStyle: "none", justifyContent: "center", margin: 0, padding: 0 }}>
-          <li>Work Experience
-            <ul>
-              <li>Full-Time</li>
-              <li>Part-Time</li>
-              <li>Personal References</li>
-            </ul>
-          </li>
-          <li>Portfolio</li>
-          <li>Diplomas
-            <ul>
-              <li>University Degrees</li>
-              <li>Online Bootcamps</li>
-            </ul>
-          </li>
-          <li>Education & Knowledge
-            <ul>
-              <li>Books</li>
-              <li>Finance</li>
-            </ul>
-          </li>
-          <li>Donations</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
 
       {/* AI Section */}
       <section style={{ padding: "2rem 1rem", maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
