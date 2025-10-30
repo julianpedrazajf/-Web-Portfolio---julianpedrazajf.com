@@ -129,14 +129,6 @@ export default function Disclaimer({ onContinue }) {
             <button
               style={continueButtonStyle}
               onClick={onContinue}
-              // onMouseEnter={(e) => {
-              //   // e.target.style.backgroundColor = "#FF004D";
-              //   // e.target.style.color = "#323232";
-              // }}
-              // onMouseLeave={(e) => {
-              //   // e.target.style.backgroundColor = "#A0153E";
-              //   // e.target.style.color = "#212121";
-              // }}
             >
               {d.continue}
             </button>
