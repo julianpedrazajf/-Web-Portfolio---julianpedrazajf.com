@@ -124,6 +124,11 @@ const ShaderBackground = () => {
     renderer.domElement.style.height = "100vh";
     renderer.domElement.style.zIndex = 0;
 
+    // make background darker (like a semi-transparent layer above shader)
+    // Ajusta el valor de brightness(0.0 - 1.0) o usa opacity para más control.
+    renderer.domElement.style.filter = "brightness(70%)";
+    renderer.domElement.style.opacity = "0.95";
+
     // Scene
     const scene = new THREE.Scene();
 

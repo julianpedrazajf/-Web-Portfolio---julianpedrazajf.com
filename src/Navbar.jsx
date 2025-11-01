@@ -1,6 +1,27 @@
 import React from 'react';
 
-export default function Navbar() {
+const navContent = {
+  en: {
+    work: "Work Experience",
+    portfolio: "Portfolio",
+    diplomas: "Diplomas",
+    education: "Education",
+    donations: "Donations",
+    contact: "Contact"
+  },
+  es: {
+    work: "Experiencia Laboral",
+    portfolio: "Portafolio",
+    diplomas: "Diplomas",
+    education: "Educación",
+    donations: "Donaciones",
+    contact: "Contacto"
+  }
+};
+
+export default function Navbar({ language = 'en' }) {
+  const t = navContent[language];
+
   return (
     <nav style={{
       padding: "1rem",
@@ -17,7 +38,7 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
-        gap: "2rem",
+        gap: "5rem",
         listStyle: "none",
         margin: 0,
         padding: 0
@@ -29,7 +50,7 @@ export default function Navbar() {
             fontWeight: 500,
             transition: "color 0.2s ease"
           }}>
-            Work Experience
+            {t.work}
           </a>
         </li>
         <li>
@@ -39,7 +60,7 @@ export default function Navbar() {
             fontWeight: 500,
             transition: "color 0.2s ease"
           }}>
-            Portfolio
+            {t.portfolio}
           </a>
         </li>
         <li>
@@ -49,7 +70,7 @@ export default function Navbar() {
             fontWeight: 500,
             transition: "color 0.2s ease"
           }}>
-            Diplomas
+            {t.diplomas}
           </a>
         </li>
         <li>
@@ -59,7 +80,7 @@ export default function Navbar() {
             fontWeight: 500,
             transition: "color 0.2s ease"
           }}>
-            Education
+            {t.education}
           </a>
         </li>
         <li>
@@ -69,7 +90,7 @@ export default function Navbar() {
             fontWeight: 500,
             transition: "color 0.2s ease"
           }}>
-            Donations
+            {t.donations}
           </a>
         </li>
         <li>
@@ -79,7 +100,7 @@ export default function Navbar() {
             fontWeight: 500,
             transition: "color 0.2s ease"
           }}>
-            Contact
+            {t.contact}
           </a>
         </li>
       </ul>
