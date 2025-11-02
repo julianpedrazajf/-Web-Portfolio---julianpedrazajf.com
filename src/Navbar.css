@@ -1,0 +1,8 @@
+.nav-item-with-submenu:hover .submenu {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.submenu-item:hover {
+  background: rgba(0,0,0,0.05);
+}
