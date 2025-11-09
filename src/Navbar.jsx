@@ -99,7 +99,7 @@ export default function Navbar({ language = 'en' }) {
             zIndex: 1001
           }}>
             <li className="submenu-item">
-              <a href="#fulltime" style={{ 
+        <a href="#/fulltime" style={{ 
                 color: "#333",
                 textDecoration: "none",
                 padding: "0.5rem 1rem",
@@ -114,7 +114,7 @@ export default function Navbar({ language = 'en' }) {
               </a>
             </li>
             <li className="submenu-item">
-              <a href="#parttime" style={{ 
+              <a href="#/parttime" style={{ 
                 color: "#333",
                 textDecoration: "none",
                 padding: "0.5rem 1rem",
@@ -129,7 +129,7 @@ export default function Navbar({ language = 'en' }) {
               </a>
             </li>
             <li className="submenu-item">
-              <a href="#references" style={{ 
+              <a href="#/references" style={{ 
                 color: "#333",
                 textDecoration: "none",
                 padding: "0.5rem 1rem",
