@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../../Navbar';
 
 const content = {
 	en: {
@@ -143,98 +144,103 @@ export default function FullTime({ language = 'en' }) {
 	const t = content[language];
 
 	return (
-		<main className="p-8 max-w-6xl mx-auto">
-			<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
-			
-			{/* Menzies Aviation */}
-			<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-				<h2 className="text-2xl font-semibold text-teal">{t.menzies.company}</h2>
-				<div className="mt-4">
-					<p className="font-medium">{t.menzies.role}</p>
-					<p className="text-gray-600">{t.menzies.duration} | {t.menzies.location}</p>
-				</div>
-				<p className="mt-4 text-gray-700">{t.menzies.description}</p>
-				<div className="mt-4">
-					<h3 className="font-medium mb-2">Skills:</h3>
-					<p className="text-gray-700">{t.menzies.skills}</p>
-				</div>
-				<div className="mt-4 text-sm text-gray-600">
-					<p>{t.menzies.reference.title}: {t.menzies.reference.name}</p>
-					<p>Contact: {t.menzies.reference.contact}</p>
-				</div>
-			</section>
+		<div>
+			<Navbar language={language} />
+			<main style={{ padding: '2rem' }}>
+				<section id="work-fulltime">
+					<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+					
+					{/* Menzies Aviation */}
+					<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
+						<h2 className="text-2xl font-semibold text-teal">{t.menzies.company}</h2>
+						<div className="mt-4">
+							<p className="font-medium">{t.menzies.role}</p>
+							<p className="text-gray-600">{t.menzies.duration} | {t.menzies.location}</p>
+						</div>
+						<p className="mt-4 text-gray-700">{t.menzies.description}</p>
+						<div className="mt-4">
+							<h3 className="font-medium mb-2">Skills:</h3>
+							<p className="text-gray-700">{t.menzies.skills}</p>
+						</div>
+						<div className="mt-4 text-sm text-gray-600">
+							<p>{t.menzies.reference.title}: {t.menzies.reference.name}</p>
+							<p>Contact: {t.menzies.reference.contact}</p>
+						</div>
+					</section>
 
-			{/* Labour Connect */}
-			<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-				<h2 className="text-2xl font-semibold text-teal">{t.labourConnect.company}</h2>
-				<div className="mt-4">
-					<p className="font-medium">{t.labourConnect.role}</p>
-					<p className="text-gray-600">{t.labourConnect.duration} | {t.labourConnect.location}</p>
-				</div>
-				<p className="mt-4 text-gray-700">{t.labourConnect.description}</p>
-				<div className="mt-4">
-					<h3 className="font-medium mb-2">Skills:</h3>
-					<p className="text-gray-700">{t.labourConnect.skills}</p>
-				</div>
-				<div className="mt-4 text-sm text-gray-600">
-					<p>{t.labourConnect.reference.title}: {t.labourConnect.reference.name}</p>
-					<p>Contact: {t.labourConnect.reference.contact}</p>
-				</div>
-			</section>
+					{/* Labour Connect */}
+					<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
+						<h2 className="text-2xl font-semibold text-teal">{t.labourConnect.company}</h2>
+						<div className="mt-4">
+							<p className="font-medium">{t.labourConnect.role}</p>
+							<p className="text-gray-600">{t.labourConnect.duration} | {t.labourConnect.location}</p>
+						</div>
+						<p className="mt-4 text-gray-700">{t.labourConnect.description}</p>
+						<div className="mt-4">
+							<h3 className="font-medium mb-2">Skills:</h3>
+							<p className="text-gray-700">{t.labourConnect.skills}</p>
+						</div>
+						<div className="mt-4 text-sm text-gray-600">
+							<p>{t.labourConnect.reference.title}: {t.labourConnect.reference.name}</p>
+							<p>Contact: {t.labourConnect.reference.contact}</p>
+						</div>
+					</section>
 
-			{/* TECH Universidad */}
-			<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-				<h2 className="text-2xl font-semibold text-teal">{t.tech.company}</h2>
-				<div className="mt-4">
-					<p className="font-medium">{t.tech.role}</p>
-					<p className="text-gray-600">{t.tech.duration} | {t.tech.location}</p>
-				</div>
-				<p className="mt-4 text-gray-700">{t.tech.description}</p>
-				<div className="mt-4">
-					<h3 className="font-medium mb-2">Skills:</h3>
-					<p className="text-gray-700">{t.tech.skills}</p>
-				</div>
-				<div className="mt-4 text-sm text-gray-600">
-					<p>{t.tech.reference.title}: {t.tech.reference.name}</p>
-					<p>Contact: {t.tech.reference.contact}</p>
-				</div>
-			</section>
+					{/* TECH Universidad */}
+					<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
+						<h2 className="text-2xl font-semibold text-teal">{t.tech.company}</h2>
+						<div className="mt-4">
+							<p className="font-medium">{t.tech.role}</p>
+							<p className="text-gray-600">{t.tech.duration} | {t.tech.location}</p>
+						</div>
+						<p className="mt-4 text-gray-700">{t.tech.description}</p>
+						<div className="mt-4">
+							<h3 className="font-medium mb-2">Skills:</h3>
+							<p className="text-gray-700">{t.tech.skills}</p>
+						</div>
+						<div className="mt-4 text-sm text-gray-600">
+							<p>{t.tech.reference.title}: {t.tech.reference.name}</p>
+							<p>Contact: {t.tech.reference.contact}</p>
+						</div>
+					</section>
 
-			{/* RDV LTDA */}
-			<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-				<h2 className="text-2xl font-semibold text-teal">{t.rdv.company}</h2>
-				<div className="mt-4">
-					<p className="font-medium">{t.rdv.role}</p>
-					<p className="text-gray-600">{t.rdv.duration} | {t.rdv.location}</p>
-				</div>
-				<p className="mt-4 text-gray-700">{t.rdv.description}</p>
-				<div className="mt-4">
-					<h3 className="font-medium mb-2">Skills:</h3>
-					<p className="text-gray-700">{t.rdv.skills}</p>
-				</div>
-				<div className="mt-4 text-sm text-gray-600">
-					<p>{t.rdv.reference.title}: {t.rdv.reference.name}</p>
-					<p>Contact: {t.rdv.reference.contact}</p>
-				</div>
-			</section>
+					{/* RDV LTDA */}
+					<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
+						<h2 className="text-2xl font-semibold text-teal">{t.rdv.company}</h2>
+						<div className="mt-4">
+							<p className="font-medium">{t.rdv.role}</p>
+							<p className="text-gray-600">{t.rdv.duration} | {t.rdv.location}</p>
+						</div>
+						<p className="mt-4 text-gray-700">{t.rdv.description}</p>
+						<div className="mt-4">
+							<h3 className="font-medium mb-2">Skills:</h3>
+							<p className="text-gray-700">{t.rdv.skills}</p>
+						</div>
+						<div className="mt-4 text-sm text-gray-600">
+							<p>{t.rdv.reference.title}: {t.rdv.reference.name}</p>
+							<p>Contact: {t.rdv.reference.contact}</p>
+						</div>
+					</section>
 
-			{/* Ladrillera La Sultana */}
-			<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-				<h2 className="text-2xl font-semibold text-teal">{t.sultana.company}</h2>
-				<div className="mt-4">
-					<p className="font-medium">{t.sultana.role}</p>
-					<p className="text-gray-600">{t.sultana.duration} | {t.sultana.location}</p>
-				</div>
-				<p className="mt-4 text-gray-700">{t.sultana.description}</p>
-				<div className="mt-4">
-					<h3 className="font-medium mb-2">Skills:</h3>
-					<p className="text-gray-700">{t.sultana.skills}</p>
-				</div>
-				<div className="mt-4 text-sm text-gray-600">
-					<p>{t.sultana.reference.title}: {t.sultana.reference.name}</p>
-					<p>Contact: {t.sultana.reference.contact}</p>
-				</div>
-			</section>
-		</main>
-	);
-}
+					{/* Ladrillera La Sultana */}
+					<section className="mb-12 bg-white rounded-lg shadow-lg p-6">
+						<h2 className="text-2xl font-semibold text-teal">{t.sultana.company}</h2>
+						<div className="mt-4">
+							<p className="font-medium">{t.sultana.role}</p>
+							<p className="text-gray-600">{t.sultana.duration} | {t.sultana.location}</p>
+						</div>
+						<p className="mt-4 text-gray-700">{t.sultana.description}</p>
+						<div className="mt-4">
+							<h3 className="font-medium mb-2">Skills:</h3>
+							<p className="text-gray-700">{t.sultana.skills}</p>
+						</div>
+						<div className="mt-4 text-sm text-gray-600">
+							<p>{t.sultana.reference.title}: {t.sultana.reference.name}</p>
+							<p>Contact: {t.sultana.reference.contact}</p>
+						</div>
+					</section>
+				</section>
+			</main>
+		</div>
+		);
+};
