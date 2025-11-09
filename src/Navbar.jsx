@@ -146,7 +146,7 @@ export default function Navbar({ language = 'en' }) {
           </ul>
         </li>
         <li>
-          <a href="#portfolio" style={{ 
+          <a href="#/portfolio" style={{ 
             color: "#333", 
             textDecoration: "none", 
             fontWeight: 500,
@@ -184,7 +184,7 @@ export default function Navbar({ language = 'en' }) {
             zIndex: 1001
           }}>
             <li className="submenu-item">
-              <a href="#diplomas-university" style={{ 
+              <a href="#/diplomas/university" style={{ 
                 color: "#333",
                 textDecoration: "none",
                 padding: "0.5rem 1rem",
@@ -196,7 +196,7 @@ export default function Navbar({ language = 'en' }) {
               </a>
             </li>
             <li className="submenu-item">
-              <a href="#diplomas-bootcamps" style={{ 
+              <a href="#/diplomas/bootcamps" style={{ 
                 color: "#333",
                 textDecoration: "none",
                 padding: "0.5rem 1rem",
@@ -238,7 +238,7 @@ export default function Navbar({ language = 'en' }) {
             zIndex: 1001
           }}>
             <li className="submenu-item">
-              <a href="#education-books" style={{ 
+              <a href="#/education/books" style={{ 
                 color: "#333",
                 textDecoration: "none",
                 padding: "0.5rem 1rem",
@@ -250,7 +250,7 @@ export default function Navbar({ language = 'en' }) {
               </a>
             </li>
             <li className="submenu-item">
-              <a href="#education-finance" style={{ 
+                <a href="#/education/finance" style={{ 
                 color: "#333",
                 textDecoration: "none",
                 padding: "0.5rem 1rem",
@@ -264,7 +264,7 @@ export default function Navbar({ language = 'en' }) {
           </ul>
         </li>
         <li>
-          <a href="#donations" style={{ 
+          <a href="#/donations" style={{ 
             color: "#333", 
             textDecoration: "none", 
             fontWeight: 500,
@@ -274,7 +274,7 @@ export default function Navbar({ language = 'en' }) {
           </a>
         </li>
         <li>
-          <a href="#contact" style={{ 
+          <a href="#/contact" style={{ 
             color: "#333", 
             textDecoration: "none", 
             fontWeight: 500,
