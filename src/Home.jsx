@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const content = {
   en: {
-    title: "yulian's Portfolio",
+    title: "Julian's Portfolio",
     introduction: "I'm Julian, constantly learning and applying what I know to create, improve, and add value.",
     aiSectionTitle: "AI Section",
     aiSectionQuestion: "Have a quick question about Julian or any area of knowledge he has experience in?",
