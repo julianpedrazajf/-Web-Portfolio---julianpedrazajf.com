@@ -1,13 +1,76 @@
 import React from 'react';
+import Navbar from '../../Navbar';
 
 const content = {
 	en: {
 		title: 'Part-Time & Freelance',
-		body: 'Short-term, part-time or freelance projects I have worked on. Include scope, dates and outcomes.'
+		grilld: {
+			company: "Grill'd Burgers",
+			role: 'Team Member',
+			duration: 'October 2022 – December 2022',
+			location: 'Dee Why, NSW, Australia',
+			description: 'Worked across multiple areas of the restaurant including cooking, cleaning, food preparation, staff coordination, and assisting with opening and closing procedures.',
+			skills: 'Food preparation, customer service, teamwork, time management, staff coordination, cleaning and hygiene standards'
+		},
+		haircut: {
+			company: "Julian Haircut Services",
+			role: 'Freelance Barber',
+			duration: '2021 – Present',
+			location: 'Sydney, Australia',
+			description: 'Provided haircut services to private clients, managing appointments and delivering tailored grooming experiences. Developed strong interpersonal skills while ensuring high standards of quality, customer satisfaction, and consistency over three years of practice in Australia.',
+			skills: 'Haircutting, customer service, attention to detail, time management, client relationship management, adaptability'
+		},
+		trader: {
+			company: 'Independent Futures Trader',
+			role: 'Day Trader — E-mini S&P 500 Futures',
+			duration: '2020 – Present',
+			location: 'Sydney, Australia (Remote Trading)',
+			description: 'Actively trade the E-mini S&P 500 futures using technical and fundamental analysis to identify short-term market opportunities. Operate through NinjaTrader with expertise in charting, order execution, and real-time risk management. Manage personal capital and funded accounts, following strict risk management and position sizing rules.',
+			skills: 'Futures trading, technical & fundamental analysis, NinjaTrader platform, risk management, capital allocation, market research'
+		},
+		investor: {
+			company: 'Independent Investor',
+			role: 'Long-Term Investor — Index Funds & Equities',
+			duration: '2024 – Present',
+			location: 'Sydney, Australia',
+			description: 'Build wealth through long-term investments in diversified index funds and selected equities. Focused on disciplined contributions, diversification, fundamental analysis, and alignment with long-term financial goals.',
+			skills: 'Investing, portfolio management, diversification, fundamental analysis'
+		}
 	},
 	es: {
 		title: 'Proyectos a Tiempo Parcial y Freelance',
-		body: 'Proyectos cortos, a tiempo parcial o freelance en los que he trabajado. Incluye alcance, fechas y resultados.'
+		grilld: {
+			company: "Grill'd Burgers",
+			role: 'Miembro del equipo',
+			duration: 'Octubre 2022 – Diciembre 2022',
+			location: 'Dee Why, NSW, Australia',
+			description: 'Trabajé en varias áreas del restaurante incluyendo cocina, limpieza, preparación de alimentos, coordinación de personal y apoyo en los procedimientos de apertura y cierre.',
+			skills: 'Preparación de alimentos, servicio al cliente, trabajo en equipo, gestión del tiempo, coordinación de personal, estándares de limpieza e higiene'
+		},
+		haircut: {
+			company: 'Julian Haircut Services',
+			role: 'Barbero Freelance',
+			duration: '2021 – Presente',
+			location: 'Sydney, Australia',
+			description: 'Presté servicios de corte de cabello a clientes particulares, gestionando citas y entregando experiencias de arreglo personal a medida. Desarrollé habilidades interpersonales sólidas y mantuve altos estándares de calidad y satisfacción del cliente.',
+			skills: 'Corte de cabello, servicio al cliente, atención al detalle, gestión del tiempo, gestión de relaciones con clientes, adaptabilidad'
+		},
+		trader: {
+			company: 'Trader Independiente de Futuros',
+			role: 'Day Trader — E-mini S&P 500 Futures',
+			duration: '2020 – Presente',
+			location: 'Sydney, Australia (Trading Remoto)',
+			description: 'Opero activamente con futuros E-mini S&P 500 aplicando análisis técnico y fundamental para identificar oportunidades en movimientos de corto plazo. Uso NinjaTrader con experiencia en gráficos, ejecución de órdenes y gestión de riesgo en tiempo real, siguiendo reglas estrictas de gestión del riesgo y dimensionamiento de posiciones.',
+			skills: 'Trading de futuros, análisis técnico y fundamental, plataforma NinjaTrader, gestión del riesgo, asignación de capital, investigación de mercados'
+		},
+		investor: {
+			company: 'Inversor Independiente',
+			role: 'Inversor a Largo Plazo — Fondos Indexados y Acciones',
+			duration: '2024 – Presente',
+			location: 'Sydney, Australia',
+			description: 'Construyo patrimonio mediante inversiones a largo plazo en fondos indexados diversificados y acciones seleccionadas, con contribuciones disciplinadas y un perfil de riesgo moderado.',
+			skills: 'Inversión, gestión de cartera, diversificación, análisis fundamental'
+		}
 	}
 };
 
@@ -15,11 +78,47 @@ export default function PartTime({ language = 'en' }) {
 	const t = content[language];
 
 	return (
-		<main style={{ padding: '2rem' }}>
-			<section id="work-parttime">
-				<h1 style={{ fontSize: '1.5rem', fontWeight: 700 }}>{t.title}</h1>
-				<p style={{ marginTop: 12 }}>{t.body}</p>
-			</section>
-		</main>
+		<div>
+			<Navbar language={language} />
+			<main className="p-8 max-w-4xl mx-auto">
+				<h1 className="text-3xl font-bold mb-6">{t.title}</h1>
+
+				{/* Grill'd Burgers */}
+				<section className="mb-8 bg-white rounded-lg shadow p-6">
+					<h2 className="text-2xl font-semibold">{t.grilld.company}</h2>
+					<p className="mt-2 font-medium">{t.grilld.role}</p>
+					<p className="text-gray-600">{t.grilld.duration} | {t.grilld.location}</p>
+					<p className="mt-4 text-gray-700">{t.grilld.description}</p>
+					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.grilld.skills}</p>
+				</section>
+
+				{/* Julian Haircut Services */}
+				<section className="mb-8 bg-white rounded-lg shadow p-6">
+					<h2 className="text-2xl font-semibold">{t.haircut.company}</h2>
+					<p className="mt-2 font-medium">{t.haircut.role}</p>
+					<p className="text-gray-600">{t.haircut.duration} | {t.haircut.location}</p>
+					<p className="mt-4 text-gray-700">{t.haircut.description}</p>
+					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.haircut.skills}</p>
+				</section>
+
+				{/* Independent Futures Trader */}
+				<section className="mb-8 bg-white rounded-lg shadow p-6">
+					<h2 className="text-2xl font-semibold">{t.trader.company}</h2>
+					<p className="mt-2 font-medium">{t.trader.role}</p>
+					<p className="text-gray-600">{t.trader.duration} | {t.trader.location}</p>
+					<p className="mt-4 text-gray-700">{t.trader.description}</p>
+					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.trader.skills}</p>
+				</section>
+
+				{/* Independent Investor */}
+				<section className="mb-8 bg-white rounded-lg shadow p-6">
+					<h2 className="text-2xl font-semibold">{t.investor.company}</h2>
+					<p className="mt-2 font-medium">{t.investor.role}</p>
+					<p className="text-gray-600">{t.investor.duration} | {t.investor.location}</p>
+					<p className="mt-4 text-gray-700">{t.investor.description}</p>
+					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.investor.skills}</p>
+				</section>
+			</main>
+		</div>
 	);
 }
