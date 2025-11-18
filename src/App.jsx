@@ -12,10 +12,28 @@ import Finance from './pages/education/Finance.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Donations from './pages/Donations.jsx';
 import Contact from './pages/Contact.jsx';
+import LanguageContext from './LanguageContext';
 
 function App() {
   const [showDisclaimer, setShowDisclaimer] = useState(true);
   const [route, setRoute] = useState(window.location.hash || '');
+
+  // Global language state (initialized from localStorage so user's choice persists)
+  const [language, setLanguage] = useState(() => {
+    try {
+      return localStorage.getItem('language') || 'en';
+    } catch (e) {
+      return 'en';
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('language', language);
+    } catch (e) {
+      // ignore
+    }
+  }, [language]);
 
   useEffect(() => {
     const onHash = () => setRoute(window.location.hash || '');
@@ -24,53 +42,101 @@ function App() {
   }, []);
 
   if (showDisclaimer) {
-    return <Disclaimer onContinue={() => setShowDisclaimer(false)} />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <Disclaimer onContinue={() => setShowDisclaimer(false)} />
+      </LanguageContext.Provider>
+    );
   }
 
   // Minimal hash router: handle only the FullTime route for now.
   // Minimal hash router: handle FullTime and PartTime routes.
   if (route === '#/fulltime' || route === '#fulltime') {
-    return <FullTime />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <FullTime language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/parttime' || route === '#parttime') {
-    return <PartTime />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <PartTime language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/references' || route === '#references') {
-    return <References />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <References language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/diplomas/university' || route === '#/diplomas-university' || route === '#diplomas-university') {
-    return <UniversityDegrees />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <UniversityDegrees language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/diplomas/bootcamps' || route === '#/diplomas-bootcamps' || route === '#diplomas-bootcamps') {
-    return <OnlineBootcamps />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <OnlineBootcamps language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/education/books' || route === '#education-books' || route === '#/education-books') {
-    return <Books />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <Books language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/education/finance' || route === '#education-finance' || route === '#/education-finance') {
-    return <Finance />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <Finance language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/portfolio' || route === '#portfolio') {
-    return <Portfolio />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <Portfolio language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/donations' || route === '#donations') {
-    return <Donations />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <Donations language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   if (route === '#/contact' || route === '#contact') {
-    return <Contact />;
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <Contact language={language} />
+      </LanguageContext.Provider>
+    );
   }
 
   // default to Home
-  return <Home />;
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      <Home language={language} setLanguage={setLanguage} />
+    </LanguageContext.Provider>
+  );
 }
 
 export default App;

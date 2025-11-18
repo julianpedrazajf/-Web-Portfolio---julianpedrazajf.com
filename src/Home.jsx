@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Navbar from "./Navbar";
+import LanguageContext from './LanguageContext';
 
 const content = {
   en: {
@@ -19,7 +20,7 @@ const content = {
 };
 
 export default function Home() {
-  const [language, setLanguage] = useState('en');
+  const { language, setLanguage } = useContext(LanguageContext);
   const t = content[language]; // t for translate
 
   const toggleLanguage = () => {

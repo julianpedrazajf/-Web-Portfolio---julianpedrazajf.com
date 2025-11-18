@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import ShaderBackground from "./ShaderBackground";
+import LanguageContext from './LanguageContext';
 
 const disclaimers = {
   en: {
@@ -21,8 +22,8 @@ const disclaimers = {
 };
 
 export default function Disclaimer({ onContinue }) {
-  const [lang, setLang] = useState("en");
-  const d = disclaimers[lang];
+  const { language, setLanguage } = useContext(LanguageContext);
+  const d = disclaimers[language];
 
   const containerStyle = {
     display: "grid",
@@ -121,7 +122,7 @@ export default function Disclaimer({ onContinue }) {
           <div style={buttonContainerStyle}>
             <button
               style={toggleButtonStyle}
-              onClick={() => setLang(lang === "en" ? "es" : "en")}
+              onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
               aria-label="Toggle language"
             >
               {d.toggle}
