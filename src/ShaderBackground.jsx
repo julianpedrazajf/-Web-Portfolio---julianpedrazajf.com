@@ -112,7 +112,8 @@ vec4 renderPass(vec2 uv, vec2 uvoffset) {
   texCol = mix(texCol, paletteMix, 0.85);
   texCol = smoothstep(0.05, .75, pow(texCol*texCol, vec3(.55, .99, .85)));
 
-  vec3 colour = (texCol * (diffuse*vec3(1, .97, .92)*2. + 0.5) + lightColour*specular * f * 2.)*attenuation;
+  // scale final colour down to darken the overall output
+  vec3 colour = (texCol * (diffuse*vec3(0.7, .97, .92)*2. + 0.5) + lightColour*specular * f * 2.)*attenuation * 0.45;
   return vec4(sqrt(colour), 1.);
 }
 
@@ -135,8 +136,8 @@ const ShaderBackground = () => {
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
-    // use the darker palette color as clear color (hex: #8A1E14)
-    renderer.setClearColor(0x8A1E14, 1);
+    // use a darker clear color (deep burgundy) to ground the palette
+    renderer.setClearColor(0x4A0F0C, 1);
     renderer.domElement.style.position = "fixed";
     renderer.domElement.style.top = 0;
     renderer.domElement.style.left = 0;
@@ -144,8 +145,8 @@ const ShaderBackground = () => {
     renderer.domElement.style.height = "100vh";
     renderer.domElement.style.zIndex = 0;
 
-    // apply a subtle brightness tint and keep high opacity so colors show
-    renderer.domElement.style.filter = "brightness(100%)";
+    // darken the canvas so the shader reads darker overall
+    renderer.domElement.style.filter = "brightness(25%)";
     renderer.domElement.style.opacity = "0.95";
 
     // Scene
