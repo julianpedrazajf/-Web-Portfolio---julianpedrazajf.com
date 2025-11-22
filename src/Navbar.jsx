@@ -53,7 +53,7 @@ export default function Navbar({ language = 'en' }) {
     <nav style={{
       padding: "1rem",
       marginTop: "1rem",
-      marginBottom: "2rem",
+      marginBottom: "1rem",
       background: "rgba(255,255,255,0.8)",
       backdropFilter: "blur(10px)",
       position: "sticky",

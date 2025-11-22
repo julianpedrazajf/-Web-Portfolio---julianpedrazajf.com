@@ -47,19 +47,30 @@ export default function Home() {
         {language === 'en' ? '🇪🇸 ES' : '🇺🇸 EN'}
       </button>
 
+      {/* Navigation Bar */}
+      <Navbar language={language} />
+
       {/* Hero Section */}
-      <section style={{ padding: "3rem 1rem", textAlign: "center" }}>
-        <h1 style={{ fontSize: "2.5rem", fontWeight: 800 }}>{t.title}</h1>
-        <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ color: "#24292f", fontWeight: 600 }}>
+      <section style={{ padding: "1rem 1rem", textAlign: "center" }}>
+        <h1 style={{ margin: 0 }}>
+          <img
+            src="/img/image1.png"
+            alt={t.title}
+            style={{
+              maxWidth: '20%',
+              height: 'auto',
+              display: 'inline-block',
+              verticalAlign: 'middle'
+            }}
+          />
+        </h1>
+        <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ color: "#24292f", fontWeight: 600, display: 'block', marginTop: '0.5rem' }}>
           {t.githubLink} <br />
           https://github.com/julianpedrazajf
         </a>
 
-          {/* Navigation Bar */}
-        <Navbar language={language} />
-      
         {/* Introducción (versión 3 - narrativa personal) */}
-        <div style={{ fontSize: "1.25rem", margin: "1rem auto", maxWidth: 600, textAlign: "center", display: "inline-block", lineHeight: 1.6}}>
+        <div style={{ fontSize: "1.25rem", margin: "1rem auto", maxWidth: 600, textAlign: "center", display: "block", lineHeight: 1.6}}>
           <p style={{ marginBottom: 12 }}>
           "{t.introduction}"
           </p>

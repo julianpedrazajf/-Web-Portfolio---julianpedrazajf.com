@@ -13,6 +13,12 @@ const fragmentShader = `
 uniform vec2 u_resolution;
 uniform float u_time;
 
+// Palette colors (provided hex -> normalized RGB)
+const vec3 PALETTE_A = vec3(0.780392, 0.215686, 0.149019); // #C33726
+const vec3 PALETTE_B = vec3(0.956863, 0.635294, 0.137255); // #F4A223
+const vec3 PALETTE_C = vec3(0.541176, 0.117647, 0.078431); // #8A1E14
+const vec3 PALETTE_D = vec3(0.949020, 0.760784, 0.298039); // #F2C24C
+
 const int octaves = 2;
 const float seed2 = 73156.8473192;
 const float seed = 43758.5453123;
@@ -91,8 +97,21 @@ vec4 renderPass(vec2 uv, vec2 uvoffset) {
   float attenuation = 1./(1.0 + lightDist*lightDist*falloff);
   float diffuse = max(dot(normal, lightV), 0.);
   float specular = pow(max(dot( reflect(-lightV, normal), -ray), 0.), 22.); 
+  // base procedural colour
   vec3 texCol = vec3(0.15, .15 + r.g * f * 2., q.r * f * 1.5);
+
+  // derive a palette mix from procedural channels (q and r) and noise
+  float qmix = smoothstep(0.0, 1.0, q.r);
+  float rmix = smoothstep(0.0, 1.0, r.g * f);
+  vec3 paletteMix = mix(PALETTE_A, PALETTE_B, qmix);
+  paletteMix = mix(paletteMix, PALETTE_D, rmix);
+  // add a subtle influence from PALETTE_C (darker tone)
+  paletteMix = mix(paletteMix, PALETTE_C, 0.12 + 0.2 * (1.0 - qmix));
+
+  // blend procedural texCol into the palette to keep shapes but recolor
+  texCol = mix(texCol, paletteMix, 0.85);
   texCol = smoothstep(0.05, .75, pow(texCol*texCol, vec3(.55, .99, .85)));
+
   vec3 colour = (texCol * (diffuse*vec3(1, .97, .92)*2. + 0.5) + lightColour*specular * f * 2.)*attenuation;
   return vec4(sqrt(colour), 1.);
 }
@@ -116,7 +135,8 @@ const ShaderBackground = () => {
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
-    renderer.setClearColor(0x000000, 1);
+    // use the darker palette color as clear color (hex: #8A1E14)
+    renderer.setClearColor(0x8A1E14, 1);
     renderer.domElement.style.position = "fixed";
     renderer.domElement.style.top = 0;
     renderer.domElement.style.left = 0;
@@ -124,9 +144,8 @@ const ShaderBackground = () => {
     renderer.domElement.style.height = "100vh";
     renderer.domElement.style.zIndex = 0;
 
-    // make background darker (like a semi-transparent layer above shader)
-    // Ajusta el valor de brightness(0.0 - 1.0) o usa opacity para más control.
-    renderer.domElement.style.filter = "brightness(70%)";
+    // apply a subtle brightness tint and keep high opacity so colors show
+    renderer.domElement.style.filter = "brightness(100%)";
     renderer.domElement.style.opacity = "0.95";
 
     // Scene
