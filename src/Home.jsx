@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <main style={{ minHeight: "100vh", width: "100vw", background: "#f5f6fa" }}>
+    <main style={{ minHeight: "100vh", width: "100vw", background: "transparent" }}>
       {/* Language Toggle */}
       <button
         onClick={toggleLanguage}

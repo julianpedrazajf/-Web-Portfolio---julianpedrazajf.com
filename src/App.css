@@ -13,3 +13,9 @@ html, body, #root {
 body {
   font-family: system-ui, -apple-system, sans-serif;
 }
+
+/* App background and default text color for dark theme */
+body {
+  background-color: #1A1A1D;
+  color: #e6e6e6;
+}

@@ -48,7 +48,7 @@ export default function Disclaimer({ onContinue }) {
     maxWidth: "52rem",
     width: "100%",
     textAlign: "center",
-    boxShadow:  "-10px -10px 58px #0e0f0eff, 10px 10px 58px #0e0f0eff",
+    boxshadow:  "50px -50px 97px #d9d9d9, -50px 50px 97px #e7e7e7",
   };
 
   const titleStyle = {
