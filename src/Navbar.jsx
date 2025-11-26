@@ -51,15 +51,15 @@ export default function Navbar({ language = 'en' }) {
 
   return (
     <nav style={{
-      padding: "1rem",
-      marginTop: "1rem",
+      background: "rgba(255, 255, 255, 0.18)",
+      backdropFilter: "blur(10px) brightness(1.1)",
+      border: "1px solid rgba(255, 255, 255, 0.18)",
+      padding: "0.7rem",
+      marginTop: "2rem",
       marginBottom: "1rem",
-      background: "rgba(255,255,255,0.8)",
-      backdropFilter: "blur(10px)",
-      position: "sticky",
-      top: 0,
-      zIndex: 1000,
-      borderBottom: "1px solid rgba(0,0,0,0.1)"
+      borderRadius: "40px",
+      maxWidth: "999px",
+      marginInline: "auto"
     }}>
       <ul style={{
         display: "flex",
@@ -72,7 +72,7 @@ export default function Navbar({ language = 'en' }) {
       }}>
         <li style={{ position: 'relative' }} className="nav-item-with-submenu">
           <a href="#work" style={{ 
-            color: "#333", 
+            color: "#fff", 
             textDecoration: "none", 
             fontWeight: 500,
             transition: "color 0.2s ease",
@@ -147,17 +147,19 @@ export default function Navbar({ language = 'en' }) {
         </li>
         <li>
           <a href="#/portfolio" style={{ 
-            color: "#333", 
+            color: "#fff", 
             textDecoration: "none", 
             fontWeight: 500,
-            transition: "color 0.2s ease"
+            transition: "color 0.2s ease",
+            display: "inline-block",
+            padding: "0.5rem 0"
           }}>
             {t.portfolio}
           </a>
         </li>
         <li style={{ position: 'relative' }} className="nav-item-with-submenu">
           <a href="#diplomas" style={{ 
-            color: "#333", 
+            color: "#fff", 
             textDecoration: "none", 
             fontWeight: 500,
             transition: "color 0.2s ease",
@@ -211,7 +213,7 @@ export default function Navbar({ language = 'en' }) {
         </li>
         <li style={{ position: 'relative' }} className="nav-item-with-submenu">
           <a href="#education" style={{ 
-            color: "#333", 
+            color: "#fff", 
             textDecoration: "none", 
             fontWeight: 500,
             transition: "color 0.2s ease",
@@ -265,20 +267,24 @@ export default function Navbar({ language = 'en' }) {
         </li>
         <li>
           <a href="#/donations" style={{ 
-            color: "#333", 
+            color: "#fff", 
             textDecoration: "none", 
             fontWeight: 500,
-            transition: "color 0.2s ease"
+            transition: "color 0.2s ease",
+            display: "inline-block",
+            padding: "0.5rem 0"
           }}>
             {t.donations}
           </a>
         </li>
         <li>
           <a href="#/contact" style={{ 
-            color: "#333", 
+            color: "#fff", 
             textDecoration: "none", 
             fontWeight: 500,
-            transition: "color 0.2s ease"
+            transition: "color 0.2s ease",
+            display: "inline-block",
+            padding: "0.5rem 0"
           }}>
             {t.contact}
           </a>
