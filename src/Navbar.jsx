@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 
 const navContent = {
@@ -48,19 +48,53 @@ const navContent = {
 
 export default function Navbar({ language = 'en' }) {
   const t = navContent[language];
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleSubmenu = (menu) => {
+    setOpenSubmenu(openSubmenu === menu ? null : menu);
+  };
 
   return (
-    <nav style={{
-      background: "rgba(255, 255, 255, 0.18)",
-      backdropFilter: "blur(10px) brightness(1.1)",
-      border: "1px solid rgba(255, 255, 255, 0.18)",
-      padding: "0.7rem",
-      marginTop: "2rem",
-      marginBottom: "1rem",
-      borderRadius: "40px",
-      maxWidth: "999px",
-      marginInline: "auto"
-    }}>
+    <>
+      {/* Hamburger Button (mobile only) */}
+      <button 
+        onClick={toggleMenu}
+        style={{
+          display: "none",
+          position: "fixed",
+          top: "1rem",
+          left: "1rem",
+          zIndex: 2000,
+          background: "rgba(255, 255, 255, 0.2)",
+          backdropFilter: "blur(10px)",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+          borderRadius: "8px",
+          padding: "0.6rem",
+          cursor: "pointer",
+          color: "#fff",
+          fontSize: "1.5rem",
+          lineHeight: 1
+        }}
+        className="hamburger-button"
+      >
+        {isMenuOpen ? '✕' : '☰'}
+      </button>
+
+      <nav style={{
+        background: "rgba(255, 255, 255, 0.18)",
+        backdropFilter: "blur(10px) brightness(1.1)",
+        border: "1px solid rgba(255, 255, 255, 0.18)",
+        padding: "0.7rem",
+        marginTop: "2rem",
+        marginBottom: "1rem",
+        borderRadius: "40px",
+        maxWidth: "999px",
+        marginInline: "auto"
+      }}
+      className="desktop-nav"
+      >
       <ul style={{
         display: "flex",
         justifyContent: "center",
@@ -291,5 +325,258 @@ export default function Navbar({ language = 'en' }) {
         </li>
       </ul>
     </nav>
+
+    {/* Mobile Menu Overlay */}
+    <div 
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        background: "rgba(26, 26, 29, 0.98)",
+        backdropFilter: "blur(10px)",
+        zIndex: 1999,
+        display: isMenuOpen ? "flex" : "none",
+        flexDirection: "column",
+        padding: "4rem 2rem 2rem",
+        overflowY: "auto"
+      }}
+      className="mobile-menu"
+    >
+      <ul style={{
+        listStyle: "none",
+        margin: 0,
+        padding: 0,
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem"
+      }}>
+        {/* Work Experience */}
+        <li>
+          <button
+            onClick={() => toggleSubmenu('work')}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#fff",
+              fontSize: "1.1rem",
+              fontWeight: 500,
+              padding: "0.75rem",
+              width: "100%",
+              textAlign: "left",
+              cursor: "pointer",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            {t.work}
+            <span style={{ fontSize: "0.8rem" }}>{openSubmenu === 'work' ? '▼' : '▶'}</span>
+          </button>
+          {openSubmenu === 'work' && (
+            <ul style={{
+              listStyle: "none",
+              margin: 0,
+              padding: "0 0 0 1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5rem"
+            }}>
+              <li>
+                <a href="#/fulltime" onClick={toggleMenu} style={{ 
+                  color: "#ccc",
+                  textDecoration: "none",
+                  padding: "0.5rem",
+                  display: "block",
+                  fontSize: "1rem"
+                }}>
+                  {t.workSubmenu.fulltime}
+                </a>
+              </li>
+              <li>
+                <a href="#/parttime" onClick={toggleMenu} style={{ 
+                  color: "#ccc",
+                  textDecoration: "none",
+                  padding: "0.5rem",
+                  display: "block",
+                  fontSize: "1rem"
+                }}>
+                  {t.workSubmenu.parttime}
+                </a>
+              </li>
+              <li>
+                <a href="#/references" onClick={toggleMenu} style={{ 
+                  color: "#ccc",
+                  textDecoration: "none",
+                  padding: "0.5rem",
+                  display: "block",
+                  fontSize: "1rem"
+                }}>
+                  {t.workSubmenu.references}
+                </a>
+              </li>
+            </ul>
+          )}
+        </li>
+
+        {/* Portfolio */}
+        <li>
+          <a href="#/portfolio" onClick={toggleMenu} style={{ 
+            color: "#fff",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            fontWeight: 500,
+            padding: "0.75rem",
+            display: "block"
+          }}>
+            {t.portfolio}
+          </a>
+        </li>
+
+        {/* Diplomas */}
+        <li>
+          <button
+            onClick={() => toggleSubmenu('diplomas')}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#fff",
+              fontSize: "1.1rem",
+              fontWeight: 500,
+              padding: "0.75rem",
+              width: "100%",
+              textAlign: "left",
+              cursor: "pointer",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            {t.diplomas}
+            <span style={{ fontSize: "0.8rem" }}>{openSubmenu === 'diplomas' ? '▼' : '▶'}</span>
+          </button>
+          {openSubmenu === 'diplomas' && (
+            <ul style={{
+              listStyle: "none",
+              margin: 0,
+              padding: "0 0 0 1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5rem"
+            }}>
+              <li>
+                <a href="#/diplomas/university" onClick={toggleMenu} style={{ 
+                  color: "#ccc",
+                  textDecoration: "none",
+                  padding: "0.5rem",
+                  display: "block",
+                  fontSize: "1rem"
+                }}>
+                  {t.diplomasSubmenu.university}
+                </a>
+              </li>
+              <li>
+                <a href="#/diplomas/bootcamps" onClick={toggleMenu} style={{ 
+                  color: "#ccc",
+                  textDecoration: "none",
+                  padding: "0.5rem",
+                  display: "block",
+                  fontSize: "1rem"
+                }}>
+                  {t.diplomasSubmenu.bootcamps}
+                </a>
+              </li>
+            </ul>
+          )}
+        </li>
+
+        {/* Education */}
+        <li>
+          <button
+            onClick={() => toggleSubmenu('education')}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#fff",
+              fontSize: "1.1rem",
+              fontWeight: 500,
+              padding: "0.75rem",
+              width: "100%",
+              textAlign: "left",
+              cursor: "pointer",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            {t.education}
+            <span style={{ fontSize: "0.8rem" }}>{openSubmenu === 'education' ? '▼' : '▶'}</span>
+          </button>
+          {openSubmenu === 'education' && (
+            <ul style={{
+              listStyle: "none",
+              margin: 0,
+              padding: "0 0 0 1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5rem"
+            }}>
+              <li>
+                <a href="#/education/books" onClick={toggleMenu} style={{ 
+                  color: "#ccc",
+                  textDecoration: "none",
+                  padding: "0.5rem",
+                  display: "block",
+                  fontSize: "1rem"
+                }}>
+                  {t.educationSubmenu.books}
+                </a>
+              </li>
+              <li>
+                <a href="#/education/finance" onClick={toggleMenu} style={{ 
+                  color: "#ccc",
+                  textDecoration: "none",
+                  padding: "0.5rem",
+                  display: "block",
+                  fontSize: "1rem"
+                }}>
+                  {t.educationSubmenu.finance}
+                </a>
+              </li>
+            </ul>
+          )}
+        </li>
+
+        {/* Donations */}
+        <li>
+          <a href="#/donations" onClick={toggleMenu} style={{ 
+            color: "#fff",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            fontWeight: 500,
+            padding: "0.75rem",
+            display: "block"
+          }}>
+            {t.donations}
+          </a>
+        </li>
+
+        {/* Contact */}
+        <li>
+          <a href="#/contact" onClick={toggleMenu} style={{ 
+            color: "#fff",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            fontWeight: 500,
+            padding: "0.75rem",
+            display: "block"
+          }}>
+            {t.contact}
+          </a>
+        </li>
+      </ul>
+    </div>
+    </>
   );
 }

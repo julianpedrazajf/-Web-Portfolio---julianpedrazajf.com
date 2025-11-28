@@ -6,3 +6,25 @@
 .submenu-item:hover {
   background: rgba(0,0,0,0.05);
 }
+
+/* Mobile Menu Styles */
+@media (max-width: 893px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .hamburger-button {
+    display: block !important;
+  }
+}
+
+/* Desktop Menu Styles */
+@media (min-width: 894px) {
+  .mobile-menu {
+    display: none !important;
+  }
+  
+  .hamburger-button {
+    display: none !important;
+  }
+}
