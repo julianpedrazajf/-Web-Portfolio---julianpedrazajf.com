@@ -19,3 +19,22 @@ body {
   background-color: #1A1A1D;
   color: #e6e6e6;
 }
+
+/* Responsive logo sizing: keeps logo within a comfortable range */
+.site-logo {
+  width: clamp(140px, 40vw, 290px);
+  height: auto;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .site-logo {
+    width: 250px; /* slightly larger than minimum for small phones */
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-logo {
+    width: 350px; /* cap size on large desktops */
+  }
+}

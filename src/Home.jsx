@@ -56,12 +56,8 @@ export default function Home() {
           <img
             src="/img/image1.png"
             alt={t.title}
-            style={{
-              maxWidth: '20%',
-              height: 'auto',
-              display: 'inline-block',
-              verticalAlign: 'middle'
-            }}
+            className="site-logo"
+            style={{ verticalAlign: 'middle' }}
           />
         </h1>
         <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ textDecorationLine: 'underline', textDecorationColor: '#fff', color: "#fff", fontWeight: 600, display: 'block', marginBottom: '3rem' }}>
