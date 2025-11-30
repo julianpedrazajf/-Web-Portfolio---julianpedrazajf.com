@@ -64,7 +64,7 @@ export default function Home() {
             }}
           />
         </h1>
-        <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ color: "#24292f", fontWeight: 600, display: 'block', marginTop: '0.5rem' }}>
+        <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ textDecorationLine: 'underline', textDecorationColor: '#fff', color: "#fff", fontWeight: 600, display: 'block', marginBottom: '3rem' }}>
           {t.githubLink} <br />
           https://github.com/julianpedrazajf
         </a>
