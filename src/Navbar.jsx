@@ -86,7 +86,7 @@ export default function Navbar({ language = 'en' }) {
         background: "rgba(255, 255, 255, 0.18)",
         backdropFilter: "blur(10px) brightness(1.1)",
         border: "1px solid rgba(255, 255, 255, 0.18)",
-        padding: "0.7rem",
+        padding: "0.4rem",
         marginTop: "2rem",
         marginBottom: "1rem",
         borderRadius: "40px",

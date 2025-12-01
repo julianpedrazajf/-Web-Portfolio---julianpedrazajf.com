@@ -32,16 +32,13 @@ export default function Home() {
       {/* Language Toggle */}
       <button
         onClick={toggleLanguage}
+        className="lang-toggle"
         style={{
-          position: "fixed",
-          top: "1rem",
-          right: "1rem",
-          padding: "0.5rem 1rem",
+          padding: "0.3rem",
           background: "rgba(255,255,255,0.8)",
           border: "1px solid rgba(0,0,0,0.1)",
           borderRadius: "4px",
-          cursor: "pointer",
-          zIndex: 1001
+          cursor: "pointer"
         }}
       >
         {language === 'en' ? '🇪🇸 ES' : '🇺🇸 EN'}

@@ -38,3 +38,32 @@ body {
     width: 350px; /* cap size on large desktops */
   }
 }
+
+/* Language toggle responsive position */
+.lang-toggle {
+  position: fixed;
+  right: 1rem;
+  top: 1rem; /* default */
+  z-index: 1001;
+}
+
+/* Before 1136px, move down to 6rem */
+@media (max-width: 1135px) {
+  .lang-toggle {
+    top: 6rem;
+  }
+}
+
+/* Before 893px, bring back up to 1rem */
+@media (max-width: 893px) {
+  .lang-toggle {
+    top: 1rem;
+  }
+}
+
+/* After 1136px and up, keep at 1rem */
+@media (min-width: 1136px) {
+  .lang-toggle {
+    top: 1rem;
+  }
+}
