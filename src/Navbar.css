@@ -8,7 +8,7 @@
 }
 
 /* Mobile Menu Styles */
-@media (max-width: 893px) {
+@media (max-width: 933px) {
   .desktop-nav {
     display: none !important;
   }
@@ -19,7 +19,7 @@
 }
 
 /* Desktop Menu Styles */
-@media (min-width: 894px) {
+@media (min-width: 933px) {
   .mobile-menu {
     display: none !important;
   }
