@@ -5,14 +5,14 @@ import LanguageContext from './LanguageContext';
 const content = {
   en: {
     title: "Julian's Portfolio",
-    introduction: "I'm Julian, constantly learning and applying what I know to create, improve, and add value.",
+    introduction: "Hi, I'm Julian.\nFrontend Developer and IT student focused on building clean, fast, and user-centered web experiences.\nI enjoy turning ideas into functional interfaces using modern tools and best practices.\n\nExplore my work below.",
     aiSectionTitle: "AI Section",
     aiSectionQuestion: "Have a quick question about Julian or any area of knowledge he has experience in?",
     githubLink: ""
   },
   es: {
     title: "Portafolio de Julian",
-    introduction: "Soy Julian, aprendo constantemente y aplico lo que sé para crear, mejorar y aportar valor.",
+    introduction: "Hola, soy Julian.\nDesarrollador Frontend y estudiante de IT enfocado en construir experiencias web limpias, rápidas y centradas en el usuario.\nDisfruto transformar ideas en interfaces funcionales utilizando herramientas modernas y buenas prácticas.\n\nExplora mi trabajo a continuación.",
     aiSectionTitle: "Sección de IA",
     aiSectionQuestion: "¿Tienes alguna pregunta sobre Julian o algún área de conocimiento en la que tenga experiencia?",
     githubLink: ""
@@ -63,9 +63,9 @@ export default function Home() {
         </a>
 
         {/* Introducción (versión 3 - narrativa personal) */}
-        <div style={{ fontSize: "1.25rem", margin: "1rem auto", maxWidth: 600, textAlign: "center", display: "block", lineHeight: 1.6}}>
+        <div style={{ fontSize: "1.25rem", margin: "1rem auto", maxWidth: 600, textAlign: "center", display: "block", lineHeight: 1.6, whiteSpace: "pre-line" }}>
           <p style={{ marginBottom: 12 }}>
-          "{t.introduction}"
+          {t.introduction}
           </p>
         </div>
       </section>
