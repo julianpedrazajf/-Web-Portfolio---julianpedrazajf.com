@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Navbar from "./Navbar";
 import LanguageContext from './LanguageContext';
 
@@ -26,6 +26,52 @@ export default function Home() {
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'es' : 'en');
   };
+
+  // Load Chatbase chatbot script on component mount
+  useEffect(() => {
+    // Configure Chatbase before initialization
+    window.chatbaseConfig = {
+      showFloatingInitialMessages: true,  // Enable floating messages
+      floatingInitialMessagesDelay: 0     // Show after 2 seconds
+    };
+
+    // Initialize chatbase queue if not already present
+    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+      window.chatbase = (...args) => {
+        if (!window.chatbase.q) {
+          window.chatbase.q = [];
+        }
+        window.chatbase.q.push(args);
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop) {
+          if (prop === "q") {
+            return target.q;
+          }
+          return (...args) => target(prop, ...args);
+        }
+      });
+    }
+
+    // Load the Chatbase embed script
+    const onLoad = function() {
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "x-Q1cVJoxUCqnT320qFuE";
+      script.domain = "www.chatbase.co";
+      document.body.appendChild(script);
+    };
+
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+    }
+
+    return () => {
+      window.removeEventListener("load", onLoad);
+    };
+  }, []);
 
   return (
     <main style={{ minHeight: "100vh", width: "100vw", background: "transparent" }}>
