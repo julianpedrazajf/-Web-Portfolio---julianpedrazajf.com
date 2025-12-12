@@ -32,7 +32,9 @@ export default function Home() {
     // Configure Chatbase before initialization
     window.chatbaseConfig = {
       showFloatingInitialMessages: true,  // Enable floating messages
-      floatingInitialMessagesDelay: 0     // Show after 2 seconds
+      floatingInitialMessagesDelay: 1,    // Show after 1 second
+      chatboxWidth: '360px',              // Smaller width (default is 448px)
+      chatboxHeight: '550px'              // Smaller height (default is 700px)
     };
 
     // Initialize chatbase queue if not already present
@@ -55,10 +57,48 @@ export default function Home() {
 
     // Load the Chatbase embed script
     const onLoad = function() {
+      // Clear any stored state to ensure floating messages show on every reload
+      try {
+        const chatbaseKeys = Object.keys(localStorage).filter(key => 
+          key.startsWith('chatbase') || key.includes('chatbase')
+        );
+        chatbaseKeys.forEach(key => localStorage.removeItem(key));
+      } catch (e) {
+        console.warn('Could not clear chatbase localStorage:', e);
+      }
+
       const script = document.createElement("script");
       script.src = "https://www.chatbase.co/embed.min.js";
       script.id = "x-Q1cVJoxUCqnT320qFuE";
       script.domain = "www.chatbase.co";
+      // Once the script loads, attach a toggle handler to the bubble button
+      script.onload = () => {
+        const attachBubbleToggle = (attempt = 0) => {
+          const bubble = document.getElementById('chatbase-bubble-button');
+          if (!bubble) {
+            if (attempt < 20) {
+              setTimeout(() => attachBubbleToggle(attempt + 1), 150);
+            }
+            return;
+          }
+          if (bubble.dataset.toggleAttached === 'true') return;
+          bubble.dataset.toggleAttached = 'true';
+
+          let isOpen = false;
+          bubble.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            isOpen = !isOpen;
+            if (isOpen) {
+              window.chatbase?.open?.();
+            } else {
+              window.chatbase?.close?.();
+            }
+          });
+        };
+
+        attachBubbleToggle();
+      };
       document.body.appendChild(script);
     };
 
