@@ -161,22 +161,11 @@ export default function Home() {
         </a>
 
         {/* Introducción (versión 3 - narrativa personal) */}
-        <div style={{ fontSize: "1.25rem", margin: "1rem auto", maxWidth: 600, textAlign: "center", display: "block", lineHeight: 1.6, whiteSpace: "pre-line" }}>
+        <div style={{ fontSize: "1.25rem", margin: "0.5rem auto", maxWidth: 600, textAlign: "center", display: "block", lineHeight: 1.6, whiteSpace: "pre-line" }}>
           <p style={{ marginBottom: 12 }}>
           {t.introduction}
           </p>
         </div>
-      </section>
-
-
-
-      {/* AI Section */}
-      <section style={{ padding: "2rem 1rem", maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
-        <h2 style={{ fontSize: "1.25rem", fontWeight: 700 }}>🧠 {t.aiSectionTitle}</h2>
-        <blockquote style={{ fontStyle: "italic", margin: "1rem auto", color: "#555" }}>
-          "{t.aiSectionQuestion}"
-        </blockquote>
-        {/* You can add a chatbot or FAQ search here */}
       </section>
     </main>
   );
