@@ -32,9 +32,7 @@ export default function Home() {
     // Configure Chatbase before initialization
     window.chatbaseConfig = {
       showFloatingInitialMessages: true,  // Enable floating messages
-      floatingInitialMessagesDelay: 1,    // Show after 1 second
-      chatboxWidth: '360px',              // Smaller width (default is 448px)
-      chatboxHeight: '550px'              // Smaller height (default is 700px)
+      floatingInitialMessagesDelay: 1     // Show after 2 seconds
     };
 
     // Initialize chatbase queue if not already present
@@ -97,7 +95,21 @@ export default function Home() {
           });
         };
 
+        // Apply custom dimensions to chatbase window
+        const applyCustomStyles = (attempt = 0) => {
+          const chatWindow = document.getElementById('chatbase-bubble-window');
+          if (!chatWindow) {
+            if (attempt < 20) {
+              setTimeout(() => applyCustomStyles(attempt + 1), 150);
+            }
+            return;
+          }
+          chatWindow.style.width = '400px';
+          chatWindow.style.height = '70dvh';
+        };
+
         attachBubbleToggle();
+        applyCustomStyles();
       };
       document.body.appendChild(script);
     };
