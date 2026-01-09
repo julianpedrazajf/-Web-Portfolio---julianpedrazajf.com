@@ -82,19 +82,28 @@ export default function Navbar({ language = 'en' }) {
         {isMenuOpen ? '✕' : '☰'}
       </button>
 
-      <nav style={{
-        background: "rgba(255, 255, 255, 0.18)",
-        backdropFilter: "blur(10px) brightness(1.1)",
-        border: "1px solid rgba(255, 255, 255, 0.18)",
-        padding: "0.4rem",
-        marginTop: "2rem",
-        marginBottom: "1rem",
-        borderRadius: "40px",
-        maxWidth: "999px",
-        marginInline: "auto"
-      }}
-      className="desktop-nav"
+      <div
+        style={{
+          background: "linear-gradient(90deg, #C33726, #F4A223, #F2C24C, #8A1E14)",
+          borderRadius: "40px",
+          padding: "2px",
+          marginTop: "2rem",
+          marginBottom: "1rem",
+          maxWidth: "999px",
+          marginInline: "auto"
+        }}
+        className="desktop-nav"
       >
+        <nav
+          style={{
+            background: "#2A2A2A",
+            backdropFilter: "blur(10px) brightness(1.1)",
+            borderRadius: "36px",
+            padding: "0.6rem",
+            width: "100%",
+            boxSizing: "border-box"
+          }}
+        >
       <ul style={{
         display: "flex",
         justifyContent: "center",
@@ -325,6 +334,8 @@ export default function Navbar({ language = 'en' }) {
         </li>
       </ul>
     </nav>
+
+      </div>
 
     {/* Mobile Menu Overlay */}
     <div 
