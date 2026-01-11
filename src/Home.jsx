@@ -155,10 +155,17 @@ export default function Home() {
             style={{ verticalAlign: 'middle' }}
           />
         </h1>
+
+        {/* Separator between sections */}
+        <div className="section-separator-1000px" aria-hidden="true" />
+
         <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ textDecorationLine: 'underline', textDecorationColor: '#fff', color: "#fff", fontWeight: 600, display: 'block', marginBottom: '3rem' }}>
           {t.githubLink} <br />
           https://github.com/julianpedrazajf
         </a>
+
+      {/* Separator between sections */}
+      <div className="section-separator-500px" aria-hidden="true" />
 
         {/* Introducción (versión 3 - narrativa personal) */}
         <div style={{ fontSize: "1.25rem", margin: "0.5rem auto", maxWidth: 600, textAlign: "center", display: "block", lineHeight: 1.6, whiteSpace: "pre-line" }}>
@@ -167,6 +174,10 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* Separator between sections */}
+      <div className="section-separator-1000px" aria-hidden="true" />
+
     </main>
   );
 }

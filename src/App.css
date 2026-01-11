@@ -67,3 +67,24 @@ body {
     top: 1rem;
   }
 }
+/* Section separator: centered, ~500px wide, soft gray */
+.section-separator-1000px {
+  width: 1000px;
+  max-width: 90%; /* keep responsive on small screens */
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12); /* soft gray on dark bg */
+  margin: 2.5rem auto;
+  border-radius: 1px;
+  display: block;
+}
+
+/* Section separator: centered, ~500px wide, soft gray */
+.section-separator-500px {
+  width: 500px;
+  max-width: 90%; /* keep responsive on small screens */
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12); /* soft gray on dark bg */
+  margin: 2.5rem auto;
+  border-radius: 1px;
+  display: block;
+}

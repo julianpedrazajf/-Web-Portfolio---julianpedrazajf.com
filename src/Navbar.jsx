@@ -86,7 +86,7 @@ export default function Navbar({ language = 'en' }) {
         style={{
           background: "linear-gradient(90deg, #C33726, #F4A223, #F2C24C, #8A1E14)",
           borderRadius: "40px",
-          padding: "2px",
+          padding: "1px",
           marginTop: "2rem",
           marginBottom: "1rem",
           maxWidth: "999px",
