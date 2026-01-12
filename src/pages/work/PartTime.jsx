@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Navbar';
+import PageLayout from '../../components/PageLayout';
 
 const content = {
 	en: {
@@ -80,45 +81,43 @@ export default function PartTime({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-4xl mx-auto">
-				<h1 className="text-3xl font-bold mb-6">{t.title}</h1>
-
+			<PageLayout title={t.title}>
 				{/* Grill'd Burgers */}
-				<section className="mb-8 bg-white rounded-lg shadow p-6">
+				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
 					<h2 className="text-2xl font-semibold">{t.grilld.company}</h2>
 					<p className="mt-2 font-medium">{t.grilld.role}</p>
-					<p className="text-gray-600">{t.grilld.duration} | {t.grilld.location}</p>
-					<p className="mt-4 text-gray-700">{t.grilld.description}</p>
-					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.grilld.skills}</p>
+					<p className="text-gray-400">{t.grilld.duration} | {t.grilld.location}</p>
+					<p className="mt-4 text-gray-300">{t.grilld.description}</p>
+					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.grilld.skills}</p>
 				</section>
 
 				{/* Julian Haircut Services */}
-				<section className="mb-8 bg-white rounded-lg shadow p-6">
+				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
 					<h2 className="text-2xl font-semibold">{t.haircut.company}</h2>
 					<p className="mt-2 font-medium">{t.haircut.role}</p>
-					<p className="text-gray-600">{t.haircut.duration} | {t.haircut.location}</p>
-					<p className="mt-4 text-gray-700">{t.haircut.description}</p>
-					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.haircut.skills}</p>
+					<p className="text-gray-400">{t.haircut.duration} | {t.haircut.location}</p>
+					<p className="mt-4 text-gray-300">{t.haircut.description}</p>
+					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.haircut.skills}</p>
 				</section>
 
 				{/* Independent Futures Trader */}
-				<section className="mb-8 bg-white rounded-lg shadow p-6">
+				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
 					<h2 className="text-2xl font-semibold">{t.trader.company}</h2>
 					<p className="mt-2 font-medium">{t.trader.role}</p>
-					<p className="text-gray-600">{t.trader.duration} | {t.trader.location}</p>
-					<p className="mt-4 text-gray-700">{t.trader.description}</p>
-					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.trader.skills}</p>
+					<p className="text-gray-400">{t.trader.duration} | {t.trader.location}</p>
+					<p className="mt-4 text-gray-300">{t.trader.description}</p>
+					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.trader.skills}</p>
 				</section>
 
 				{/* Independent Investor */}
-				<section className="mb-8 bg-white rounded-lg shadow p-6">
+				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
 					<h2 className="text-2xl font-semibold">{t.investor.company}</h2>
 					<p className="mt-2 font-medium">{t.investor.role}</p>
-					<p className="text-gray-600">{t.investor.duration} | {t.investor.location}</p>
-					<p className="mt-4 text-gray-700">{t.investor.description}</p>
-					<p className="mt-3 text-gray-700"><strong>Skills:</strong> {t.investor.skills}</p>
+					<p className="text-gray-400">{t.investor.duration} | {t.investor.location}</p>
+					<p className="mt-4 text-gray-300">{t.investor.description}</p>
+					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.investor.skills}</p>
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

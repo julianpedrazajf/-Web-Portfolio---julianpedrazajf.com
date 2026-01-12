@@ -130,7 +130,7 @@ export default function Home() {
       {/* Language Toggle */}
       <button
         onClick={toggleLanguage}
-        className="lang-toggle"
+        className="lang-toggle lang-toggle--home"
         style={{
           padding: "0.3rem",
           background: "rgba(255,255,255,0.8)",
@@ -143,17 +143,19 @@ export default function Home() {
       </button>
 
       {/* Navigation Bar */}
-      <Navbar language={language} />
+      <Navbar language={language} showLogo={false} />
 
       {/* Hero Section */}
       <section style={{ padding: "1rem 1rem", textAlign: "center" }}>
         <h1 style={{ margin: 0 }}>
-          <img
-            src="/img/image1.png"
-            alt={t.title}
-            className="site-logo"
-            style={{ verticalAlign: 'middle' }}
-          />
+          <a href="#/" aria-label="Home" style={{ display: 'inline-block', textDecoration: 'none' }}>
+            <img
+              src="/img/image1.png"
+              alt={t.title}
+              className="site-logo"
+              style={{ verticalAlign: 'middle', cursor: 'pointer' }}
+            />
+          </a>
         </h1>
 
         {/* Separator between sections */}

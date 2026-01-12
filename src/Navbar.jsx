@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import Logo from './components/Logo';
 
 const navContent = {
   en: {
@@ -46,7 +47,7 @@ const navContent = {
   }
 };
 
-export default function Navbar({ language = 'en' }) {
+export default function Navbar({ language = 'en', showLogo = true }) {
   const t = navContent[language];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -58,6 +59,8 @@ export default function Navbar({ language = 'en' }) {
 
   return (
     <>
+      {showLogo && <Logo />}
+
       {/* Hamburger Button (mobile only) */}
       <button 
         onClick={toggleMenu}
@@ -65,7 +68,8 @@ export default function Navbar({ language = 'en' }) {
           display: "none",
           position: "fixed",
           top: "1rem",
-          left: "1rem",
+          left: "auto",
+          right: "1rem",
           zIndex: 2000,
           background: "rgba(255, 255, 255, 0.2)",
           backdropFilter: "blur(10px)",
@@ -114,16 +118,23 @@ export default function Navbar({ language = 'en' }) {
         padding: 0
       }}>
         <li style={{ position: 'relative' }} className="nav-item-with-submenu">
-          <a href="#work" style={{ 
-            color: "#fff", 
-            textDecoration: "none", 
-            fontWeight: 500,
-            transition: "color 0.2s ease",
-            display: "inline-block",
-            padding: "0.5rem 0"
-          }}>
+          <button
+            onClick={() => toggleSubmenu('work')}
+            aria-expanded={openSubmenu === 'work'}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: "#fff", 
+              textDecoration: "none", 
+              fontWeight: 500,
+              transition: "color 0.2s ease",
+              display: "inline-block",
+              padding: "0.5rem 0",
+              cursor: 'pointer'
+            }}
+          >
             {t.work}
-          </a>
+          </button>
           <ul className="submenu" style={{
             position: "absolute",
             top: "100%",
@@ -136,8 +147,8 @@ export default function Navbar({ language = 'en' }) {
             boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
             listStyle: "none",
             minWidth: "150px",
-            opacity: 0,
-            visibility: "hidden",
+            opacity: openSubmenu === 'work' ? 1 : 0,
+            visibility: openSubmenu === 'work' ? 'visible' : 'hidden',
             transition: "all 0.2s ease",
             zIndex: 1001
           }}>
@@ -201,16 +212,23 @@ export default function Navbar({ language = 'en' }) {
           </a>
         </li>
         <li style={{ position: 'relative' }} className="nav-item-with-submenu">
-          <a href="#diplomas" style={{ 
-            color: "#fff", 
-            textDecoration: "none", 
-            fontWeight: 500,
-            transition: "color 0.2s ease",
-            display: "inline-block",
-            padding: "0.5rem 0"
-          }}>
+          <button
+            onClick={() => toggleSubmenu('diplomas')}
+            aria-expanded={openSubmenu === 'diplomas'}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: "#fff", 
+              textDecoration: "none", 
+              fontWeight: 500,
+              transition: "color 0.2s ease",
+              display: "inline-block",
+              padding: "0.5rem 0",
+              cursor: 'pointer'
+            }}
+          >
             {t.diplomas}
-          </a>
+          </button>
           <ul className="submenu" style={{
             position: "absolute",
             top: "100%",
@@ -223,8 +241,8 @@ export default function Navbar({ language = 'en' }) {
             boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
             listStyle: "none",
             minWidth: "180px",
-            opacity: 0,
-            visibility: "hidden",
+            opacity: openSubmenu === 'diplomas' ? 1 : 0,
+            visibility: openSubmenu === 'diplomas' ? 'visible' : 'hidden',
             transition: "all 0.2s ease",
             zIndex: 1001
           }}>
@@ -255,16 +273,23 @@ export default function Navbar({ language = 'en' }) {
           </ul>
         </li>
         <li style={{ position: 'relative' }} className="nav-item-with-submenu">
-          <a href="#education" style={{ 
-            color: "#fff", 
-            textDecoration: "none", 
-            fontWeight: 500,
-            transition: "color 0.2s ease",
-            display: "inline-block",
-            padding: "0.5rem 0"
-          }}>
+          <button
+            onClick={() => toggleSubmenu('education')}
+            aria-expanded={openSubmenu === 'education'}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: "#fff", 
+              textDecoration: "none", 
+              fontWeight: 500,
+              transition: "color 0.2s ease",
+              display: "inline-block",
+              padding: "0.5rem 0",
+              cursor: 'pointer'
+            }}
+          >
             {t.education}
-          </a>
+          </button>
           <ul className="submenu" style={{
             position: "absolute",
             top: "100%",
@@ -277,8 +302,8 @@ export default function Navbar({ language = 'en' }) {
             boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
             listStyle: "none",
             minWidth: "180px",
-            opacity: 0,
-            visibility: "hidden",
+            opacity: openSubmenu === 'education' ? 1 : 0,
+            visibility: openSubmenu === 'education' ? 'visible' : 'hidden',
             transition: "all 0.2s ease",
             zIndex: 1001
           }}>

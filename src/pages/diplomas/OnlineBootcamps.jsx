@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Navbar';
+import PageLayout from '../../components/PageLayout';
 
 const content = {
 	en: {
@@ -546,29 +547,28 @@ export default function OnlineBootcamps({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-3xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="diplomas-bootcamps">
 					{t.bootcamps.map((bootcamp, idx) => (
-						<div key={idx} className="mb-10 bg-white rounded-lg shadow p-6">
+						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
 							<h2 className="text-xl font-semibold mb-2">{bootcamp.platform}</h2>
-							<p className="mb-1 text-gray-700 font-medium">{bootcamp.course}</p>
-							<p className="mb-1 text-gray-600">{bootcamp.certification}</p>
-							<p className="mb-1 text-gray-600">Completion Date: {bootcamp.date}</p>
+							<p className="mb-1 text-gray-300 font-medium">{bootcamp.course}</p>
+							<p className="mb-1 text-gray-400">{bootcamp.certification}</p>
+							<p className="mb-1 text-gray-400">Completion Date: {bootcamp.date}</p>
 							{bootcamp.certificate && (
 								<p className="mt-2">
-									<a href={`/${bootcamp.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View Certificate</a>
+									<a href={`/${bootcamp.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
 								</p>
 							)}
 							{bootcamp.github && (
 								<p className="mt-2">
-									<a href={bootcamp.github} target="_blank" rel="noopener noreferrer" className="text-green-600 underline">GitHub Repository</a>
+									<a href={bootcamp.github} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">GitHub Repository</a>
 								</p>
 							)}
 						</div>
 					))}
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

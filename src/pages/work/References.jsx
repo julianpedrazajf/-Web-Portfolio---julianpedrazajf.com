@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Navbar';
+import PageLayout from '../../components/PageLayout';
 
 const content = {
 	en: {
@@ -44,19 +45,18 @@ export default function References({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-2xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="work-references">
 					{t.references.map((ref, idx) => (
-						<div key={idx} className="mb-8 bg-white rounded-lg shadow p-6">
+						<div key={idx} className="mb-8 bg-white/6 rounded-lg shadow p-6">
 							<h2 className="text-xl font-semibold mb-2">{ref.name}</h2>
-							<p className="mb-1 text-gray-700">{ref.role}</p>
-							<p className="mb-1 text-gray-600">☎ {ref.phone}</p>
-							<p className="mb-1 text-gray-600">✉ <a href={`mailto:${ref.email}`} className="text-blue-600 underline">{ref.email}</a></p>
+							<p className="mb-1 text-gray-300">{ref.role}</p>
+							<p className="mb-1 text-gray-400">☎ {ref.phone}</p>
+							<p className="mb-1 text-gray-400">✉ <a href={`mailto:${ref.email}`} className="text-blue-400 underline">{ref.email}</a></p>
 						</div>
 					))}
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

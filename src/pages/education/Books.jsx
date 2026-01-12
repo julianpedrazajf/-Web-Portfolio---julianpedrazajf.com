@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Navbar';
+import PageLayout from '../../components/PageLayout';
 
 const content = {
 	en: {
@@ -162,19 +163,18 @@ export default function Books({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-3xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="education-books">
-					<p className="mb-8 text-gray-700">{t.body}</p>
+					<p className="mb-8 text-gray-300">{t.body}</p>
 					{t.books.map((book, idx) => (
-						<div key={idx} className="mb-8 bg-white rounded-lg shadow p-6">
+						<div key={idx} className="mb-8 bg-white/6 rounded-lg shadow p-6">
 							<h2 className="text-xl font-semibold mb-2">{book.title}</h2>
-							<p className="mb-1 text-gray-700 font-medium">{book.author}</p>
-							<p className="mb-1 text-gray-600">{book.takeaway}</p>
+							<p className="mb-1 text-gray-300 font-medium">{book.author}</p>
+							<p className="mb-1 text-gray-300">{book.takeaway}</p>
 						</div>
 					))}
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

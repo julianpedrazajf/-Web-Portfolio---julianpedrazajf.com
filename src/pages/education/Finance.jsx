@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Navbar';
+import PageLayout from '../../components/PageLayout';
 
 const content = {
 	en: {
@@ -88,26 +89,25 @@ export default function Finance({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-3xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="education-finance">
-					<p className="mb-8 text-gray-700">{t.body}</p>
+					<p className="mb-8 text-gray-300">{t.body}</p>
 					{t.sections.map((section, idx) => (
-						<div key={idx} className="mb-10 bg-white rounded-lg shadow p-6">
+						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
 							<h2 className="text-xl font-semibold mb-2">{section.heading}</h2>
-							<p className="mb-2 text-gray-700 font-medium">{section.description}</p>
+							<p className="mb-2 text-gray-300 font-medium">{section.description}</p>
 							<h3 className="font-medium mt-4 mb-2">Strategies Learned:</h3>
-							<ul className="list-disc ml-6 mb-4 text-gray-700">
+							<ul className="list-disc ml-6 mb-4 text-gray-300">
 								{section.strategies.map((s, i) => <li key={i}>{s}</li>)}
 							</ul>
 							<h3 className="font-medium mb-2">Knowledge Gained:</h3>
-							<ul className="list-disc ml-6 text-gray-700">
+							<ul className="list-disc ml-6 text-gray-300">
 								{section.knowledge.map((k, i) => <li key={i}>{k}</li>)}
 							</ul>
 						</div>
 					))}
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

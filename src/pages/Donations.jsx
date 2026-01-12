@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Navbar';
+import PageLayout from '../components/PageLayout';
 
 const content = {
 	en: {
@@ -42,25 +43,24 @@ export default function Donations({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="donations">
-					<p className="mb-6 text-gray-700">{t.body}</p>
-					<div className="mb-8 bg-white rounded-lg shadow p-6">
+					<p className="mb-6 text-gray-300">{t.body}</p>
+					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
 						<h2 className="text-lg font-semibold mb-2">{t.stripe.label}</h2>
-						<p className="mb-4 text-gray-700">{t.stripe.description}</p>
-						<a href={t.stripe.link} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 rounded-lg bg-blue-900 text-white font-semibold shadow hover:bg-blue-800 transition">{t.stripe.button}</a>
+						<p className="mb-4 text-gray-300">{t.stripe.description}</p>
+						<a href={t.stripe.link} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 rounded-lg bg-blue-800 text-white font-semibold shadow hover:bg-blue-700 transition">{t.stripe.button}</a>
 					</div>
-					<div className="mb-8 bg-white rounded-lg shadow p-6">
+					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
 						<h2 className="text-lg font-semibold mb-2">{t.paypal.label}</h2>
-						<a href={t.paypal.link} target="_blank" rel="noopener noreferrer" className="inline-block px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow hover:bg-blue-500 transition">{t.paypal.button}</a>
+						<a href={t.paypal.link} target="_blank" rel="noopener noreferrer" className="inline-block px-5 py-2 rounded-lg bg-blue-700 text-white font-semibold shadow hover:bg-blue-600 transition">{t.paypal.button}</a>
 					</div>
-					<div className="mb-8 bg-white rounded-lg shadow p-6">
+					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
 						<h3 className="font-medium mb-2">Transparency</h3>
-						<p className="text-gray-700">{t.transparency}</p>
+						<p className="text-gray-300">{t.transparency}</p>
 					</div>
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

@@ -28,3 +28,27 @@
     display: none !important;
   }
 }
+
+/* Fixed logo (top-left on every page) */
+.site-logo-wrapper {
+  position: fixed;
+  left: 1.5rem; /* moved slightly away from the edge */
+  top: 1.5rem;  /* moved slightly away from the edge */
+  z-index: 1002;
+}
+
+.site-logo-wrapper .site-logo--small {
+  width: clamp(32px, 6vw, 70px); /* slightly smaller */
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  transition: transform 120ms ease;
+}
+
+/* Ensure the hamburger doesn't overlap the logo on small screens */
+@media (max-width: 933px) {
+  .site-logo-wrapper {
+    left: 1rem;
+    top: 1rem;
+  }
+}

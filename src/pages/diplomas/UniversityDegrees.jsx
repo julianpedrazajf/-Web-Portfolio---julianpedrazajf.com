@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Navbar';
+import PageLayout from '../../components/PageLayout';
 
 const content = {
 	en: {
@@ -110,26 +111,25 @@ export default function UniversityDegrees({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-3xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="diplomas-university">
 					{t.diplomas.map((diploma, idx) => (
-						<div key={idx} className="mb-10 bg-white rounded-lg shadow p-6">
+						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
 							<h2 className="text-xl font-semibold mb-2">{diploma.institution}</h2>
-							<p className="mb-1 text-gray-700 font-medium">{diploma.program}</p>
-							<p className="mb-1 text-gray-600">{diploma.duration}</p>
-							<p className="mb-1 text-gray-600">{diploma.mode}</p>
-							<p className="mb-1 text-gray-600">{diploma.outcome}</p>
-							<p className="mb-1 text-gray-600">Graduation: {diploma.graduation}</p>
+							<p className="mb-1 text-gray-300 font-medium">{diploma.program}</p>
+							<p className="mb-1 text-gray-400">{diploma.duration}</p>
+							<p className="mb-1 text-gray-400">{diploma.mode}</p>
+							<p className="mb-1 text-gray-400">{diploma.outcome}</p>
+							<p className="mb-1 text-gray-400">Graduation: {diploma.graduation}</p>
 							{diploma.certificate && (
 								<p className="mt-2">
-									<a href={`/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View Certificate</a>
+									<a href={`/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
 								</p>
 							)}
 						</div>
 					))}
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

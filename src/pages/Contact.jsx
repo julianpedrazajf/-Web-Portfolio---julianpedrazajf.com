@@ -36,6 +36,8 @@ const content = {
 	}
 };
 
+import PageLayout from '../components/PageLayout';
+
 export default function Contact({ language = 'en' }) {
 	const t = content[language];
 	const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -54,36 +56,35 @@ export default function Contact({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="contact">
-					<p className="mb-6 text-gray-700">{t.body}</p>
-					<form onSubmit={handleSubmit} className="mb-10 bg-white rounded-lg shadow p-6">
+					<p className="mb-6 text-gray-300">{t.body}</p>
+					<form onSubmit={handleSubmit} className="mb-10 bg-white/6 rounded-lg shadow p-6">
 						<div className="mb-4">
 							<label className="block font-medium mb-1" htmlFor="name">{t.form.name}</label>
-							<input type="text" id="name" name="name" value={form.name} onChange={handleChange} required className="w-full border rounded px-3 py-2" />
+							<input type="text" id="name" name="name" value={form.name} onChange={handleChange} required className="w-full border rounded px-3 py-2 bg-transparent" />
 						</div>
 						<div className="mb-4">
 							<label className="block font-medium mb-1" htmlFor="email">{t.form.email}</label>
-							<input type="email" id="email" name="email" value={form.email} onChange={handleChange} required className="w-full border rounded px-3 py-2" />
+							<input type="email" id="email" name="email" value={form.email} onChange={handleChange} required className="w-full border rounded px-3 py-2 bg-transparent" />
 						</div>
 						<div className="mb-4">
 							<label className="block font-medium mb-1" htmlFor="message">{t.form.message}</label>
-							<textarea id="message" name="message" value={form.message} onChange={handleChange} required className="w-full border rounded px-3 py-2" rows={4} />
+							<textarea id="message" name="message" value={form.message} onChange={handleChange} required className="w-full border rounded px-3 py-2 bg-transparent" rows={4} />
 						</div>
 						<button type="submit" className="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold shadow hover:bg-blue-600 transition">{t.form.submit}</button>
-						{submitted && <p className="mt-4 text-green-600 font-medium">{language === 'en' ? 'Thank you! Your message has been sent.' : '¡Gracias! Tu mensaje ha sido enviado.'}</p>}
+						{submitted && <p className="mt-4 text-green-500 font-medium">{language === 'en' ? 'Thank you! Your message has been sent.' : '¡Gracias! Tu mensaje ha sido enviado.'}</p>}
 					</form>
-					<div className="mb-8 bg-white rounded-lg shadow p-6">
+					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
 						<h2 className="text-lg font-semibold mb-2">{t.other}</h2>
 						<ul className="list-none">
-							<li className="mb-2"><span className="font-medium">{t.direct.email}:</span> <a href="mailto:julianpedrazajf2@gmail.com" className="text-blue-600 underline">julianpedrazajf2@gmail.com</a></li>
-							<li className="mb-2"><span className="font-medium">{t.direct.linkedin}:</span> <a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">LinkedIn</a></li>
-							<li><span className="font-medium">{t.direct.github}:</span> <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">GitHub</a></li>
+							<li className="mb-2"><span className="font-medium">{t.direct.email}:</span> <a href="mailto:julianpedrazajf2@gmail.com" className="text-blue-400 underline">julianpedrazajf2@gmail.com</a></li>
+							<li className="mb-2"><span className="font-medium">{t.direct.linkedin}:</span> <a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">LinkedIn</a></li>
+							<li><span className="font-medium">{t.direct.github}:</span> <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">GitHub</a></li>
 						</ul>
 					</div>
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }

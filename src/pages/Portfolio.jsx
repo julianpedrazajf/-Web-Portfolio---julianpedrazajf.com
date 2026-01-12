@@ -42,28 +42,29 @@ const content = {
 	}
 };
 
+import PageLayout from '../components/PageLayout';
+
 export default function Portfolio({ language = 'en' }) {
 	const t = content[language];
 
 	return (
 		<div>
 			<Navbar language={language} />
-			<main className="p-8 max-w-3xl mx-auto">
-				<h1 className="text-3xl font-bold mb-8">{t.title}</h1>
+			<PageLayout title={t.title}>
 				<section id="portfolio">
 					{t.projects.map((proj, idx) => (
-						<div key={idx} className="mb-10 bg-white rounded-lg shadow p-6">
+						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
 							<h2 className="text-xl font-semibold mb-2">{proj.name}</h2>
-							<p className="mb-2 text-gray-700">{proj.description}</p>
-							<p className="mb-2 text-gray-600"><strong>Tools:</strong> {proj.tools}</p>
+							<p className="mb-2 text-gray-300">{proj.description}</p>
+							<p className="mb-2 text-gray-400"><strong>Tools:</strong> {proj.tools}</p>
 							<div className="flex gap-4 mt-2">
-								<a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">GitHub</a>
-								<a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-green-600 underline">Live Demo</a>
+								<a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">GitHub</a>
+								<a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">Live Demo</a>
 							</div>
 						</div>
 					))}
 				</section>
-			</main>
+			</PageLayout>
 		</div>
 	);
 }
