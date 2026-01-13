@@ -52,3 +52,58 @@
     top: 1rem;
   }
 }
+
+/* Submenu styles - match navbar visuals and center text */
+.submenu {
+  background: #2A2A2A;
+  color: #fff;
+  backdrop-filter: blur(8px) brightness(1.05);
+  padding: 0.4rem 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  list-style: none;
+  min-width: 160px;
+  text-align: center;
+}
+
+.submenu .submenu-item {
+  margin: 0;
+}
+
+.submenu .submenu-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  font-size: 0.95rem;
+  transition: background 0.15s ease;
+  text-align: center;
+}
+
+.submenu .submenu-link:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Mobile menu adjustments for submenu links */
+.mobile-menu .submenu {
+  position: static;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  min-width: auto;
+}
+
+.mobile-menu .submenu-link {
+  color: #fff; /* restored to white */
+  text-align: center;
+  padding-left: 0;
+}
+
+/* Navbar shadow (desktop) */
+.desktop-nav {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  -webkit-box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  /* ensure rounded corners don't clip shadow in some browsers */
+  overflow: visible;
+}

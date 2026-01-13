@@ -25,11 +25,18 @@ body {
   width: clamp(140px, 40vw, 290px);
   height: auto;
   display: inline-block;
+  border-radius: 10px; /* soft rounding to match nav rounded style */
+  -webkit-filter: drop-shadow(0 12px 40px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.6)); /* shadow applied to the image itself */
+  transition: filter 200ms ease, transform 200ms ease;
 }
 
+/* Slightly reduce shadow on very small screens */
 @media (max-width: 480px) {
   .site-logo {
     width: 250px; /* slightly larger than minimum for small phones */
+    -webkit-filter: drop-shadow(0 10px 30px rgba(0,0,0,0.55));
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.55));
   }
 }
 
@@ -39,29 +46,65 @@ body {
   }
 }
 
-/* Language toggle responsive position */
+/* subtle hover lift for non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .site-logo:hover {
+    transform: translateY(-10px);
+    -webkit-filter: drop-shadow(0 18px 48px rgba(0,0,0,0.68));
+    filter: drop-shadow(0 18px 48px rgba(0,0,0,0.68));
+  }
+}
+
+/* Language toggle responsive position and visual style */
 .lang-toggle {
   position: fixed;
   right: 1rem;
   top: 1rem; /* default */
   z-index: 1001;
+
+  /* Visuals to match site style */
+  padding: 0.45rem 0.65rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.6); /* subtle white border with opacity */
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  backdrop-filter: blur(8px) saturate(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease, box-shadow 150ms ease;
+  
+  /* stronger border on hover for clarity */
+  will-change: transform, box-shadow, border;
 }
 
-/* Before 1136px, move down to 6rem */
+.lang-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.95);
+}
+}
+
+.lang-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+}
+
+/* Responsive adjustments */
 @media (max-width: 1135px) {
   .lang-toggle {
     top: 6rem;
   }
 }
 
-/* Before 893px, bring back up to 1rem */
 @media (max-width: 893px) {
   .lang-toggle {
     top: 1rem;
   }
 }
 
-/* After 1136px and up, keep at 1rem */
 @media (min-width: 1136px) {
   .lang-toggle {
     top: 1rem;
@@ -79,7 +122,7 @@ body {
     left: 1rem; /* ensure spacing on small screens */
     right: auto;
   }
-}/* Section separators: centered, soft gray */
+} /* Section separators: centered, soft gray */
 .section-separator, .section-separator-1000px {
   width: 1000px;
   max-width: 90%; /* keep responsive on small screens */
@@ -106,6 +149,7 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   width: 100%;
+  text-align: center; /* Centra el texto de las páginas */
 }
 
 .page-title {

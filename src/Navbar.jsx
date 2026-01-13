@@ -140,60 +140,30 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             top: "100%",
             left: "50%",
             transform: "translateX(-50%)",
-            background: "rgba(255,255,255,0.95)",
-            backdropFilter: "blur(10px)",
+            background: "#2A2A2A",
+            backdropFilter: "blur(8px) brightness(1.05)",
             padding: "0.5rem 0",
-            borderRadius: "4px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            borderRadius: "12px",
+            boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
             listStyle: "none",
-            minWidth: "150px",
+            minWidth: "160px",
             opacity: openSubmenu === 'work' ? 1 : 0,
             visibility: openSubmenu === 'work' ? 'visible' : 'hidden',
             transition: "all 0.2s ease",
             zIndex: 1001
           }}>
             <li className="submenu-item">
-        <a href="#/fulltime" style={{ 
-                color: "#333",
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                display: "block",
-                fontSize: "0.95rem",
-                transition: "background 0.2s ease",
-                ":hover": {
-                  background: "rgba(0,0,0,0.05)"
-                }
-              }}>
+        <a href="#/fulltime" className="submenu-link">
                 {t.workSubmenu.fulltime}
               </a>
             </li>
             <li className="submenu-item">
-              <a href="#/parttime" style={{ 
-                color: "#333",
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                display: "block",
-                fontSize: "0.95rem",
-                transition: "background 0.2s ease",
-                ":hover": {
-                  background: "rgba(0,0,0,0.05)"
-                }
-              }}>
+              <a href="#/parttime" className="submenu-link">
                 {t.workSubmenu.parttime}
               </a>
             </li>
             <li className="submenu-item">
-              <a href="#/references" style={{ 
-                color: "#333",
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                display: "block",
-                fontSize: "0.95rem",
-                transition: "background 0.2s ease",
-                ":hover": {
-                  background: "rgba(0,0,0,0.05)"
-                }
-              }}>
+              <a href="#/references" className="submenu-link">
                 {t.workSubmenu.references}
               </a>
             </li>
@@ -234,11 +204,11 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             top: "100%",
             left: "50%",
             transform: "translateX(-50%)",
-            background: "rgba(255,255,255,0.95)",
-            backdropFilter: "blur(10px)",
+            background: "#2A2A2A",
+            backdropFilter: "blur(8px) brightness(1.05)",
             padding: "0.5rem 0",
-            borderRadius: "4px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            borderRadius: "12px",
+            boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
             listStyle: "none",
             minWidth: "180px",
             opacity: openSubmenu === 'diplomas' ? 1 : 0,
@@ -247,26 +217,12 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             zIndex: 1001
           }}>
             <li className="submenu-item">
-              <a href="#/diplomas/university" style={{ 
-                color: "#333",
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                display: "block",
-                fontSize: "0.95rem",
-                transition: "background 0.2s ease"
-              }}>
+              <a href="#/diplomas/university" className="submenu-link">
                 {t.diplomasSubmenu.university}
               </a>
             </li>
             <li className="submenu-item">
-              <a href="#/diplomas/bootcamps" style={{ 
-                color: "#333",
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                display: "block",
-                fontSize: "0.95rem",
-                transition: "background 0.2s ease"
-              }}>
+              <a href="#/diplomas/bootcamps" className="submenu-link">
                 {t.diplomasSubmenu.bootcamps}
               </a>
             </li>
@@ -295,11 +251,11 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             top: "100%",
             left: "50%",
             transform: "translateX(-50%)",
-            background: "rgba(255,255,255,0.95)",
-            backdropFilter: "blur(10px)",
+            background: "#2A2A2A",
+            backdropFilter: "blur(8px) brightness(1.05)",
             padding: "0.5rem 0",
-            borderRadius: "4px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            borderRadius: "12px",
+            boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
             listStyle: "none",
             minWidth: "180px",
             opacity: openSubmenu === 'education' ? 1 : 0,
@@ -308,26 +264,12 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             zIndex: 1001
           }}>
             <li className="submenu-item">
-              <a href="#/education/books" style={{ 
-                color: "#333",
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                display: "block",
-                fontSize: "0.95rem",
-                transition: "background 0.2s ease"
-              }}>
+              <a href="#/education/books" className="submenu-link">
                 {t.educationSubmenu.books}
               </a>
             </li>
             <li className="submenu-item">
-                <a href="#/education/finance" style={{ 
-                color: "#333",
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                display: "block",
-                fontSize: "0.95rem",
-                transition: "background 0.2s ease"
-              }}>
+                <a href="#/education/finance" className="submenu-link">
                 {t.educationSubmenu.finance}
               </a>
             </li>
@@ -420,35 +362,17 @@ export default function Navbar({ language = 'en', showLogo = true }) {
               gap: "0.5rem"
             }}>
               <li>
-                <a href="#/fulltime" onClick={toggleMenu} style={{ 
-                  color: "#ccc",
-                  textDecoration: "none",
-                  padding: "0.5rem",
-                  display: "block",
-                  fontSize: "1rem"
-                }}>
+                <a href="#/fulltime" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.workSubmenu.fulltime}
                 </a>
               </li>
               <li>
-                <a href="#/parttime" onClick={toggleMenu} style={{ 
-                  color: "#ccc",
-                  textDecoration: "none",
-                  padding: "0.5rem",
-                  display: "block",
-                  fontSize: "1rem"
-                }}>
+                <a href="#/parttime" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.workSubmenu.parttime}
                 </a>
               </li>
               <li>
-                <a href="#/references" onClick={toggleMenu} style={{ 
-                  color: "#ccc",
-                  textDecoration: "none",
-                  padding: "0.5rem",
-                  display: "block",
-                  fontSize: "1rem"
-                }}>
+                <a href="#/references" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.workSubmenu.references}
                 </a>
               </li>
@@ -502,24 +426,12 @@ export default function Navbar({ language = 'en', showLogo = true }) {
               gap: "0.5rem"
             }}>
               <li>
-                <a href="#/diplomas/university" onClick={toggleMenu} style={{ 
-                  color: "#ccc",
-                  textDecoration: "none",
-                  padding: "0.5rem",
-                  display: "block",
-                  fontSize: "1rem"
-                }}>
+                <a href="#/diplomas/university" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.diplomasSubmenu.university}
                 </a>
               </li>
               <li>
-                <a href="#/diplomas/bootcamps" onClick={toggleMenu} style={{ 
-                  color: "#ccc",
-                  textDecoration: "none",
-                  padding: "0.5rem",
-                  display: "block",
-                  fontSize: "1rem"
-                }}>
+                <a href="#/diplomas/bootcamps" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.diplomasSubmenu.bootcamps}
                 </a>
               </li>
@@ -559,24 +471,12 @@ export default function Navbar({ language = 'en', showLogo = true }) {
               gap: "0.5rem"
             }}>
               <li>
-                <a href="#/education/books" onClick={toggleMenu} style={{ 
-                  color: "#ccc",
-                  textDecoration: "none",
-                  padding: "0.5rem",
-                  display: "block",
-                  fontSize: "1rem"
-                }}>
+                <a href="#/education/books" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.educationSubmenu.books}
                 </a>
               </li>
               <li>
-                <a href="#/education/finance" onClick={toggleMenu} style={{ 
-                  color: "#ccc",
-                  textDecoration: "none",
-                  padding: "0.5rem",
-                  display: "block",
-                  fontSize: "1rem"
-                }}>
+                <a href="#/education/finance" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.educationSubmenu.finance}
                 </a>
               </li>

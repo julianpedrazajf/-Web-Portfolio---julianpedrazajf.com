@@ -131,13 +131,6 @@ export default function Home() {
       <button
         onClick={toggleLanguage}
         className="lang-toggle lang-toggle--home"
-        style={{
-          padding: "0.3rem",
-          background: "rgba(255,255,255,0.8)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderRadius: "4px",
-          cursor: "pointer"
-        }}
       >
         {language === 'en' ? '🇪🇸 ES' : '🇺🇸 EN'}
       </button>
@@ -149,12 +142,14 @@ export default function Home() {
       <section style={{ padding: "1rem 1rem", textAlign: "center" }}>
         <h1 style={{ margin: 0 }}>
           <a href="#/" aria-label="Home" style={{ display: 'inline-block', textDecoration: 'none' }}>
-            <img
-              src="/img/image1.png"
-              alt={t.title}
-              className="site-logo"
-              style={{ verticalAlign: 'middle', cursor: 'pointer' }}
-            />
+            <span className="home-logo-wrapper">
+              <img
+                src="/img/image1.png"
+                alt={t.title}
+                className="site-logo"
+                style={{ verticalAlign: 'middle', cursor: 'pointer', display: 'block' }}
+              />
+            </span>
           </a>
         </h1>
 
