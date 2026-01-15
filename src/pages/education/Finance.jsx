@@ -93,18 +93,21 @@ export default function Finance({ language = 'en' }) {
 				<section id="education-finance">
 					<p className="mb-8 text-gray-300">{t.body}</p>
 					{t.sections.map((section, idx) => (
-						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
-							<h2 className="text-xl font-semibold mb-2">{section.heading}</h2>
-							<p className="mb-2 text-gray-300 font-medium">{section.description}</p>
-							<h3 className="font-medium mt-4 mb-2">Strategies Learned:</h3>
-							<ul className="list-disc ml-6 mb-4 text-gray-300">
-								{section.strategies.map((s, i) => <li key={i}>{s}</li>)}
-							</ul>
-							<h3 className="font-medium mb-2">Knowledge Gained:</h3>
-							<ul className="list-disc ml-6 text-gray-300">
-								{section.knowledge.map((k, i) => <li key={i}>{k}</li>)}
-							</ul>
-						</div>
+						<React.Fragment key={idx}>
+							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
+								<h2 className="text-xl font-semibold mb-2">{section.heading}</h2>
+								<p className="mb-2 text-gray-300 font-medium">{section.description}</p>
+								<h3 className="font-medium mt-4 mb-2">Strategies Learned:</h3>
+								<ul className="list-disc ml-6 mb-4 text-gray-300">
+									{section.strategies.map((s, i) => <li key={i}>{s}</li>)}
+								</ul>
+								<h3 className="font-medium mb-2">Knowledge Gained:</h3>
+								<ul className="list-disc ml-6 text-gray-300">
+									{section.knowledge.map((k, i) => <li key={i}>{k}</li>)}
+								</ul>
+							</div>
+							{idx < t.sections.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}
+						</React.Fragment>
 					))}
 				</section>
 			</PageLayout>

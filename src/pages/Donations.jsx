@@ -51,10 +51,12 @@ export default function Donations({ language = 'en' }) {
 						<p className="mb-4 text-gray-300">{t.stripe.description}</p>
 						<a href={t.stripe.link} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 rounded-lg bg-blue-800 text-white font-semibold shadow hover:bg-blue-700 transition">{t.stripe.button}</a>
 					</div>
+					<div className="section-separator-1000px" aria-hidden="true" />
 					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
 						<h2 className="text-lg font-semibold mb-2">{t.paypal.label}</h2>
 						<a href={t.paypal.link} target="_blank" rel="noopener noreferrer" className="inline-block px-5 py-2 rounded-lg bg-blue-700 text-white font-semibold shadow hover:bg-blue-600 transition">{t.paypal.button}</a>
 					</div>
+					<div className="section-separator-1000px" aria-hidden="true" />
 					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
 						<h3 className="font-medium mb-2">Transparency</h3>
 						<p className="text-gray-300">{t.transparency}</p>

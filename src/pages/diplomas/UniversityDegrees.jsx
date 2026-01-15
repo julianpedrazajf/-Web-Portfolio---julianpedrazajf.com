@@ -114,19 +114,22 @@ export default function UniversityDegrees({ language = 'en' }) {
 			<PageLayout title={t.title}>
 				<section id="diplomas-university">
 					{t.diplomas.map((diploma, idx) => (
-						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
-							<h2 className="text-xl font-semibold mb-2">{diploma.institution}</h2>
-							<p className="mb-1 text-gray-300 font-medium">{diploma.program}</p>
-							<p className="mb-1 text-gray-400">{diploma.duration}</p>
-							<p className="mb-1 text-gray-400">{diploma.mode}</p>
-							<p className="mb-1 text-gray-400">{diploma.outcome}</p>
-							<p className="mb-1 text-gray-400">Graduation: {diploma.graduation}</p>
-							{diploma.certificate && (
-								<p className="mt-2">
-									<a href={`/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
-								</p>
-							)}
-						</div>
+						<React.Fragment key={idx}>
+							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
+								<h2 className="text-xl font-semibold mb-2">{diploma.institution}</h2>
+								<p className="mb-1 text-gray-300 font-medium">{diploma.program}</p>
+								<p className="mb-1 text-gray-400">{diploma.duration}</p>
+								<p className="mb-1 text-gray-400">{diploma.mode}</p>
+								<p className="mb-1 text-gray-400">{diploma.outcome}</p>
+								<p className="mb-1 text-gray-400">Graduation: {diploma.graduation}</p>
+								{diploma.certificate && (
+									<p className="mt-2">
+										<a href={`/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
+									</p>
+								)}
+							</div>
+							{idx < t.diplomas.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}
+						</React.Fragment>
 					))}
 				</section>
 			</PageLayout>

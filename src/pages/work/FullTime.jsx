@@ -168,6 +168,8 @@ export default function FullTime({ language = 'en' }) {
 						</div>
 					</section>
 
+					<div className="section-separator-1000px" aria-hidden="true" />
+
 					{/* Labour Connect */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
 						<h2 className="text-2xl font-semibold text-teal">{t.labourConnect.company}</h2>
@@ -185,6 +187,8 @@ export default function FullTime({ language = 'en' }) {
 							<p>Contact: {t.labourConnect.reference.contact}</p>
 						</div>
 					</section>
+
+					<div className="section-separator-1000px" aria-hidden="true" />
 
 					{/* TECH Universidad */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
@@ -204,6 +208,8 @@ export default function FullTime({ language = 'en' }) {
 						</div>
 					</section>
 
+					<div className="section-separator-1000px" aria-hidden="true" />
+
 					{/* RDV LTDA */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
 						<h2 className="text-2xl font-semibold text-teal">{t.rdv.company}</h2>
@@ -221,6 +227,8 @@ export default function FullTime({ language = 'en' }) {
 							<p>Contact: {t.rdv.reference.contact}</p>
 						</div>
 					</section>
+
+					<div className="section-separator-1000px" aria-hidden="true" />
 
 					{/* Ladrillera La Sultana */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">

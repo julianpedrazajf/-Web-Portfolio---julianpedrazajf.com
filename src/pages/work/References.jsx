@@ -48,12 +48,15 @@ export default function References({ language = 'en' }) {
 			<PageLayout title={t.title}>
 				<section id="work-references">
 					{t.references.map((ref, idx) => (
-						<div key={idx} className="mb-8 bg-white/6 rounded-lg shadow p-6">
-							<h2 className="text-xl font-semibold mb-2">{ref.name}</h2>
-							<p className="mb-1 text-gray-300">{ref.role}</p>
-							<p className="mb-1 text-gray-400">☎ {ref.phone}</p>
-							<p className="mb-1 text-gray-400">✉ <a href={`mailto:${ref.email}`} className="text-blue-400 underline">{ref.email}</a></p>
-						</div>
+						<React.Fragment key={idx}>
+							<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
+								<h2 className="text-xl font-semibold mb-2">{ref.name}</h2>
+								<p className="mb-1 text-gray-300">{ref.role}</p>
+								<p className="mb-1 text-gray-400">☎ {ref.phone}</p>
+								<p className="mb-1 text-gray-400">✉ <a href={`mailto:${ref.email}`} className="text-blue-400 underline">{ref.email}</a></p>
+							</div>
+							{idx < t.references.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}
+						</React.Fragment>
 					))}
 				</section>
 			</PageLayout>

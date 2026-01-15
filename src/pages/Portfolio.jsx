@@ -53,15 +53,18 @@ export default function Portfolio({ language = 'en' }) {
 			<PageLayout title={t.title}>
 				<section id="portfolio">
 					{t.projects.map((proj, idx) => (
-						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
-							<h2 className="text-xl font-semibold mb-2">{proj.name}</h2>
-							<p className="mb-2 text-gray-300">{proj.description}</p>
-							<p className="mb-2 text-gray-400"><strong>Tools:</strong> {proj.tools}</p>
-							<div className="flex gap-4 mt-2">
-								<a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">GitHub</a>
-								<a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">Live Demo</a>
+						<React.Fragment key={idx}>
+							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
+								<h2 className="text-xl font-semibold mb-2">{proj.name}</h2>
+								<p className="mb-2 text-gray-300">{proj.description}</p>
+								<p className="mb-2 text-gray-400"><strong>Tools:</strong> {proj.tools}</p>
+								<div className="flex gap-4 mt-2">
+									<a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">GitHub</a>
+									<a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">Live Demo</a>
+								</div>
 							</div>
-						</div>
+							{idx < t.projects.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}
+						</React.Fragment>
 					))}
 				</section>
 			</PageLayout>

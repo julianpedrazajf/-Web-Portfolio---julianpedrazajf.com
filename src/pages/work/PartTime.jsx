@@ -91,6 +91,8 @@ export default function PartTime({ language = 'en' }) {
 					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.grilld.skills}</p>
 				</section>
 
+				<div className="section-separator-1000px" aria-hidden="true" />
+
 				{/* Julian Haircut Services */}
 				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
 					<h2 className="text-2xl font-semibold">{t.haircut.company}</h2>
@@ -100,6 +102,8 @@ export default function PartTime({ language = 'en' }) {
 					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.haircut.skills}</p>
 				</section>
 
+				<div className="section-separator-1000px" aria-hidden="true" />
+
 				{/* Independent Futures Trader */}
 				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
 					<h2 className="text-2xl font-semibold">{t.trader.company}</h2>
@@ -108,6 +112,8 @@ export default function PartTime({ language = 'en' }) {
 					<p className="mt-4 text-gray-300">{t.trader.description}</p>
 					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.trader.skills}</p>
 				</section>
+
+				<div className="section-separator-1000px" aria-hidden="true" />
 
 				{/* Independent Investor */}
 				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">

@@ -550,22 +550,25 @@ export default function OnlineBootcamps({ language = 'en' }) {
 			<PageLayout title={t.title}>
 				<section id="diplomas-bootcamps">
 					{t.bootcamps.map((bootcamp, idx) => (
-						<div key={idx} className="mb-10 bg-white/6 rounded-lg shadow p-6">
-							<h2 className="text-xl font-semibold mb-2">{bootcamp.platform}</h2>
-							<p className="mb-1 text-gray-300 font-medium">{bootcamp.course}</p>
-							<p className="mb-1 text-gray-400">{bootcamp.certification}</p>
-							<p className="mb-1 text-gray-400">Completion Date: {bootcamp.date}</p>
-							{bootcamp.certificate && (
-								<p className="mt-2">
-									<a href={`/${bootcamp.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
-								</p>
-							)}
-							{bootcamp.github && (
-								<p className="mt-2">
-									<a href={bootcamp.github} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">GitHub Repository</a>
-								</p>
-							)}
-						</div>
+						<React.Fragment key={idx}>
+							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
+								<h2 className="text-xl font-semibold mb-2">{bootcamp.platform}</h2>
+								<p className="mb-1 text-gray-300 font-medium">{bootcamp.course}</p>
+								<p className="mb-1 text-gray-400">{bootcamp.certification}</p>
+								<p className="mb-1 text-gray-400">Completion Date: {bootcamp.date}</p>
+								{bootcamp.certificate && (
+									<p className="mt-2">
+										<a href={`/${bootcamp.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
+									</p>
+								)}
+								{bootcamp.github && (
+									<p className="mt-2">
+										<a href={bootcamp.github} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">GitHub Repository</a>
+									</p>
+								)}
+							</div>
+							{idx < t.bootcamps.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}
+						</React.Fragment>
 					))}
 				</section>
 			</PageLayout>

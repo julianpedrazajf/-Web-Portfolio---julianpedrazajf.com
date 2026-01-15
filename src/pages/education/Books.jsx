@@ -167,11 +167,14 @@ export default function Books({ language = 'en' }) {
 				<section id="education-books">
 					<p className="mb-8 text-gray-300">{t.body}</p>
 					{t.books.map((book, idx) => (
-						<div key={idx} className="mb-8 bg-white/6 rounded-lg shadow p-6">
-							<h2 className="text-xl font-semibold mb-2">{book.title}</h2>
-							<p className="mb-1 text-gray-300 font-medium">{book.author}</p>
-							<p className="mb-1 text-gray-300">{book.takeaway}</p>
-						</div>
+						<React.Fragment key={idx}>
+							<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
+								<h2 className="text-xl font-semibold mb-2">{book.title}</h2>
+								<p className="mb-1 text-gray-300 font-medium">{book.author}</p>
+								<p className="mb-1 text-gray-300">{book.takeaway}</p>
+							</div>
+							{idx < t.books.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}
+						</React.Fragment>
 					))}
 				</section>
 			</PageLayout>
