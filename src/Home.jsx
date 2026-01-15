@@ -154,9 +154,9 @@ export default function Home() {
         </h1>
 
         {/* Separator between sections */}
-        <div className="section-separator-1000px" aria-hidden="true" />
+        <div className="section-separator-1000px" aria-hidden="true" style={{ marginBottom: '1.5rem', marginTop: '0rem' }} />
 
-        <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ textDecorationLine: 'underline', textDecorationColor: '#fff', color: "#fff", fontWeight: 600, display: 'block', marginBottom: '3rem' }}>
+        <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ textDecorationLine: 'underline', textDecorationColor: '#fff', color: "#fff", fontWeight: 600, display: 'block', marginBottom: '0rem' }}>
           {t.githubLink} <br />
           https://github.com/julianpedrazajf
         </a>

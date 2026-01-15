@@ -7,6 +7,12 @@
   background: rgba(0,0,0,0.05);
 }
 
+/* Standardized navbar menu items - consistent font size */
+nav > ul > li > a,
+nav > ul > li > button {
+  font-size: 0.95rem;
+}
+
 /* Mobile Menu Styles */
 @media (max-width: 933px) {
   .desktop-nav {
