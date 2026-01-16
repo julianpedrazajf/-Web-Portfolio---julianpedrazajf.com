@@ -19,6 +19,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
 }
 
+h2 {
+  color: #F4A223 !important;
+}
+
+.job-role {
+  text-decoration: underline !important;
+}
+
+.job-meta {
+  font-style: italic !important;
+}
+
 /* App background and default text color for dark theme */
 body {
   background-color: #1A1A1D;

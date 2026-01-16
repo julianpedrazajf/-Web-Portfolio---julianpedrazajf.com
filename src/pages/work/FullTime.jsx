@@ -152,10 +152,10 @@ export default function FullTime({ language = 'en' }) {
 					
 					{/* Menzies Aviation */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-						<h2 className="text-2xl font-semibold text-teal">{t.menzies.company}</h2>
+					<h2 className="text-2xl font-semibold !text-accent">{t.menzies.company}</h2>
 						<div className="mt-4">
-							<p className="font-medium">{t.menzies.role}</p>
-							<p className="text-gray-400">{t.menzies.duration} | {t.menzies.location}</p>
+							<p className="job-role">{t.menzies.role}</p>
+						<p className="text-gray-400 job-meta">{t.menzies.duration} | {t.menzies.location}</p>
 						</div>
 						<p className="mt-4 text-gray-300">{t.menzies.description}</p>
 						<div className="mt-4">
@@ -172,10 +172,10 @@ export default function FullTime({ language = 'en' }) {
 
 					{/* Labour Connect */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-						<h2 className="text-2xl font-semibold text-teal">{t.labourConnect.company}</h2>
+					<h2 className="text-2xl font-semibold !text-accent">{t.labourConnect.company}</h2>
 						<div className="mt-4">
-							<p className="font-medium">{t.labourConnect.role}</p>
-							<p className="text-gray-400">{t.labourConnect.duration} | {t.labourConnect.location}</p>
+							<p className="job-role">{t.labourConnect.role}</p>
+						<p className="text-gray-400 job-meta">{t.labourConnect.duration} | {t.labourConnect.location}</p>
 						</div>
 						<p className="mt-4 text-gray-300">{t.labourConnect.description}</p>
 						<div className="mt-4">
@@ -192,10 +192,10 @@ export default function FullTime({ language = 'en' }) {
 
 					{/* TECH Universidad */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-						<h2 className="text-2xl font-semibold text-teal">{t.tech.company}</h2>
+					<h2 className="text-2xl font-semibold !text-accent">{t.tech.company}</h2>
 						<div className="mt-4">
-							<p className="font-medium">{t.tech.role}</p>
-							<p className="text-gray-400">{t.tech.duration} | {t.tech.location}</p>
+							<p className="job-role">{t.tech.role}</p>
+						<p className="text-gray-400 job-meta">{t.tech.duration} | {t.tech.location}</p>
 						</div>
 						<p className="mt-4 text-gray-300">{t.tech.description}</p>
 						<div className="mt-4">
@@ -212,10 +212,10 @@ export default function FullTime({ language = 'en' }) {
 
 					{/* RDV LTDA */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-						<h2 className="text-2xl font-semibold text-teal">{t.rdv.company}</h2>
+					<h2 className="text-2xl font-semibold !text-accent">{t.rdv.company}</h2>
 						<div className="mt-4">
-							<p className="font-medium">{t.rdv.role}</p>
-							<p className="text-gray-400">{t.rdv.duration} | {t.rdv.location}</p>
+							<p className="job-role">{t.rdv.role}</p>
+						<p className="text-gray-400 job-meta">{t.rdv.duration} | {t.rdv.location}</p>
 						</div>
 						<p className="mt-4 text-gray-300">{t.rdv.description}</p>
 						<div className="mt-4">
@@ -232,10 +232,10 @@ export default function FullTime({ language = 'en' }) {
 
 					{/* Ladrillera La Sultana */}
 					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-						<h2 className="text-2xl font-semibold text-teal">{t.sultana.company}</h2>
+					<h2 className="text-2xl font-semibold !text-accent">{t.sultana.company}</h2>
 						<div className="mt-4">
-							<p className="font-medium">{t.sultana.role}</p>
-							<p className="text-gray-400">{t.sultana.duration} | {t.sultana.location}</p>
+							<p className="job-role">{t.sultana.role}</p>
+						<p className="text-gray-400 job-meta">{t.sultana.duration} | {t.sultana.location}</p>
 						</div>
 						<p className="mt-4 text-gray-300">{t.sultana.description}</p>
 						<div className="mt-4">
