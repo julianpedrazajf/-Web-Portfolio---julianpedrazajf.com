@@ -150,103 +150,93 @@ export default function FullTime({ language = 'en' }) {
 			<PageLayout title={t.title}>
 				<section id="work-fulltime">
 					
-					{/* Menzies Aviation */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-					<h2 className="text-2xl font-semibold !text-accent">{t.menzies.company}</h2>
-						<div className="mt-4">
-							<p className="job-role">{t.menzies.role}</p>
-						<p className="text-gray-400 job-meta">{t.menzies.duration} | {t.menzies.location}</p>
-						</div>
-						<p className="mt-4 text-gray-300">{t.menzies.description}</p>
-						<div className="mt-4">
-							<h3 className="font-medium mb-2">Skills:</h3>
-							<p className="text-gray-300">{t.menzies.skills}</p>
-						</div>
-						<div className="mt-4 text-sm text-gray-400">
-							<p>{t.menzies.reference.title}: {t.menzies.reference.name}</p>
-							<p>Contact: {t.menzies.reference.contact}</p>
-						</div>
-					</section>
+					   {/* Menzies Aviation */}
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+						   <h2 className="text-2xl font-semibold !text-accent mb-6 p-10 " >{t.menzies.company}</h2>
+						   <p className="job-role mb-6">{t.menzies.role}</p>
+						   <p className="text-gray-400 job-meta mb-6">{t.menzies.duration} | {t.menzies.location}</p>
+						   <p className="text-gray-300 mb-6">{t.menzies.description}</p>
+						   <div className="mb-6">
+							   <h3 className="font-medium mb-2">Skills:</h3>
+							   <p className="text-gray-300">{t.menzies.skills}</p>
+						   </div>
+						   <div className="text-sm text-gray-400 mb-2">
+							   <p>{t.menzies.reference.title}: {t.menzies.reference.name}</p>
+							   <p>Contact: {t.menzies.reference.contact}</p>
+						   </div>
+					   </section>
 
 					<div className="section-separator-1000px" aria-hidden="true" />
 
-					{/* Labour Connect */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-					<h2 className="text-2xl font-semibold !text-accent">{t.labourConnect.company}</h2>
-						<div className="mt-4">
-							<p className="job-role">{t.labourConnect.role}</p>
-						<p className="text-gray-400 job-meta">{t.labourConnect.duration} | {t.labourConnect.location}</p>
-						</div>
-						<p className="mt-4 text-gray-300">{t.labourConnect.description}</p>
-						<div className="mt-4">
-							<h3 className="font-medium mb-2">Skills:</h3>
-							<p className="text-gray-300">{t.labourConnect.skills}</p>
-						</div>
-						<div className="mt-4 text-sm text-gray-400">
-							<p>{t.labourConnect.reference.title}: {t.labourConnect.reference.name}</p>
-							<p>Contact: {t.labourConnect.reference.contact}</p>
-						</div>
-					</section>
+					   {/* Labour Connect */}
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.labourConnect.company}</h2>
+						   <p className="job-role mb-6">{t.labourConnect.role}</p>
+						   <p className="text-gray-400 job-meta mb-6">{t.labourConnect.duration} | {t.labourConnect.location}</p>
+						   <p className="text-gray-300 mb-6">{t.labourConnect.description}</p>
+						   <div className="mb-6">
+							   <h3 className="font-medium mb-2">Skills:</h3>
+							   <p className="text-gray-300">{t.labourConnect.skills}</p>
+						   </div>
+						   <div className="text-sm text-gray-400 mb-2">
+							   <p>{t.labourConnect.reference.title}: {t.labourConnect.reference.name}</p>
+							   <p>Contact: {t.labourConnect.reference.contact}</p>
+						   </div>
+					   </section>
 
 					<div className="section-separator-1000px" aria-hidden="true" />
 
-					{/* TECH Universidad */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-					<h2 className="text-2xl font-semibold !text-accent">{t.tech.company}</h2>
-						<div className="mt-4">
-							<p className="job-role">{t.tech.role}</p>
-						<p className="text-gray-400 job-meta">{t.tech.duration} | {t.tech.location}</p>
-						</div>
-						<p className="mt-4 text-gray-300">{t.tech.description}</p>
-						<div className="mt-4">
-							<h3 className="font-medium mb-2">Skills:</h3>
-							<p className="text-gray-300">{t.tech.skills}</p>
-						</div>
-						<div className="mt-4 text-sm text-gray-400">
-							<p>{t.tech.reference.title}: {t.tech.reference.name}</p>
-							<p>Contact: {t.tech.reference.contact}</p>
-						</div>
-					</section>
+					   {/* TECH Universidad */}
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.tech.company}</h2>
+						   <p className="job-role mb-6">{t.tech.role}</p>
+						   <p className="text-gray-400 job-meta mb-6">{t.tech.duration} | {t.tech.location}</p>
+						   <p className="text-gray-300 mb-6">{t.tech.description}</p>
+						   <div className="mb-6">
+							   <h3 className="font-medium mb-2">Skills:</h3>
+							   <p className="text-gray-300">{t.tech.skills}</p>
+						   </div>
+						   <div className="text-sm text-gray-400 mb-2">
+							   <p>{t.tech.reference.title}: {t.tech.reference.name}</p>
+							   <p>Contact: {t.tech.reference.contact}</p>
+						   </div>
+					   </section>
 
 					<div className="section-separator-1000px" aria-hidden="true" />
 
-					{/* RDV LTDA */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-					<h2 className="text-2xl font-semibold !text-accent">{t.rdv.company}</h2>
-						<div className="mt-4">
-							<p className="job-role">{t.rdv.role}</p>
-						<p className="text-gray-400 job-meta">{t.rdv.duration} | {t.rdv.location}</p>
-						</div>
-						<p className="mt-4 text-gray-300">{t.rdv.description}</p>
-						<div className="mt-4">
-							<h3 className="font-medium mb-2">Skills:</h3>
-							<p className="text-gray-300">{t.rdv.skills}</p>
-						</div>
-						<div className="mt-4 text-sm text-gray-400">
-							<p>{t.rdv.reference.title}: {t.rdv.reference.name}</p>
-							<p>Contact: {t.rdv.reference.contact}</p>
-						</div>
-					</section>
+					   {/* RDV LTDA */}
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.rdv.company}</h2>
+						   <p className="job-role mb-6">{t.rdv.role}</p>
+						   <p className="text-gray-400 job-meta mb-6">{t.rdv.duration} | {t.rdv.location}</p>
+						   <p className="text-gray-300 mb-6">{t.rdv.description}</p>
+						   <div className="mb-6">
+							   <h3 className="font-medium mb-2">Skills:</h3>
+							   <p className="text-gray-300">{t.rdv.skills}</p>
+						   </div>
+						   <div className="text-sm text-gray-400 mb-2">
+							   <p>{t.rdv.reference.title}: {t.rdv.reference.name}</p>
+							   <p>Contact: {t.rdv.reference.contact}</p>
+						   </div>
+					   </section>
 
 					<div className="section-separator-1000px" aria-hidden="true" />
 
-					{/* Ladrillera La Sultana */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6">
-					<h2 className="text-2xl font-semibold !text-accent">{t.sultana.company}</h2>
-						<div className="mt-4">
-							<p className="job-role">{t.sultana.role}</p>
-						<p className="text-gray-400 job-meta">{t.sultana.duration} | {t.sultana.location}</p>
-						</div>
-						<p className="mt-4 text-gray-300">{t.sultana.description}</p>
-						<div className="mt-4">
-							<h3 className="font-medium mb-2">Skills:</h3>
-							<p className="text-gray-300">{t.sultana.skills}</p>
-						</div>
-						<div className="mt-4 text-sm text-gray-400">
-							<p>{t.sultana.reference.title}: {t.sultana.reference.name}</p>
-							<p>Contact: {t.sultana.reference.contact}</p>
-						</div>
-					</section>
+					   {/* Ladrillera La Sultana */}
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.sultana.company}</h2>
+						   <p className="job-role mb-6">{t.sultana.role}</p>
+						   <p className="text-gray-400 job-meta mb-6">{t.sultana.duration} | {t.sultana.location}</p>
+						   <p className="text-gray-300 mb-6">{t.sultana.description}</p>
+						   <div className="mb-6">
+							   <h3 className="font-medium mb-2">Skills:</h3>
+							   <p className="text-gray-300">{t.sultana.skills}</p>
+						   </div>
+						   <div className="text-sm text-gray-400 mb-2">
+							   <p>{t.sultana.reference.title}: {t.sultana.reference.name}</p>
+							   <p>Contact: {t.sultana.reference.contact}</p>
+						   </div>
+					   </section>
 				</section>
 			</PageLayout>
 		</div>
