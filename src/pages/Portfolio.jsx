@@ -58,9 +58,31 @@ export default function Portfolio({ language = 'en' }) {
 								<h2 className="text-xl font-semibold mb-2">{proj.name}</h2>
 								<p className="mb-2 text-gray-300">{proj.description}</p>
 								<p className="mb-2 text-gray-400"><strong>Tools:</strong> {proj.tools}</p>
-								<div className="flex gap-4 mt-2">
-									<a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">GitHub</a>
-									<a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">Live Demo</a>
+								<div className="mb-4 flex flex-col gap-0 mt-2">
+								  <div className="mb-4">
+									<a
+									  href={proj.github}
+									  target="_blank"
+									  rel="noopener noreferrer"
+									  className="underline transition-colors duration-200"
+									  style={{ color: '#FF004D' }}
+									  onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
+									  onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}
+									>
+									  GitHub Link
+									</a>
+								  </div>
+								  <a
+									href={proj.demo}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline transition-colors duration-200"
+									style={{ color: '#34D399' }}
+									onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
+									onMouseOut={e => (e.currentTarget.style.color = '#34D399')}
+								  >
+									Live Demo Link
+								  </a>
 								</div>
 							</div>
 							{idx < t.projects.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}

@@ -82,47 +82,59 @@ export default function PartTime({ language = 'en' }) {
 		<div>
 			<Navbar language={language} />
 			<PageLayout title={t.title}>
-				{/* Grill'd Burgers */}
-				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
-					<h2 className="text-2xl font-semibold">{t.grilld.company}</h2>
-					<p className="mt-2 font-medium">{t.grilld.role}</p>
-					<p className="text-gray-400">{t.grilld.duration} | {t.grilld.location}</p>
-					<p className="mt-4 text-gray-300">{t.grilld.description}</p>
-					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.grilld.skills}</p>
-				</section>
+				   {/* Grill'd Burgers */}
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.grilld.company}</h2>
+					   <p className="job-role mb-6">{t.grilld.role}</p>
+					   <p className="text-gray-400 job-meta mb-6">{t.grilld.duration} | {t.grilld.location}</p>
+					   <p className="text-gray-300 mb-6">{t.grilld.description}</p>
+					   <div className="mb-6">
+						   <h3 className="font-medium mb-2">Skills:</h3>
+						   <p className="text-gray-300">{t.grilld.skills}</p>
+					   </div>
+				   </section>
 
 				<div className="section-separator-1000px" aria-hidden="true" />
 
-				{/* Julian Haircut Services */}
-				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
-					<h2 className="text-2xl font-semibold">{t.haircut.company}</h2>
-					<p className="mt-2 font-medium">{t.haircut.role}</p>
-					<p className="text-gray-400">{t.haircut.duration} | {t.haircut.location}</p>
-					<p className="mt-4 text-gray-300">{t.haircut.description}</p>
-					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.haircut.skills}</p>
-				</section>
+				   {/* Julian Haircut Services */}
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.haircut.company}</h2>
+					   <p className="job-role mb-6">{t.haircut.role}</p>
+					   <p className="text-gray-400 job-meta mb-6">{t.haircut.duration} | {t.haircut.location}</p>
+					   <p className="text-gray-300 mb-6">{t.haircut.description}</p>
+					   <div className="mb-6">
+						   <h3 className="font-medium mb-2">Skills:</h3>
+						   <p className="text-gray-300">{t.haircut.skills}</p>
+					   </div>
+				   </section>
 
 				<div className="section-separator-1000px" aria-hidden="true" />
 
-				{/* Independent Futures Trader */}
-				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
-					<h2 className="text-2xl font-semibold">{t.trader.company}</h2>
-					<p className="mt-2 font-medium">{t.trader.role}</p>
-					<p className="text-gray-400">{t.trader.duration} | {t.trader.location}</p>
-					<p className="mt-4 text-gray-300">{t.trader.description}</p>
-					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.trader.skills}</p>
-				</section>
+				   {/* Independent Futures Trader */}
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.trader.company}</h2>
+					   <p className="job-role mb-6">{t.trader.role}</p>
+					   <p className="text-gray-400 job-meta mb-6">{t.trader.duration} | {t.trader.location}</p>
+					   <p className="text-gray-300 mb-6">{t.trader.description}</p>
+					   <div className="mb-6">
+						   <h3 className="font-medium mb-2">Skills:</h3>
+						   <p className="text-gray-300">{t.trader.skills}</p>
+					   </div>
+				   </section>
 
 				<div className="section-separator-1000px" aria-hidden="true" />
 
-				{/* Independent Investor */}
-				<section className="mb-8 bg-white/6 rounded-lg shadow p-6">
-					<h2 className="text-2xl font-semibold">{t.investor.company}</h2>
-					<p className="mt-2 font-medium">{t.investor.role}</p>
-					<p className="text-gray-400">{t.investor.duration} | {t.investor.location}</p>
-					<p className="mt-4 text-gray-300">{t.investor.description}</p>
-					<p className="mt-3 text-gray-300"><strong>Skills:</strong> {t.investor.skills}</p>
-				</section>
+				   {/* Independent Investor */}
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.investor.company}</h2>
+					   <p className="job-role mb-6">{t.investor.role}</p>
+					   <p className="text-gray-400 job-meta mb-6">{t.investor.duration} | {t.investor.location}</p>
+					   <p className="text-gray-300 mb-6">{t.investor.description}</p>
+					   <div className="mb-6">
+						   <h3 className="font-medium mb-2">Skills:</h3>
+						   <p className="text-gray-300">{t.investor.skills}</p>
+					   </div>
+				   </section>
 			</PageLayout>
 		</div>
 	);
