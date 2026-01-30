@@ -117,11 +117,11 @@ export default function UniversityDegrees({ language = 'en' }) {
 						<React.Fragment key={idx}>
 							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
 								<h2 className="text-xl font-semibold mb-2">{diploma.institution}</h2>
-								<p className="mb-1 text-gray-300 font-medium">{diploma.program}</p>
-								<p className="mb-1 text-gray-400">{diploma.duration}</p>
+								<p className="job-role mb-1 text-gray-300 font-medium">{diploma.program}</p>
+								<p className="job-meta mb-1 text-gray-400">{diploma.duration}</p>
 								<p className="mb-1 text-gray-400">{diploma.mode}</p>
 								<p className="mb-1 text-gray-400">{diploma.outcome}</p>
-								<p className="mb-1 text-gray-400">Graduation: {diploma.graduation}</p>
+								<p className="job-meta mb-1 text-gray-400">Graduation: {diploma.graduation}</p>
 								{diploma.certificate && (
 									<p className="mt-2">
 										<a href={`/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
