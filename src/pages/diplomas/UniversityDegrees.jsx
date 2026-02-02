@@ -13,7 +13,7 @@ const content = {
 				duration: '36 weeks (17 Oct 2022 – 30 Jun 2023)',
 				mode: '20 hours/week, face-to-face',
 				outcome: 'Certificate of Attainment & Attendance',
-				certificate: '6.degree diploma English Course Australia.pdf'
+				certificate: 'greenwich-english.pdf'
 			},
 			{
 				institution: 'Universidad Nacional de Colombia',
@@ -22,7 +22,7 @@ const content = {
 				duration: 'Cycle 1: Fundamentals of Programming – 200h (Apr 18 – Jun 12, 2022)\nCycle 2: Basic Programming – 200h (Jun 21 – Aug 14, 2022)\nCycle 3: Software Development – 200h (Aug 16 – Oct 9, 2022)',
 				mode: 'Virtual',
 				outcome: 'Programming Diploma',
-				certificate: '5.degree diploma programming program uni Co.pdf'
+				certificate: 'unal-programming.pdf'
 			},
 			{
 				institution: 'Professional Drawing Academy Foundation',
@@ -31,7 +31,7 @@ const content = {
 				duration: '6 semesters (Jul 2016 – Jun 2018)',
 				mode: 'In-person (Cali, Colombia)',
 				outcome: 'Professional Technical Program in Multimedia Production',
-				certificate: '3. degree diploma Uni Colombia Co.pdf'
+				certificate: 'dibujo-profesional.pdf'
 			},
 			{
 				institution: 'English Access Microscholarship Program',
@@ -40,7 +40,7 @@ const content = {
 				duration: 'Scholarship program',
 				mode: 'English language learning',
 				outcome: 'Certificate of Achievement',
-				certificate: '2. degree diploma English Program Co.pdf'
+				certificate: 'access-english.pdf'
 			},
 			{
 				institution: 'Commercial Technical Educational Institution “Simón Rodríguez”',
@@ -49,7 +49,7 @@ const content = {
 				duration: 'Secondary education with technical emphasis',
 				mode: 'In-person (Cali, Colombia)',
 				outcome: 'Technical Commercial High School Graduate',
-				certificate: '1.degree diploma High school Co .pdf'
+				certificate: 'simon-rodriguez.pdf'
 			}
 		]
 	},
@@ -63,7 +63,7 @@ const content = {
 				duration: '36 semanas (17 Oct 2022 – 30 Jun 2023)',
 				mode: '20 horas/semana, presencial',
 				outcome: 'Certificado de Logro y Asistencia',
-				certificate: '6.degree diploma English Course Australia.pdf'
+				certificate: 'greenwich-english.pdf'
 			},
 			{
 				institution: 'Universidad Nacional de Colombia',
@@ -72,7 +72,7 @@ const content = {
 				duration: 'Ciclo 1: Fundamentos de Programación – 200h (18 Abr – 12 Jun 2022)\nCiclo 2: Programación Básica – 200h (21 Jun – 14 Ago 2022)\nCiclo 3: Desarrollo de Software – 200h (16 Ago – 9 Oct 2022)',
 				mode: 'Virtual',
 				outcome: 'Diplomado en Programación',
-				certificate: '5.degree diploma programming program uni Co.pdf'
+				certificate: 'unal-programming.pdf'
 			},
 			{
 				institution: 'Fundación Academia de Dibujo Profesional',
@@ -81,7 +81,7 @@ const content = {
 				duration: '6 semestres (Jul 2016 – Jun 2018)',
 				mode: 'Presencial (Cali, Colombia)',
 				outcome: 'Técnico Profesional en Producción Multimedia',
-				certificate: '3. degree diploma Uni Colombia Co.pdf'
+				certificate: 'dibujo-profesional.pdf'
 			},
 			{
 				institution: 'Programa Access Microscholarship',
@@ -90,7 +90,7 @@ const content = {
 				duration: 'Programa de beca',
 				mode: 'Aprendizaje de inglés',
 				outcome: 'Certificado de Logro',
-				certificate: '2. degree diploma English Program Co.pdf'
+				certificate: 'access-english.pdf'
 			},
 			{
 				institution: 'Institución Educativa Técnica Comercial “Simón Rodríguez”',
@@ -99,7 +99,7 @@ const content = {
 				duration: 'Educación secundaria con énfasis técnico',
 				mode: 'Presencial (Cali, Colombia)',
 				outcome: 'Bachiller Técnico Comercial',
-				certificate: '1.degree diploma High school Co .pdf'
+				certificate: 'simon-rodriguez.pdf'
 			}
 		]
 	}
@@ -124,7 +124,7 @@ export default function UniversityDegrees({ language = 'en' }) {
 								<p className="job-meta mb-1 text-gray-400">Graduation: {diploma.graduation}</p>
 								{diploma.certificate && (
 									<p className="mt-2">
-										<a href={`/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
+										<a href={`/diplomas/UniversityDegrees/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
 									</p>
 								)}
 							</div>
