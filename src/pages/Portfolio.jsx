@@ -72,6 +72,7 @@ export default function Portfolio({ language = 'en' }) {
 									  GitHub Link
 									</a>
 								  </div>
+								  <div></div>
 								  <a
 									href={proj.demo}
 									target="_blank"
