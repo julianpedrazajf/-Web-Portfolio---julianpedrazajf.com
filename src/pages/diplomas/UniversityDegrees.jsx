@@ -124,7 +124,17 @@ export default function UniversityDegrees({ language = 'en' }) {
 								<p className="job-meta mb-1 text-gray-400">Graduation: {diploma.graduation}</p>
 								{diploma.certificate && (
 									<p className="mt-2">
-										<a href={`/diplomas/UniversityDegrees/${diploma.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
+									<a
+										href={`/diplomas/UniversityDegrees/${diploma.certificate}`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="underline transition-colors duration-200"
+										style={{ color: '#FF004D' }}
+										onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
+										onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}
+									>
+										View Certificate
+									</a>
 									</p>
 								)}
 							</div>

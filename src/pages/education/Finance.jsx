@@ -89,22 +89,27 @@ export default function Finance({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<PageLayout title={t.title}>
+			<PageLayout title={t.title} description={t.body}>
 				<section id="education-finance">
-					<p className="mb-8 text-gray-300">{t.body}</p>
 					{t.sections.map((section, idx) => (
 						<React.Fragment key={idx}>
-							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
-								<h2 className="text-xl font-semibold mb-2">{section.heading}</h2>
-								<p className="mb-2 text-gray-300 font-medium">{section.description}</p>
-								<h3 className="font-medium mt-4 mb-2">Strategies Learned:</h3>
-								<ul className="list-disc ml-6 mb-4 text-gray-300">
-									{section.strategies.map((s, i) => <li key={i}>{s}</li>)}
-								</ul>
-								<h3 className="font-medium mb-2">Knowledge Gained:</h3>
-								<ul className="list-disc ml-6 text-gray-300">
-									{section.knowledge.map((k, i) => <li key={i}>{k}</li>)}
-								</ul>
+							<div className="mb-12 bg-white/6 rounded-lg shadow-lg p-8">
+								<h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{section.heading}</h2>
+								<p className="mb-6 text-gray-300 font-medium text-base leading-relaxed">{section.description}</p>
+								<div className="space-y-6">
+									<div>
+										<h3 className="font-semibold text-lg mb-3 text-gray-100">Strategies Learned:</h3>
+										<ul className="space-y-2 text-gray-300" style={{listStyle: 'none'}}>
+											{section.strategies.map((s, i) => <li key={i} className="leading-relaxed flex items-start"><span className="mr-3">•</span><span>{s}</span></li>)}
+										</ul>
+									</div>
+									<div>
+										<h3 className="font-semibold text-lg mb-3 text-gray-100">Knowledge Gained:</h3>
+										<ul className="space-y-2 text-gray-300" style={{listStyle: 'none'}}>
+											{section.knowledge.map((k, i) => <li key={i} className="leading-relaxed flex items-start"><span className="mr-3">•</span><span>{k}</span></li>)}
+										</ul>
+									</div>
+								</div>
 							</div>
 							{idx < t.sections.length - 1 && <div className="section-separator-1000px" aria-hidden="true" />}
 						</React.Fragment>

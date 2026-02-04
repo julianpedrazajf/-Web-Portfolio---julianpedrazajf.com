@@ -553,17 +553,37 @@ export default function OnlineBootcamps({ language = 'en' }) {
 						<React.Fragment key={idx}>
 							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
 								<h2 className="text-xl font-semibold mb-2">{bootcamp.platform}</h2>
-								<p className="mb-1 text-gray-300 font-medium">{bootcamp.course}</p>
+								<p className="job-role mb-1 text-gray-300 font-medium">{bootcamp.course}</p>
 								<p className="mb-1 text-gray-400">{bootcamp.certification}</p>
 								<p className="mb-1 text-gray-400">Completion Date: {bootcamp.date}</p>
 								{bootcamp.certificate && (
 									<p className="mt-2">
-										<a href={`/${bootcamp.certificate}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">View Certificate</a>
+										<a
+											href={`/diplomas/OnlineBootcamps/${bootcamp.certificate}`}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="underline transition-colors duration-200"
+											style={{ color: '#FF004D' }}
+											onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
+											onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}
+										>
+											View Certificate
+										</a>
 									</p>
 								)}
 								{bootcamp.github && (
 									<p className="mt-2">
-										<a href={bootcamp.github} target="_blank" rel="noopener noreferrer" className="text-green-400 underline">GitHub Repository</a>
+										<a
+											href={bootcamp.github}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="underline transition-colors duration-200"
+											style={{ color: '#34D399' }}
+											onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
+											onMouseOut={e => (e.currentTarget.style.color = '#34D399')}
+										>
+											GitHub Repository
+										</a>
 									</p>
 								)}
 							</div>

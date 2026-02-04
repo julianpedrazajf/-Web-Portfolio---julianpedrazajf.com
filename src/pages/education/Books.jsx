@@ -163,9 +163,8 @@ export default function Books({ language = 'en' }) {
 	return (
 		<div>
 			<Navbar language={language} />
-			<PageLayout title={t.title}>
+			<PageLayout title={t.title} description={t.body}>
 				<section id="education-books">
-					<p className="mb-8 text-gray-300">{t.body}</p>
 					{t.books.map((book, idx) => (
 						<React.Fragment key={idx}>
 							<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
