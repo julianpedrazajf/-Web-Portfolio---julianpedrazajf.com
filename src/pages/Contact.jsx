@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import Navbar from '../Navbar';
 
 const content = {
@@ -42,6 +43,12 @@ export default function Contact({ language = 'en' }) {
 	const t = content[language];
 	const [form, setForm] = useState({ name: '', email: '', message: '' });
 	const [submitted, setSubmitted] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+
+	useEffect(() => {
+		emailjs.init('MYBMiQ_pdUt5qiFRu');
+	}, []);
 
 	function handleChange(e) {
 		setForm({ ...form, [e.target.name]: e.target.value });
@@ -49,8 +56,29 @@ export default function Contact({ language = 'en' }) {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		setSubmitted(true);
-		// Here you could integrate with a backend or service like Formspree
+		setLoading(true);
+		setError(null);
+
+		const templateParams = {
+			to_email: 'julianpedrazajf2@gmail.com',
+			user_name: form.name,
+			user_email: form.email,
+			message: form.message
+		};
+
+		emailjs.send('service_gi9pgew', 'template_4qkbb6k', templateParams)
+			.then((response) => {
+				console.log('Success:', response.status, response.text);
+				setSubmitted(true);
+				setForm({ name: '', email: '', message: '' });
+				setLoading(false);
+				setTimeout(() => setSubmitted(false), 5000);
+			})
+			.catch((error) => {
+				console.error('Failed:', error);
+				setError(language === 'en' ? 'Error sending message. Please try again.' : 'Error al enviar el mensaje. Intenta de nuevo.');
+				setLoading(false);
+			});
 	}
 
 	return (
@@ -72,8 +100,9 @@ export default function Contact({ language = 'en' }) {
 							<label className="block font-medium mb-1" htmlFor="message">{t.form.message}</label>
 							<textarea id="message" name="message" value={form.message} onChange={handleChange} required className="w-full border rounded px-3 py-2 bg-transparent" rows={4} />
 						</div>
-						<button type="submit" className="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold shadow hover:bg-blue-600 transition">{t.form.submit}</button>
+						<button type="submit" disabled={loading} className="px-6 py-2 rounded-lg bg-blue-700 text-white font-semibold shadow hover:bg-blue-600 transition disabled:opacity-50 disabled:cursor-not-allowed">{loading ? (language === 'en' ? 'Sending...' : 'Enviando...') : t.form.submit}</button>
 						{submitted && <p className="mt-4 text-green-500 font-medium">{language === 'en' ? 'Thank you! Your message has been sent.' : '¡Gracias! Tu mensaje ha sido enviado.'}</p>}
+						{error && <p className="mt-4 text-red-500 font-medium">{error}</p>}
 					</form>
 					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
 						<h2 className="text-lg font-semibold mb-2">{t.other}</h2>
