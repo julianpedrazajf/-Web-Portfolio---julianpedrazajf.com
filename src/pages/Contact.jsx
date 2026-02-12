@@ -52,7 +52,7 @@ export default function Contact({ language = 'en' }) {
 	const containerStyle = {
 		display: 'flex',
 		justifyContent: 'center',
-		minHeight: '70vh',
+		minHeight: '60vh',
 		width: '100%',
 		position: 'relative',
 		zIndex: 1
@@ -82,8 +82,8 @@ export default function Contact({ language = 'en' }) {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
+		justifyContent: 'center',
 		gap: '1.5rem',
-		width: '100%'
 	};
 
 	const formFieldStyle = {
@@ -144,15 +144,16 @@ export default function Contact({ language = 'en' }) {
 					<div style={cardStyle}>
 						<section id="contact" style={contactSectionStyle}>
 							<div>
-								<h2 className="text-3xl font-bold mb-4 text-slate-50">{t.title}</h2>
 								<p className="text-slate-400 text-sm sm:text-base max-w-xl">{t.body}</p>
 							</div>
 						
 							<form onSubmit={handleSubmit} style={formStyle}>
 								<div style={formFieldStyle}>
-									<label className="block text-sm font-semibold text-slate-400 mb-3" htmlFor="name">
-										{t.form.name}
-									</label>
+									<div className="mb-4">
+										<label className="block text-sm font-semibold text-slate-400" htmlFor="name">
+											{t.form.name}
+										</label>
+									</div>
 									<input 
 										type="text" 
 										id="name" 
@@ -166,9 +167,11 @@ export default function Contact({ language = 'en' }) {
 								</div>
 
 								<div style={formFieldStyle}>
-									<label className="block text-sm font-semibold text-slate-400 mb-3" htmlFor="email">
-										{t.form.email}
-									</label>
+									<div className="mb-4">
+										<label className="block text-sm font-semibold text-slate-400" htmlFor="email">
+											{t.form.email}
+										</label>
+									</div>
 									<input 
 										type="email" 
 										id="email" 
@@ -182,9 +185,11 @@ export default function Contact({ language = 'en' }) {
 								</div>
 
 								<div style={formFieldStyle}>
-									<label className="block text-sm font-semibold text-slate-400 mb-3" htmlFor="message">
-										{t.form.message}
-									</label>
+									<div className="mb-4">
+										<label className="block text-sm font-semibold text-slate-400" htmlFor="message">
+											{t.form.message}
+										</label>
+									</div>
 									<textarea 
 										id="message" 
 										name="message" 
