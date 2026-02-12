@@ -70,6 +70,41 @@ export default function Contact({ language = 'en' }) {
 		textAlign: 'center'
 	};
 
+	const contactSectionStyle = {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		gap: '2.5rem',
+		textAlign: 'center'
+	};
+
+	const formStyle = {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		gap: '1.5rem',
+		width: '100%'
+	};
+
+	const formFieldStyle = {
+		width: '100%',
+		maxWidth: '22rem',
+		textAlign: 'left'
+	};
+
+	const buttonContainerStyle = {
+		width: '100%',
+		maxWidth: '22rem',
+		display: 'flex',
+		justifyContent: 'center'
+	};
+
+	const otherWaysStyle = {
+		borderTop: '1px solid rgba(148, 163, 184, 0.3)',
+		paddingTop: '2rem',
+		width: '100%'
+	};
+
 	function handleChange(e) {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	}
@@ -107,11 +142,14 @@ export default function Contact({ language = 'en' }) {
 			<PageLayout title={t.title}>
 				<div style={containerStyle}>
 					<div style={cardStyle}>
-						<section id="contact" className="flex flex-col items-center gap-10 text-center">
-							<p className="text-slate-600 text-sm sm:text-base max-w-xl">{t.body}</p>
+						<section id="contact" style={contactSectionStyle}>
+							<div>
+								<h2 className="text-3xl font-bold mb-4 text-slate-50">{t.title}</h2>
+								<p className="text-slate-400 text-sm sm:text-base max-w-xl">{t.body}</p>
+							</div>
 						
-							<form onSubmit={handleSubmit} className="mb-12 w-full flex flex-col items-center gap-6">
-								<div className="w-full max-w-md mx-auto text-left">
+							<form onSubmit={handleSubmit} style={formStyle}>
+								<div style={formFieldStyle}>
 									<label className="block text-sm font-semibold text-slate-400 mb-3" htmlFor="name">
 										{t.form.name}
 									</label>
@@ -122,12 +160,12 @@ export default function Contact({ language = 'en' }) {
 										value={form.name} 
 										onChange={handleChange} 
 										required 
-										className="block w-full rounded-2xl px-4 py-3 bg-white text-slate-700 placeholder:text-slate-400 border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30" 
+										className="block w-full rounded-lg px-4 py-2 bg-slate-950 border border-slate-700 text-slate-50 placeholder:text-slate-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50" 
 										placeholder="Jane Smith" 
 									/>
 								</div>
 
-								<div className="w-full max-w-md mx-auto text-left">
+								<div style={formFieldStyle}>
 									<label className="block text-sm font-semibold text-slate-400 mb-3" htmlFor="email">
 										{t.form.email}
 									</label>
@@ -138,12 +176,12 @@ export default function Contact({ language = 'en' }) {
 										value={form.email} 
 										onChange={handleChange} 
 										required 
-										className="block w-full rounded-2xl px-4 py-3 bg-white text-slate-700 placeholder:text-slate-400 border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30" 
+										className="block w-full rounded-lg px-4 py-2 bg-slate-950 border border-slate-700 text-slate-50 placeholder:text-slate-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50" 
 										placeholder="jane@domain.com" 
 									/>
 								</div>
 
-								<div className="w-full max-w-md mx-auto text-left">
+								<div style={formFieldStyle}>
 									<label className="block text-sm font-semibold text-slate-400 mb-3" htmlFor="message">
 										{t.form.message}
 									</label>
@@ -153,56 +191,51 @@ export default function Contact({ language = 'en' }) {
 										value={form.message} 
 										onChange={handleChange} 
 										required 
-										className="block w-full rounded-2xl px-4 py-3 bg-white text-slate-700 placeholder:text-slate-400 border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30" 
+										className="block w-full rounded-lg px-4 py-2 bg-slate-950 border border-slate-700 text-slate-50 placeholder:text-slate-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50" 
 										rows={4} 
 										placeholder="Type your message" 
 									/>
 								</div>
 
-								<div className="w-full max-w-md mx-auto flex justify-center">
+								<div style={buttonContainerStyle}>
 									<button 
 										type="submit" 
 										disabled={loading} 
-										className="inline-flex items-center gap-3 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition disabled:opacity-50 disabled:cursor-not-allowed"
+										className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-slate-50 font-semibold py-2 px-6 rounded-lg transition"
 									>
-										<span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white text-lg">
-											→
-										</span>
-										<span>
-											{loading ? (language === 'en' ? 'Sending...' : 'Enviando...') : (language === 'en' ? 'Get a Solution' : 'Enviar')}
-										</span>
+										<span>{loading ? (language === 'en' ? 'Sending...' : 'Enviando...') : t.form.submit}</span>
 									</button>
-									
-									{submitted && (
-										<p className="mt-4 text-emerald-600 font-medium">
-											{language === 'en' ? 'Thank you! Your message has been sent.' : '¡Gracias! Tu mensaje ha sido enviado.'}
-										</p>
-									)}
-									
-									{error && (
-										<p className="mt-4 text-red-500 font-medium">{error}</p>
-									)}
 								</div>
+
+								{submitted && (
+									<p className="text-emerald-400 font-medium text-center">
+										{language === 'en' ? 'Thank you! Your message has been sent.' : '¡Gracias! Tu mensaje ha sido enviado.'}
+									</p>
+								)}
+								
+								{error && (
+									<p className="text-red-400 font-medium text-center">{error}</p>
+								)}
 							</form>
 
-							<div className="border-t border-slate-200 pt-8">
-								<h2 className="text-base font-semibold text-slate-700 mb-3">{t.other}</h2>
-								<ul className="list-none text-sm text-slate-600" style={{listStyle: 'none'}}>
-									<li className="mb-2">
-										<span className="font-medium">{t.direct.email}:</span>{' '}
-										<a href="mailto:julianpedrazajf2@gmail.com" className="text-blue-600 underline">
+							<div style={otherWaysStyle}>
+								<h3 className="text-lg font-semibold text-slate-50 mb-4">{t.other}</h3>
+								<ul className="flex flex-col gap-3 text-sm text-slate-400" style={{listStyle: 'none'}}>
+									<li>
+										<span className="font-medium text-slate-300">{t.direct.email}:</span>{' '}
+										<a href="mailto:julianpedrazajf2@gmail.com" className="text-blue-400 hover:text-blue-300 transition">
 											julianpedrazajf2@gmail.com
 										</a>
 									</li>
-									<li className="mb-2">
-										<span className="font-medium">{t.direct.linkedin}:</span>{' '}
-										<a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+									<li>
+										<span className="font-medium text-slate-300">{t.direct.linkedin}:</span>{' '}
+										<a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">
 											LinkedIn
 										</a>
 									</li>
 									<li>
-										<span className="font-medium">{t.direct.github}:</span>{' '}
-										<a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+										<span className="font-medium text-slate-300">{t.direct.github}:</span>{' '}
+										<a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">
 											GitHub
 										</a>
 									</li>
