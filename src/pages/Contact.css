@@ -1,0 +1,25 @@
+#contact input,
+#contact textarea {
+  background-color: transparent !important;
+  border: 1px solid #475569 !important;
+  color: #cbd5e1 !important;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px #3b82f6 !important;
+}
+
+#contact label {
+  color: #ffffff !important;
+  font-size: 1.125rem !important;
+  font-weight: 500 !important;
+}

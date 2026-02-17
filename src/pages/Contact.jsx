@@ -44,6 +44,7 @@ export default function Contact({ language = 'en' }) {
 	const [submitted, setSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
+	const [focusedField, setFocusedField] = useState(null);
 
 	useEffect(() => {
 		emailjs.init('MYBMiQ_pdUt5qiFRu');
@@ -149,54 +150,75 @@ export default function Contact({ language = 'en' }) {
 						
 							<form onSubmit={handleSubmit} style={formStyle}>
 								<div style={formFieldStyle}>
-									<div className="mb-4">
-										<label className="block text-sm font-semibold text-slate-400" htmlFor="name">
-											{t.form.name}
-										</label>
-									</div>
+									<label className="block text-white text-lg font-medium mb-3" htmlFor="name">
+										{t.form.name}
+									</label>
 									<input 
 										type="text" 
 										id="name" 
 										name="name" 
 										value={form.name} 
 										onChange={handleChange} 
+										onFocus={() => setFocusedField('name')}
+										onBlur={() => setFocusedField(null)}
 										required 
-										className="block w-full rounded-lg px-4 py-2 bg-slate-950 border border-slate-700 text-slate-50 placeholder:text-slate-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50" 
-										placeholder="Jane Smith" 
+										className="w-full rounded-lg px-4 py-3 transition-all" 
+										style={{
+											background: 'transparent',
+											border: focusedField === 'name' ? '1px solid #3b82f6' : '1px solid #475569',
+											color: '#cbd5e1',
+											outline: 'none',
+											boxShadow: focusedField === 'name' ? '0 0 0 2px rgba(59, 130, 246, 0.5)' : 'none',
+										}}
+										placeholder="John Carter" 
 									/>
 								</div>
 
 								<div style={formFieldStyle}>
-									<div className="mb-4">
-										<label className="block text-sm font-semibold text-slate-400" htmlFor="email">
-											{t.form.email}
-										</label>
-									</div>
+									<label className="block text-white text-lg font-medium mb-3" htmlFor="email">
+										{t.form.email}
+									</label>
 									<input 
 										type="email" 
 										id="email" 
 										name="email" 
 										value={form.email} 
 										onChange={handleChange} 
+										onFocus={() => setFocusedField('email')}
+										onBlur={() => setFocusedField(null)}
 										required 
-										className="block w-full rounded-lg px-4 py-2 bg-slate-950 border border-slate-700 text-slate-50 placeholder:text-slate-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50" 
-										placeholder="jane@domain.com" 
+										className="w-full rounded-lg px-4 py-3 transition-all" 
+										style={{
+											background: 'transparent',
+											border: focusedField === 'email' ? '1px solid #3b82f6' : '1px solid #475569',
+											color: '#cbd5e1',
+											outline: 'none',
+											boxShadow: focusedField === 'email' ? '0 0 0 2px rgba(59, 130, 246, 0.5)' : 'none',
+										}}
+										placeholder="you@example.com" 
 									/>
 								</div>
 
 								<div style={formFieldStyle}>
-									<div className="mb-4">
-										<label className="block text-sm font-semibold text-slate-400" htmlFor="message">
-											{t.form.message}
-										</label>
-									</div>
+									<label className="block text-white text-lg font-medium mb-3" htmlFor="message">
+										{t.form.message}
+									</label>
 									<textarea 
 										id="message" 
 										name="message" 
 										value={form.message} 
 										onChange={handleChange} 
+										onFocus={() => setFocusedField('message')}
+										onBlur={() => setFocusedField(null)}
 										required 
-										className="block w-full rounded-lg px-4 py-2 bg-slate-950 border border-slate-700 text-slate-50 placeholder:text-slate-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50" 
+										className="w-full rounded-lg px-4 py-3 transition-all resize-none" 
+										style={{
+											background: 'transparent',
+											border: focusedField === 'message' ? '1px solid #3b82f6' : '1px solid #475569',
+											color: '#cbd5e1',
+											outline: 'none',
+											boxShadow: focusedField === 'message' ? '0 0 0 2px rgba(59, 130, 246, 0.5)' : 'none',
+										}}
 										rows={4} 
 										placeholder="Type your message" 
 									/>
@@ -228,19 +250,19 @@ export default function Contact({ language = 'en' }) {
 								<ul className="flex flex-col gap-3 text-sm text-slate-400" style={{listStyle: 'none'}}>
 									<li>
 										<span className="font-medium text-slate-300">{t.direct.email}:</span>{' '}
-										<a href="mailto:julianpedrazajf2@gmail.com" className="text-blue-400 hover:text-blue-300 transition">
+										<a href="mailto:julianpedrazajf2@gmail.com" className="underline transition-colors duration-200" style={{ color: '#FF004D' }} onMouseOver={e => (e.currentTarget.style.color = '#FFD700')} onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}>
 											julianpedrazajf2@gmail.com
 										</a>
 									</li>
 									<li>
 										<span className="font-medium text-slate-300">{t.direct.linkedin}:</span>{' '}
-										<a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">
+										<a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200" style={{ color: '#34D399' }} onMouseOver={e => (e.currentTarget.style.color = '#FFD700')} onMouseOut={e => (e.currentTarget.style.color = '#34D399')}>
 											LinkedIn
 										</a>
 									</li>
 									<li>
 										<span className="font-medium text-slate-300">{t.direct.github}:</span>{' '}
-										<a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">
+										<a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200" style={{ color: '#34D399' }} onMouseOver={e => (e.currentTarget.style.color = '#FFD700')} onMouseOut={e => (e.currentTarget.style.color = '#34D399')}>
 											GitHub
 										</a>
 									</li>
