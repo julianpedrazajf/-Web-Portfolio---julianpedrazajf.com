@@ -74,7 +74,7 @@ export default function Contact({ language = 'en' }) {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		gap: '2.5rem',
+		gap: '1.7rem',
 		textAlign: 'center'
 	};
 
@@ -100,8 +100,8 @@ export default function Contact({ language = 'en' }) {
 	};
 
 	const otherWaysStyle = {
-		borderTop: '1px solid rgba(148, 163, 184, 0.3)',
-		paddingTop: '2rem',
+		borderTop: '0.5px solid rgba(148, 163, 184, 0.3)',
+		paddingTop: '0.5rem',
 		width: '100%'
 	};
 
@@ -149,7 +149,7 @@ export default function Contact({ language = 'en' }) {
 						
 							<form onSubmit={handleSubmit} style={formStyle}>
 								<div style={formFieldStyle}>
-									<label className="block text-white text-lg font-medium mb-3" htmlFor="name">
+									<label className="block text-white text-lg font-medium" htmlFor="name">
 										{t.form.name}
 									</label>
 									<input 
@@ -168,6 +168,7 @@ export default function Contact({ language = 'en' }) {
 											color: '#cbd5e1',
 											fontSize: '1rem',
 											transition: 'all 200ms',
+										marginTop: '0.5rem',
 										}}
 										onFocus={(e) => {
 											e.target.style.outline = 'none';
@@ -183,7 +184,7 @@ export default function Contact({ language = 'en' }) {
 								</div>
 
 								<div style={formFieldStyle}>
-									<label className="block text-white text-lg font-medium mb-3" htmlFor="email">
+									<label className="block text-white text-lg font-medium" htmlFor="email">
 										{t.form.email}
 									</label>
 									<input 
@@ -202,6 +203,7 @@ export default function Contact({ language = 'en' }) {
 											color: '#cbd5e1',
 											fontSize: '1rem',
 											transition: 'all 200ms',
+											marginTop: '0.5rem',
 										}}
 										onFocus={(e) => {
 											e.target.style.outline = 'none';
@@ -217,7 +219,7 @@ export default function Contact({ language = 'en' }) {
 								</div>
 
 								<div style={formFieldStyle}>
-									<label className="block text-white text-lg font-medium mb-3" htmlFor="message">
+									<label className="block text-white text-lg font-medium" htmlFor="message">
 										{t.form.message}
 									</label>
 									<textarea 
@@ -236,6 +238,7 @@ export default function Contact({ language = 'en' }) {
 											fontSize: '1rem',
 											transition: 'all 200ms',
 											resize: 'none',
+											marginTop: '0.5rem',
 										}}
 										onFocus={(e) => {
 											e.target.style.outline = 'none';
@@ -252,13 +255,42 @@ export default function Contact({ language = 'en' }) {
 								</div>
 
 								<div style={buttonContainerStyle}>
-									<button 
-										type="submit" 
-										disabled={loading} 
-										className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-slate-50 font-semibold py-2 px-6 rounded-lg transition"
-									>
-										<span>{loading ? (language === 'en' ? 'Sending...' : 'Enviando...') : t.form.submit}</span>
-									</button>
+									<div style={{
+										background: 'linear-gradient(90deg, #C33726, #F4A223, #F2C24C, #8A1E14)',
+										borderRadius: '40px',
+										padding: '1px',
+										width: '100%'
+									}}>
+										<button 
+											type="submit" 
+											disabled={loading} 
+											style={{
+												width: '100%',
+												background: '#2A2A2A',
+												backdropFilter: 'blur(10px) brightness(1.1)',
+												border: 'none',
+												borderRadius: '36px',
+												padding: '0.875rem 1.5rem',
+												color: '#fff',
+												fontSize: '1rem',
+												fontWeight: '500',
+												cursor: loading ? 'not-allowed' : 'pointer',
+												transition: 'all 200ms',
+												opacity: loading ? 0.6 : 1,
+											}}
+											onMouseOver={(e) => {
+												if (!loading) {
+													e.currentTarget.style.background = '#3f3f3f';
+												}
+											}}
+											onMouseOut={(e) => {
+												e.currentTarget.style.background = '#2A2A2A';
+												e.currentTarget.style.transform = 'translateY(0)';
+											}}
+										>
+											<span>{loading ? (language === 'en' ? 'Sending...' : 'Enviando...') : t.form.submit}</span>
+										</button>
+									</div>
 								</div>
 
 								{submitted && (
