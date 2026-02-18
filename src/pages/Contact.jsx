@@ -44,7 +44,6 @@ export default function Contact({ language = 'en' }) {
 	const [submitted, setSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
-	const [focusedField, setFocusedField] = useState(null);
 
 	useEffect(() => {
 		emailjs.init('MYBMiQ_pdUt5qiFRu');
@@ -159,16 +158,25 @@ export default function Contact({ language = 'en' }) {
 										name="name" 
 										value={form.name} 
 										onChange={handleChange} 
-										onFocus={() => setFocusedField('name')}
-										onBlur={() => setFocusedField(null)}
 										required 
-										className="w-full rounded-lg px-4 py-3 transition-all" 
 										style={{
+											width: '100%',
 											background: 'transparent',
-											border: focusedField === 'name' ? '1px solid #3b82f6' : '1px solid #475569',
+											border: '1px solid #FFFFFF1F',
+											borderRadius: '0.5rem',
+											padding: '0.75rem 1rem',
 											color: '#cbd5e1',
-											outline: 'none',
-											boxShadow: focusedField === 'name' ? '0 0 0 2px rgba(59, 130, 246, 0.5)' : 'none',
+											fontSize: '1rem',
+											transition: 'all 200ms',
+										}}
+										onFocus={(e) => {
+											e.target.style.outline = 'none';
+											e.target.style.boxShadow = '0 0 0 2px rgba(255, 255, 255, 0.12)';
+											e.target.style.borderColor = 'transparent';
+										}}
+										onBlur={(e) => {
+											e.target.style.boxShadow = 'none';
+											e.target.style.borderColor = '#FFFFFF1F';
 										}}
 										placeholder="John Carter" 
 									/>
@@ -184,16 +192,25 @@ export default function Contact({ language = 'en' }) {
 										name="email" 
 										value={form.email} 
 										onChange={handleChange} 
-										onFocus={() => setFocusedField('email')}
-										onBlur={() => setFocusedField(null)}
 										required 
-										className="w-full rounded-lg px-4 py-3 transition-all" 
 										style={{
+											width: '100%',
 											background: 'transparent',
-											border: focusedField === 'email' ? '1px solid #3b82f6' : '1px solid #475569',
+											border: '1px solid #FFFFFF1F',
+											borderRadius: '0.5rem',
+											padding: '0.75rem 1rem',
 											color: '#cbd5e1',
-											outline: 'none',
-											boxShadow: focusedField === 'email' ? '0 0 0 2px rgba(59, 130, 246, 0.5)' : 'none',
+											fontSize: '1rem',
+											transition: 'all 200ms',
+										}}
+										onFocus={(e) => {
+											e.target.style.outline = 'none';
+											e.target.style.boxShadow = '0 0 0 2px rgba(255, 255, 255, 0.12)';
+											e.target.style.borderColor = 'transparent';
+										}}
+										onBlur={(e) => {
+											e.target.style.boxShadow = 'none';
+											e.target.style.borderColor = '#FFFFFF1F';
 										}}
 										placeholder="you@example.com" 
 									/>
@@ -208,16 +225,26 @@ export default function Contact({ language = 'en' }) {
 										name="message" 
 										value={form.message} 
 										onChange={handleChange} 
-										onFocus={() => setFocusedField('message')}
-										onBlur={() => setFocusedField(null)}
 										required 
-										className="w-full rounded-lg px-4 py-3 transition-all resize-none" 
 										style={{
+											width: '100%',
 											background: 'transparent',
-											border: focusedField === 'message' ? '1px solid #3b82f6' : '1px solid #475569',
+											border: '1px solid #FFFFFF1F',
+											borderRadius: '0.5rem',
+											padding: '0.75rem 1rem',
 											color: '#cbd5e1',
-											outline: 'none',
-											boxShadow: focusedField === 'message' ? '0 0 0 2px rgba(59, 130, 246, 0.5)' : 'none',
+											fontSize: '1rem',
+											transition: 'all 200ms',
+											resize: 'none',
+										}}
+										onFocus={(e) => {
+											e.target.style.outline = 'none';
+											e.target.style.boxShadow = '0 0 0 2px rrgba(255, 255, 255, 0.12)';
+											e.target.style.borderColor = 'transparent';
+										}}
+										onBlur={(e) => {
+											e.target.style.boxShadow = 'none';
+											e.target.style.borderColor = '#FFFFFF1F';
 										}}
 										rows={4} 
 										placeholder="Type your message" 

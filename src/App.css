@@ -1,12 +1,13 @@
-/* Clean CSS Reset */
-* {
-  padding: 0;
+/* Box-sizing for consistency (Tailwind Preflight already includes a reset) */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html, body, #root {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
