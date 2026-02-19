@@ -8,6 +8,16 @@ const content = {
 		body: 'A curated list of books that have influenced my thinking and work. Each includes author and key takeaways.',
 		books: [
 			{
+				title: 'The Intelligent Investor',
+				author: 'Benjamin Graham',
+				takeaway: 'The definitive book on value investing. Teaches the importance of fundamental analysis, margin of safety, and long-term investment strategies while managing risk and avoiding speculation.'
+			},
+			{
+				title: 'Financial Shenanigans, Fourth Edition',
+				author: 'Howard M. Schilit, Jeremy Perler & Yoni Engelhart',
+				takeaway: 'Reveals how companies manipulate financial statements to deceive investors. Provides techniques to detect accounting tricks, earnings manipulation, and red flags in financial reports.'
+			},
+			{
 				title: 'The Art of Being Right',
 				author: 'Arthur Schopenhauer',
 				takeaway: 'Explores 38 rhetorical strategies people use to win arguments, regardless of truth. Highlights manipulation, fallacies, and persuasion techniques—teaching both how to spot them and defend against them.'
@@ -83,6 +93,16 @@ const content = {
 		title: 'Libros y Lecturas',
 		body: 'Lista curada de libros que han influido en mi pensamiento y trabajo. Cada uno incluye autor y aprendizajes clave.',
 		books: [
+			{
+				title: 'El inversor inteligente',
+				author: 'Benjamin Graham',
+				takeaway: 'Libro definitivo sobre inversión en valor. Enseña la importancia del análisis fundamental, margen de seguridad y estrategias de inversión a largo plazo mientras se gestiona el riesgo y se evita la especulación.'
+			},
+			{
+				title: 'Trucos financieros, Cuarta Edición',
+				author: 'Howard M. Schilit, Jeremy Perler & Yoni Engelhart',
+				takeaway: 'Revela cómo las empresas manipulan estados financieros para engañar a inversionistas. Proporciona técnicas para detectar trucos contables, manipulación de ganancias y señales de alerta en reportes financieros.'
+			},
 			{
 				title: 'El arte de tener razón',
 				author: 'Arthur Schopenhauer',
