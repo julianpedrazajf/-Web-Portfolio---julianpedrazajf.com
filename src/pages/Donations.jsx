@@ -5,35 +5,11 @@ import PageLayout from '../components/PageLayout';
 const content = {
 	en: {
 		title: 'Donations',
-		body: 'If you find my work valuable and want to support it, you can donate securely via Stripe or PayPal. Thank you for your support!',
-		stripe: {
-			label: 'Donate with Card (Stripe Checkout)',
-			description: 'Simple, professional experience with Apple Pay / Google Pay support when available.',
-			button: 'Donate',
-			link: 'https://buy.stripe.com/tu-payment-link'
-		},
-		paypal: {
-			label: 'Prefer PayPal?',
-			button: 'Donate with PayPal',
-			link: 'https://www.paypal.com/donate?hosted_button_id=TU_ID'
-		},
-		transparency: 'Donations are 100% voluntary and used to maintain and improve my projects, learn, and share more resources with the community. This section also serves as a functional portfolio: it demonstrates real Stripe and PayPal integration.'
+		message: 'The donations section is not currently available.'
 	},
 	es: {
 		title: 'Donaciones',
-		body: 'Si encuentras mi trabajo valioso y quieres apoyarlo, puedes donar de forma segura por Stripe o PayPal. ¡Gracias por tu apoyo!',
-		stripe: {
-			label: 'Donar con tarjeta (Stripe Checkout)',
-			description: 'Experiencia simple y profesional con soporte para Apple Pay / Google Pay cuando esté disponible.',
-			button: 'Donar',
-			link: 'https://buy.stripe.com/tu-payment-link'
-		},
-		paypal: {
-			label: '¿Prefieres PayPal?',
-			button: 'Donar con PayPal',
-			link: 'https://www.paypal.com/donate?hosted_button_id=TU_ID'
-		},
-		transparency: 'Las donaciones son 100% voluntarias y se utilizan para mantener y mejorar mis proyectos, aprender y compartir más recursos con la comunidad. Esta sección también sirve como portafolio funcional: demuestra integración real de Stripe y PayPal.'
+		message: 'La sección de donaciones no se encuentra habilitada en este momento.'
 	}
 };
 
@@ -44,23 +20,27 @@ export default function Donations({ language = 'en' }) {
 		<div>
 			<Navbar language={language} />
 			<PageLayout title={t.title}>
-				<section id="donations">
-					<p className="mb-6 text-gray-300">{t.body}</p>
-					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
-						<h2 className="text-lg font-semibold mb-2">{t.stripe.label}</h2>
-						<p className="mb-4 text-gray-300">{t.stripe.description}</p>
-						<a href={t.stripe.link} target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 rounded-lg bg-blue-800 text-white font-semibold shadow hover:bg-blue-700 transition">{t.stripe.button}</a>
-					</div>
-					<div className="section-separator-1000px" aria-hidden="true" />
-					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
-						<h2 className="text-lg font-semibold mb-2">{t.paypal.label}</h2>
-						<a href={t.paypal.link} target="_blank" rel="noopener noreferrer" className="inline-block px-5 py-2 rounded-lg bg-blue-700 text-white font-semibold shadow hover:bg-blue-600 transition">{t.paypal.button}</a>
-					</div>
-					<div className="section-separator-1000px" aria-hidden="true" />
-					<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
-						<h3 className="font-medium mb-2">Transparency</h3>
-						<p className="text-gray-300">{t.transparency}</p>
-					</div>
+				<section id="donations" style={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					justifyContent: 'center',
+					minHeight: '40vh',
+					textAlign: 'center',
+					gap: '1.5rem'
+				}}>
+					<img 
+						src="https://img.icons8.com/?size=100&id=w0nSmTGhdtrR&format=png&color=FFFFFF" 
+						alt="Lock icon" 
+						style={{
+							width: '80px',
+							height: '80px',
+							opacity: 0.7
+						}}
+					/>
+					<p className="text-slate-400 text-lg" style={{ maxWidth: '500px' }}>
+						{t.message}
+					</p>
 				</section>
 			</PageLayout>
 		</div>
