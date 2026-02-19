@@ -156,7 +156,15 @@ export default function Home() {
         {/* Separator between sections */}
         <div className="section-separator-1000px" aria-hidden="true" style={{ marginBottom: '1.5rem', marginTop: '0rem' }} />
 
-        <a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" style={{ textDecorationLine: 'underline', textDecorationColor: '#fff', color: "#fff", fontWeight: 600, display: 'block', marginBottom: '0rem' }}>
+        <a 
+          href="https://github.com/julianpedrazajf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="underline transition-colors duration-200"
+          style={{ color: '#FF004D', fontWeight: 600, display: 'block', marginBottom: '0rem' }}
+          onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
+          onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}
+        >
           {t.githubLink} <br />
           https://github.com/julianpedrazajf
         </a>

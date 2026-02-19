@@ -8,6 +8,7 @@ const disclaimers = {
     legal: [
       "The information on this website is for informational purposes only. It does not represent a guarantee, offer, or define the specific role, conditions, or commitments of either party. This site does not specify the exact role Julian may be applying for but serves as a reference to better match his profile with the right service or opportunity, for the mutual benefit of both parties. By continuing, you acknowledge that you have read and understood this notice.",
     ],
+    lastUpdate: "Last updated: February 19, 2026",
     continue: "Continue",
     toggle: "Español",
   },
@@ -16,6 +17,7 @@ const disclaimers = {
     legal: [
       "La información en este sitio web es solo para fines informativos. No representa una garantía, oferta, ni define el rol, condiciones o compromisos de ninguna de las partes. Este sitio no especifica el rol exacto al que Julian pueda estar aplicando, sino que sirve como referencia para emparejar mejor su perfil con el servicio u oportunidad adecuada, en beneficio mutuo. Al continuar, reconoces que has leído y entendido este aviso.",
     ],
+    lastUpdate: "Última actualización: 19 de febrero de 2026",
     continue: "Continuar",
     toggle: "English",
   },
@@ -119,6 +121,9 @@ export default function Disclaimer({ onContinue }) {
               </p>
             ))}
           </div>
+          <p style={{ color: '#ccc', fontSize: '0.875rem', fontStyle: 'italic', marginTop: '1rem', marginBottom: '0.5rem' }}>
+            {d.lastUpdate}
+          </p>
           <div style={buttonContainerStyle}>
             <button
               style={toggleButtonStyle}
