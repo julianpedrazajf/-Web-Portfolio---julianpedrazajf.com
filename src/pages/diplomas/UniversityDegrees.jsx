@@ -115,7 +115,7 @@ export default function UniversityDegrees({ language = 'en' }) {
 				<section id="diplomas-university">
 					{t.diplomas.map((diploma, idx) => (
 						<React.Fragment key={idx}>
-							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
+							<div className="mb-10 bg-white/6 rounded-lg shadow p-6 glass-card">
 								<h2 className="text-xl font-semibold mb-2">{diploma.institution}</h2>
 								<p className="job-role mb-1 text-gray-300 font-medium">{diploma.program}</p>
 								<p className="job-meta mb-1 text-gray-400">{diploma.duration}</p>
@@ -129,9 +129,9 @@ export default function UniversityDegrees({ language = 'en' }) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="underline transition-colors duration-200"
-										style={{ color: '#FF004D' }}
-										onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
-										onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}
+										style={{ color: 'rgba(255, 255, 255, 0.82)' }}
+										onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')}
+										onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}
 									>
 										View Certificate
 									</a>

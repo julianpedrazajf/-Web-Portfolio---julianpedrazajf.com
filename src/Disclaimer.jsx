@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ShaderBackground from "./ShaderBackground";
+import VideoBackground from "./VideoBackground";
 import LanguageContext from './LanguageContext';
 
 const disclaimers = {
@@ -36,7 +36,7 @@ export default function Disclaimer({ onContinue }) {
     padding: "1rem",
     margin: 0,
     position: "relative",
-    zIndex: 1,
+    zIndex: 10,
   };
 
   const cardStyle = {
@@ -110,7 +110,7 @@ export default function Disclaimer({ onContinue }) {
 
   return (
     <div style={{ position: "relative", minHeight: "100vh", width: "100vw", overflow: "hidden" }}>
-      <ShaderBackground />
+      <VideoBackground />
       <div style={containerStyle}>
         <div style={cardStyle}>
           <h1 style={titleStyle}>{d.title}</h1>

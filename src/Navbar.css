@@ -60,16 +60,45 @@ nav > ul > li > button {
 }
 
 /* Submenu styles - match navbar visuals and center text */
+/* Submenu dropdown — same liquid-glass language as the navbar (glowing
+   gradient border + blur), with a readable translucent tint since it
+   sits over page content. */
 .submenu {
-  background: #2A2A2A;
+  background: rgba(20, 20, 22, 0.55);
   color: #fff;
-  backdrop-filter: blur(8px) brightness(1.05);
+  backdrop-filter: blur(20px) saturate(1.1);
+  -webkit-backdrop-filter: blur(20px) saturate(1.1);
   padding: 0.4rem 0;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
   list-style: none;
   min-width: 160px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing gradient border (identical technique to .liquid-glass) */
+.submenu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .submenu .submenu-item {
@@ -96,6 +125,7 @@ nav > ul > li > button {
   background: transparent;
   padding: 0;
   box-shadow: none;
+  border: none;
   border-radius: 0;
   min-width: auto;
 }
@@ -106,10 +136,19 @@ nav > ul > li > button {
   padding-left: 0;
 }
 
-/* Navbar shadow (desktop) */
+/* Navbar shadow (desktop) — soft separation under the liquid-glass pill.
+   width:100% keeps the pill at its max-width (999px) inside the flex hero too,
+   so the Home navbar matches the inner pages instead of shrinking to content. */
 .desktop-nav {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
-  -webkit-box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  width: 100%;
+  box-sizing: border-box;
+  /* Lift the whole navbar (and its dropdowns) above the page-container.
+     The nav's backdrop-filter traps the submenu's z-index in the nav's own
+     stacking context, so the nav as a whole must outrank the content card. */
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   /* ensure rounded corners don't clip shadow in some browsers */
   overflow: visible;
 }

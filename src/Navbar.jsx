@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import Logo from './components/Logo';
 
 const navContent = {
   en: {
+    home: "Home",
     work: "Work Experience",
     workSubmenu: {
       fulltime: "Full-Time",
@@ -21,10 +21,10 @@ const navContent = {
       books: "Books",
       finance: "Finance"
     },
-    donations: "Donations",
     contact: "Contact"
   },
   es: {
+    home: "Inicio",
     work: "Experiencia Laboral",
     workSubmenu: {
       fulltime: "Tiempo Completo",
@@ -42,12 +42,11 @@ const navContent = {
       books: "Libros",
       finance: "Finanzas"
     },
-    donations: "Donaciones",
     contact: "Contacto"
   }
 };
 
-export default function Navbar({ language = 'en', showLogo = true }) {
+export default function Navbar({ language = 'en' }) {
   const t = navContent[language];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -59,8 +58,6 @@ export default function Navbar({ language = 'en', showLogo = true }) {
 
   return (
     <>
-      {showLogo && <Logo />}
-
       {/* Hamburger Button (mobile only) */}
       <button 
         onClick={toggleMenu}
@@ -71,26 +68,23 @@ export default function Navbar({ language = 'en', showLogo = true }) {
           left: "auto",
           right: "1rem",
           zIndex: 2000,
-          background: "rgba(255, 255, 255, 0.2)",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          borderRadius: "8px",
+          borderRadius: "10px",
           padding: "0.6rem",
           cursor: "pointer",
           color: "#fff",
           fontSize: "1.5rem",
           lineHeight: 1
         }}
-        className="hamburger-button"
+        className="hamburger-button liquid-glass"
       >
         {isMenuOpen ? '✕' : '☰'}
       </button>
 
       <div
         style={{
-          background: "linear-gradient(90deg, #C33726, #F4A223, #F2C24C, #8A1E14)",
+          background: "transparent",
           borderRadius: "40px",
-          padding: "1px",
+          padding: "0",
           marginTop: "2rem",
           marginBottom: "1rem",
           maxWidth: "999px",
@@ -99,13 +93,13 @@ export default function Navbar({ language = 'en', showLogo = true }) {
         className="desktop-nav"
       >
         <nav
+          className="liquid-glass"
           style={{
-            background: "#2A2A2A",
-            backdropFilter: "blur(10px) brightness(1.1)",
             borderRadius: "36px",
             padding: "0.6rem",
             width: "100%",
-            boxSizing: "border-box"
+            boxSizing: "border-box",
+            overflow: "visible"
           }}
         >
       <ul style={{
@@ -117,6 +111,18 @@ export default function Navbar({ language = 'en', showLogo = true }) {
         margin: 0,
         padding: 0
       }}>
+        <li>
+          <a href="#/" style={{
+            color: "#fff",
+            textDecoration: "none",
+            fontWeight: 500,
+            transition: "color 0.2s ease",
+            display: "inline-block",
+            padding: "0.5rem 0"
+          }}>
+            {t.home}
+          </a>
+        </li>
         <li style={{ position: 'relative' }} className="nav-item-with-submenu">
           <button
             onClick={() => toggleSubmenu('work')}
@@ -140,11 +146,8 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             top: "100%",
             left: "50%",
             transform: "translateX(-50%)",
-            background: "#2A2A2A",
-            backdropFilter: "blur(8px) brightness(1.05)",
             padding: "0.5rem 0",
-            borderRadius: "12px",
-            boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
+            borderRadius: "14px",
             listStyle: "none",
             minWidth: "160px",
             opacity: openSubmenu === 'work' ? 1 : 0,
@@ -204,11 +207,8 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             top: "100%",
             left: "50%",
             transform: "translateX(-50%)",
-            background: "#2A2A2A",
-            backdropFilter: "blur(8px) brightness(1.05)",
             padding: "0.5rem 0",
-            borderRadius: "12px",
-            boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
+            borderRadius: "14px",
             listStyle: "none",
             minWidth: "180px",
             opacity: openSubmenu === 'diplomas' ? 1 : 0,
@@ -251,11 +251,8 @@ export default function Navbar({ language = 'en', showLogo = true }) {
             top: "100%",
             left: "50%",
             transform: "translateX(-50%)",
-            background: "#2A2A2A",
-            backdropFilter: "blur(8px) brightness(1.05)",
             padding: "0.5rem 0",
-            borderRadius: "12px",
-            boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
+            borderRadius: "14px",
             listStyle: "none",
             minWidth: "180px",
             opacity: openSubmenu === 'education' ? 1 : 0,
@@ -276,19 +273,7 @@ export default function Navbar({ language = 'en', showLogo = true }) {
           </ul>
         </li>
         <li>
-          <a href="#/donations" style={{ 
-            color: "#fff", 
-            textDecoration: "none", 
-            fontWeight: 500,
-            transition: "color 0.2s ease",
-            display: "inline-block",
-            padding: "0.5rem 0"
-          }}>
-            {t.donations}
-          </a>
-        </li>
-        <li>
-          <a href="#/contact" style={{ 
+          <a href="#/contact" style={{
             color: "#fff", 
             textDecoration: "none", 
             fontWeight: 500,
@@ -312,8 +297,9 @@ export default function Navbar({ language = 'en', showLogo = true }) {
         left: 0,
         width: "100vw",
         height: "100vh",
-        background: "rgba(26, 26, 29, 0.98)",
-        backdropFilter: "blur(10px)",
+        background: "rgba(18, 18, 20, 0.9)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
         zIndex: 1999,
         display: isMenuOpen ? "flex" : "none",
         flexDirection: "column",
@@ -330,6 +316,19 @@ export default function Navbar({ language = 'en', showLogo = true }) {
         flexDirection: "column",
         gap: "1rem"
       }}>
+        {/* Home */}
+        <li>
+          <a href="#/" onClick={toggleMenu} style={{
+            color: "#fff",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            fontWeight: 500,
+            padding: "0.75rem",
+            display: "block"
+          }}>
+            {t.home}
+          </a>
+        </li>
         {/* Work Experience */}
         <li>
           <button
@@ -482,20 +481,6 @@ export default function Navbar({ language = 'en', showLogo = true }) {
               </li>
             </ul>
           )}
-        </li>
-
-        {/* Donations */}
-        <li>
-          <a href="#/donations" onClick={toggleMenu} style={{ 
-            color: "#fff",
-            textDecoration: "none",
-            fontSize: "1.1rem",
-            fontWeight: 500,
-            padding: "0.75rem",
-            display: "block"
-          }}>
-            {t.donations}
-          </a>
         </li>
 
         {/* Contact */}

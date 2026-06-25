@@ -54,7 +54,7 @@ export default function Portfolio({ language = 'en' }) {
 				<section id="portfolio">
 					{t.projects.map((proj, idx) => (
 						<React.Fragment key={idx}>
-							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
+							<div className="mb-10 bg-white/6 rounded-lg shadow p-6 glass-card">
 								<h2 className="text-xl font-semibold mb-2">{proj.name}</h2>
 								<p className="mb-2 text-gray-300">{proj.description}</p>
 								<p className="mb-2 text-gray-400"><strong>Tools:</strong> {proj.tools}</p>
@@ -65,9 +65,9 @@ export default function Portfolio({ language = 'en' }) {
 									  target="_blank"
 									  rel="noopener noreferrer"
 									  className="underline transition-colors duration-200"
-									  style={{ color: '#FF004D' }}
-									  onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
-									  onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}
+									  style={{ color: 'rgba(255, 255, 255, 0.82)' }}
+									  onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')}
+									  onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}
 									>
 									  GitHub Link
 									</a>
@@ -78,9 +78,9 @@ export default function Portfolio({ language = 'en' }) {
 									target="_blank"
 									rel="noopener noreferrer"
 									className="underline transition-colors duration-200"
-									style={{ color: '#34D399' }}
-									onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
-									onMouseOut={e => (e.currentTarget.style.color = '#34D399')}
+									style={{ color: 'rgba(255, 255, 255, 0.82)' }}
+									onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')}
+									onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}
 								  >
 									Live Demo Link
 								  </a>

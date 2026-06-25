@@ -83,7 +83,7 @@ export default function PartTime({ language = 'en' }) {
 			<Navbar language={language} />
 			<PageLayout title={t.title}>
 				   {/* Grill'd Burgers */}
-				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.grilld.company}</h2>
 					   <p className="job-role mb-6">{t.grilld.role}</p>
 					   <p className="text-gray-400 job-meta mb-6">{t.grilld.duration} | {t.grilld.location}</p>
@@ -97,7 +97,7 @@ export default function PartTime({ language = 'en' }) {
 				<div className="section-separator-1000px" aria-hidden="true" />
 
 				   {/* Julian Haircut Services */}
-				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.haircut.company}</h2>
 					   <p className="job-role mb-6">{t.haircut.role}</p>
 					   <p className="text-gray-400 job-meta mb-6">{t.haircut.duration} | {t.haircut.location}</p>
@@ -111,7 +111,7 @@ export default function PartTime({ language = 'en' }) {
 				<div className="section-separator-1000px" aria-hidden="true" />
 
 				   {/* Independent Futures Trader */}
-				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.trader.company}</h2>
 					   <p className="job-role mb-6">{t.trader.role}</p>
 					   <p className="text-gray-400 job-meta mb-6">{t.trader.duration} | {t.trader.location}</p>
@@ -125,7 +125,7 @@ export default function PartTime({ language = 'en' }) {
 				<div className="section-separator-1000px" aria-hidden="true" />
 
 				   {/* Independent Investor */}
-				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+				   <section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 					   <h2 className="text-2xl font-semibold !text-accent mb-6 pb-4 border-b-2 border-accent">{t.investor.company}</h2>
 					   <p className="job-role mb-6">{t.investor.role}</p>
 					   <p className="text-gray-400 job-meta mb-6">{t.investor.duration} | {t.investor.location}</p>

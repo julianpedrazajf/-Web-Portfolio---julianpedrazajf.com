@@ -45,7 +45,7 @@ export default function References({ language = 'en' }) {
 				<section id="work-references">
 					{t.references.map((ref, idx) => (
 						<React.Fragment key={idx}>
-							<div className="mb-8 bg-white/6 rounded-lg shadow p-6">
+							<div className="mb-8 bg-white/6 rounded-lg shadow p-6 glass-card">
 								<h2 className="text-xl font-semibold mb-2">{ref.name}</h2>
 								<p className="mb-1 text-gray-300">{ref.role}</p>
 								<p className="mb-1 text-gray-400 flex items-center"> <img className="mr-4" width="20" height="20" src="https://img.icons8.com/material-sharp/24/FFFFFF/phone.png" alt="phone"/> {ref.phone}</p>

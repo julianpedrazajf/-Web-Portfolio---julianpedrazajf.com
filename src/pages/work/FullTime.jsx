@@ -151,7 +151,7 @@ export default function FullTime({ language = 'en' }) {
 				<section id="work-fulltime">
 					
 					   {/* Menzies Aviation */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 						   <h2 className="text-2xl font-semibold !text-accent mb-6 p-10 " >{t.menzies.company}</h2>
 						   <p className="job-role mb-6">{t.menzies.role}</p>
 						   <p className="text-gray-400 job-meta mb-6">{t.menzies.duration} | {t.menzies.location}</p>
@@ -169,7 +169,7 @@ export default function FullTime({ language = 'en' }) {
 					<div className="section-separator-1000px" aria-hidden="true" />
 
 					   {/* Labour Connect */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.labourConnect.company}</h2>
 						   <p className="job-role mb-6">{t.labourConnect.role}</p>
 						   <p className="text-gray-400 job-meta mb-6">{t.labourConnect.duration} | {t.labourConnect.location}</p>
@@ -187,7 +187,7 @@ export default function FullTime({ language = 'en' }) {
 					<div className="section-separator-1000px" aria-hidden="true" />
 
 					   {/* TECH Universidad */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.tech.company}</h2>
 						   <p className="job-role mb-6">{t.tech.role}</p>
 						   <p className="text-gray-400 job-meta mb-6">{t.tech.duration} | {t.tech.location}</p>
@@ -205,7 +205,7 @@ export default function FullTime({ language = 'en' }) {
 					<div className="section-separator-1000px" aria-hidden="true" />
 
 					   {/* RDV LTDA */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.rdv.company}</h2>
 						   <p className="job-role mb-6">{t.rdv.role}</p>
 						   <p className="text-gray-400 job-meta mb-6">{t.rdv.duration} | {t.rdv.location}</p>
@@ -223,7 +223,7 @@ export default function FullTime({ language = 'en' }) {
 					<div className="section-separator-1000px" aria-hidden="true" />
 
 					   {/* Ladrillera La Sultana */}
-					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600">
+					<section className="mb-12 bg-white/6 rounded-lg shadow-lg p-6 space-y-4 border-b border-gray-600 glass-card">
 						   <h2 className="text-2xl font-semibold !text-accent mb-6">{t.sultana.company}</h2>
 						   <p className="job-role mb-6">{t.sultana.role}</p>
 						   <p className="text-gray-400 job-meta mb-6">{t.sultana.duration} | {t.sultana.location}</p>
