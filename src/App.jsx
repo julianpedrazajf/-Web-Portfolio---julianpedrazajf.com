@@ -10,8 +10,8 @@ import OnlineBootcamps from './pages/diplomas/OnlineBootcamps.jsx';
 import Books from './pages/education/Books.jsx';
 import Finance from './pages/education/Finance.jsx';
 import Portfolio from './pages/Portfolio.jsx';
-import Donations from './pages/Donations.jsx';
 import Contact from './pages/Contact.jsx';
+import VideoBackground from './VideoBackground.jsx';
 import LanguageContext from './LanguageContext';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
   const [language, setLanguage] = useState(() => {
     try {
       return localStorage.getItem('language') || 'en';
-    } catch (e) {
+    } catch {
       return 'en';
     }
   });
@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     try {
       localStorage.setItem('language', language);
-    } catch (e) {
+    } catch {
       // ignore
     }
   }, [language]);
@@ -41,6 +41,7 @@ function App() {
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
+  // The disclaimer keeps its own shader background and gates every route.
   if (showDisclaimer) {
     return (
       <LanguageContext.Provider value={{ language, setLanguage }}>
@@ -49,92 +50,36 @@ function App() {
     );
   }
 
-  // Minimal hash router: handle only the FullTime route for now.
-  // Minimal hash router: handle FullTime and PartTime routes.
+  // Minimal hash router: resolve the route to a page component, then render it
+  // once over the shared cinematic video background.
+  let page;
   if (route === '#/fulltime' || route === '#fulltime') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <FullTime language={language} />
-      </LanguageContext.Provider>
-    );
+    page = <FullTime language={language} />;
+  } else if (route === '#/parttime' || route === '#parttime') {
+    page = <PartTime language={language} />;
+  } else if (route === '#/references' || route === '#references') {
+    page = <References language={language} />;
+  } else if (route === '#/diplomas/university' || route === '#/diplomas-university' || route === '#diplomas-university') {
+    page = <UniversityDegrees language={language} />;
+  } else if (route === '#/diplomas/bootcamps' || route === '#/diplomas-bootcamps' || route === '#diplomas-bootcamps') {
+    page = <OnlineBootcamps language={language} />;
+  } else if (route === '#/education/books' || route === '#education-books' || route === '#/education-books') {
+    page = <Books language={language} />;
+  } else if (route === '#/education/finance' || route === '#education-finance' || route === '#/education-finance') {
+    page = <Finance language={language} />;
+  } else if (route === '#/portfolio' || route === '#portfolio') {
+    page = <Portfolio language={language} />;
+  } else if (route === '#/contact' || route === '#contact') {
+    page = <Contact language={language} />;
+  } else {
+    // default to Home
+    page = <Home language={language} setLanguage={setLanguage} />;
   }
 
-  if (route === '#/parttime' || route === '#parttime') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <PartTime language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/references' || route === '#references') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <References language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/diplomas/university' || route === '#/diplomas-university' || route === '#diplomas-university') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <UniversityDegrees language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/diplomas/bootcamps' || route === '#/diplomas-bootcamps' || route === '#diplomas-bootcamps') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <OnlineBootcamps language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/education/books' || route === '#education-books' || route === '#/education-books') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <Books language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/education/finance' || route === '#education-finance' || route === '#/education-finance') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <Finance language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/portfolio' || route === '#portfolio') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <Portfolio language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/donations' || route === '#donations') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <Donations language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  if (route === '#/contact' || route === '#contact') {
-    return (
-      <LanguageContext.Provider value={{ language, setLanguage }}>
-        <Contact language={language} />
-      </LanguageContext.Provider>
-    );
-  }
-
-  // default to Home
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
-      <Home language={language} setLanguage={setLanguage} />
+      <VideoBackground />
+      <div className="app-content">{page}</div>
     </LanguageContext.Provider>
   );
 }

@@ -59,8 +59,8 @@ export default function Contact({ language = 'en' }) {
 	};
 
 	const cardStyle = {
-		background: '#2a2a2a',
-		border: '1px solid rgba(255, 255, 255, 0.1)',
+		background: 'rgba(20, 20, 22, 0.5)',
+		WebkitBackdropFilter: 'blur(20px)',
 		boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)',
 		padding: '2rem',
 		borderRadius: '2rem',
@@ -141,7 +141,7 @@ export default function Contact({ language = 'en' }) {
 			<Navbar language={language} />
 			<PageLayout title={t.title}>
 				<div style={containerStyle}>
-					<div style={cardStyle}>
+					<div className="liquid-glass" style={cardStyle}>
 						<section id="contact" style={contactSectionStyle}>
 							<div>
 								<p className="text-slate-400 text-sm sm:text-base max-w-xl">{t.body}</p>
@@ -256,7 +256,7 @@ export default function Contact({ language = 'en' }) {
 
 								<div style={buttonContainerStyle}>
 									<div style={{
-										background: 'linear-gradient(90deg, #C33726, #F4A223, #F2C24C, #8A1E14)',
+										background: 'transparent',
 										borderRadius: '40px',
 										padding: '1px',
 										width: '100%'
@@ -266,12 +266,12 @@ export default function Contact({ language = 'en' }) {
 											disabled={loading} 
 											style={{
 												width: '100%',
-												background: '#2A2A2A',
+												background: '#fff',
 												backdropFilter: 'blur(10px) brightness(1.1)',
 												border: 'none',
 												borderRadius: '36px',
 												padding: '0.875rem 1.5rem',
-												color: '#fff',
+												color: '#000',
 												fontSize: '1rem',
 												fontWeight: '500',
 												cursor: loading ? 'not-allowed' : 'pointer',
@@ -280,11 +280,11 @@ export default function Contact({ language = 'en' }) {
 											}}
 											onMouseOver={(e) => {
 												if (!loading) {
-													e.currentTarget.style.background = '#3f3f3f';
+													e.currentTarget.style.background = '#e2e2e2';
 												}
 											}}
 											onMouseOut={(e) => {
-												e.currentTarget.style.background = '#2A2A2A';
+												e.currentTarget.style.background = '#fff';
 												e.currentTarget.style.transform = 'translateY(0)';
 											}}
 										>
@@ -309,19 +309,19 @@ export default function Contact({ language = 'en' }) {
 								<ul className="flex flex-col gap-3 text-sm text-slate-400" style={{listStyle: 'none'}}>
 									<li>
 										<span className="font-medium text-slate-300">{t.direct.email}:</span>{' '}
-										<a href="mailto:julianpedrazajf2@gmail.com" className="underline transition-colors duration-200" style={{ color: '#FF004D' }} onMouseOver={e => (e.currentTarget.style.color = '#FFD700')} onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}>
+										<a href="mailto:julianpedrazajf2@gmail.com" className="underline transition-colors duration-200" style={{ color: 'rgba(255, 255, 255, 0.82)', textDecoration: 'underline' }} onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')} onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}>
 											julianpedrazajf2@gmail.com
 										</a>
 									</li>
 									<li>
 										<span className="font-medium text-slate-300">{t.direct.linkedin}:</span>{' '}
-										<a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200" style={{ color: '#34D399' }} onMouseOver={e => (e.currentTarget.style.color = '#FFD700')} onMouseOut={e => (e.currentTarget.style.color = '#34D399')}>
+										<a href="https://www.linkedin.com/in/julian-avila-247a09261/" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200" style={{ color: 'rgba(255, 255, 255, 0.82)', textDecoration: 'underline' }} onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')} onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}>
 											LinkedIn
 										</a>
 									</li>
 									<li>
 										<span className="font-medium text-slate-300">{t.direct.github}:</span>{' '}
-										<a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200" style={{ color: '#34D399' }} onMouseOver={e => (e.currentTarget.style.color = '#FFD700')} onMouseOut={e => (e.currentTarget.style.color = '#34D399')}>
+										<a href="https://github.com/julianpedrazajf" target="_blank" rel="noopener noreferrer" className="underline transition-colors duration-200" style={{ color: 'rgba(255, 255, 255, 0.82)', textDecoration: 'underline' }} onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')} onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}>
 											GitHub
 										</a>
 									</li>

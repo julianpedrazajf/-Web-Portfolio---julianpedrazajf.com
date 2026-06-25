@@ -551,7 +551,7 @@ export default function OnlineBootcamps({ language = 'en' }) {
 				<section id="diplomas-bootcamps">
 					{t.bootcamps.map((bootcamp, idx) => (
 						<React.Fragment key={idx}>
-							<div className="mb-10 bg-white/6 rounded-lg shadow p-6">
+							<div className="mb-10 bg-white/6 rounded-lg shadow p-6 glass-card">
 								<h2 className="text-xl font-semibold mb-2">{bootcamp.platform}</h2>
 								<p className="job-role mb-1 text-gray-300 font-medium">{bootcamp.course}</p>
 								<p className="mb-1 text-gray-400">{bootcamp.certification}</p>
@@ -563,9 +563,9 @@ export default function OnlineBootcamps({ language = 'en' }) {
 											target="_blank"
 											rel="noopener noreferrer"
 											className="underline transition-colors duration-200"
-											style={{ color: '#FF004D' }}
-											onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
-											onMouseOut={e => (e.currentTarget.style.color = '#FF004D')}
+											style={{ color: 'rgba(255, 255, 255, 0.82)' }}
+											onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')}
+											onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}
 										>
 											View Certificate
 										</a>
@@ -578,9 +578,9 @@ export default function OnlineBootcamps({ language = 'en' }) {
 											target="_blank"
 											rel="noopener noreferrer"
 											className="underline transition-colors duration-200"
-											style={{ color: '#34D399' }}
-											onMouseOver={e => (e.currentTarget.style.color = '#FFD700')}
-											onMouseOut={e => (e.currentTarget.style.color = '#34D399')}
+											style={{ color: 'rgba(255, 255, 255, 0.82)' }}
+											onMouseOver={e => (e.currentTarget.style.color = '#FFFFFF')}
+											onMouseOut={e => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.82)')}
 										>
 											GitHub Repository
 										</a>

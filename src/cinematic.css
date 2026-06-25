@@ -1,0 +1,369 @@
+/* =========================================================
+   Cinematic / streaming theme — shared styles
+   (video background, liquid glass, blur-fade-up, hero layout)
+   ========================================================= */
+
+/* Routed page content sits above the fixed video bg + blur overlay */
+.app-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* ---------- Fullscreen background video ---------- */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------- Bottom blur overlay (blur only, no darkening) ----------
+   The mask makes the blur appear only at the bottom and fade out
+   toward the middle of the screen. */
+.bottom-blur-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 45%);
+  mask-image: linear-gradient(to top, black 0%, transparent 45%);
+}
+
+/* ---------- Liquid glass (reusable button / pill surface) ---------- */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ---------- Blur fade-up entrance animation ---------- */
+@keyframes blurFadeUp {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+.animate-blur-fade-up {
+  opacity: 0;
+  animation: blurFadeUp 1s ease-out forwards;
+}
+
+/* =========================================================
+   Home cinematic hero
+   ========================================================= */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+}
+
+.hero-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 1rem 2.25rem;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 3rem 3rem 4rem;
+  }
+}
+
+.hero-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .hero-row {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.hero-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* metadata row */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  color: #ededed;
+}
+@media (min-width: 640px) {
+  .hero-meta {
+    gap: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+}
+.hero-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+.hero-meta-item svg {
+  width: 16px;
+  height: 16px;
+}
+@media (min-width: 640px) {
+  .hero-meta-item svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* title */
+.hero-title {
+  font-family: "Poppins", "Inter", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 3.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4.75rem;
+  }
+}
+
+/* description */
+.hero-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 42rem;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 768px) {
+  .hero-desc {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* CTAs */
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .hero-ctas {
+    gap: 1rem;
+  }
+}
+
+/* right-side pills (social / nav) */
+.hero-side {
+  display: flex;
+  gap: 0.75rem;
+  align-self: flex-start;
+}
+@media (min-width: 640px) {
+  .hero-side {
+    gap: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-side {
+    align-self: flex-end;
+  }
+}
+
+/* =========================================================
+   Buttons (pill / glass)
+   ========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 9999px;
+  padding: 0.7rem 1.5rem;
+  transition: background 200ms ease, transform 200ms ease, opacity 200ms ease;
+  white-space: nowrap;
+}
+@media (min-width: 640px) {
+  .btn {
+    padding: 0.8rem 2rem;
+  }
+}
+.btn-solid {
+  background: #fff;
+  color: #000;
+  border: none;
+}
+.btn-solid:hover {
+  background: #e2e2e2;
+}
+/* .btn-glass relies on .liquid-glass for its surface */
+.btn-glass:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   Inner-page content cards (sit over the video background)
+   Tailwind isn't compiled in this project, so the cards' utility
+   classes (bg-white/6, p-6, mb-6, text-gray-*) produce no styling.
+   `.glass-card` restores them with the cinematic liquid-glass look.
+   ========================================================= */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Glowing gradient border to match the navbar / buttons / submenus */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.12) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.12) 80%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.glass-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+.glass-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin: 1.25rem 0 0.5rem;
+}
+.glass-card p {
+  margin: 0 0 0.6rem;
+  line-height: 1.65;
+  color: #d8d8d8;
+}
+.glass-card ul {
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+.glass-card li {
+  margin: 0 0 0.4rem;
+  line-height: 1.6;
+  color: #d8d8d8;
+}
+.glass-card li span:first-child {
+  margin-right: 0.5rem;
+}
+
+/* In-card links become liquid-glass pills (text colour stays from inline style) */
+.glass-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: border-color 200ms ease, background 200ms ease, transform 150ms ease;
+}
+.glass-card a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
