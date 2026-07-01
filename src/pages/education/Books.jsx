@@ -53,6 +53,21 @@ const content = {
 				takeaway: 'Explains how personal behavior and mindset impact financial success more than technical knowledge. Emphasizes patience, risk management, and long-term thinking over chasing quick gains.'
 			},
 			{
+				title: 'Before Quitting Your Job',
+				author: 'Robert T. Kiyosaki',
+				takeaway: 'A practical guide for people considering the jump from employee to entrepreneur. Shares lessons from Kiyosaki’s successes and failures, covering how to find good clients, different types of money, and how to prepare before leaving the security of a steady paycheck.'
+			},
+			{
+				title: 'A Property a Year Doesn’t Hurt',
+				author: 'Carlos Devis',
+				takeaway: 'A real estate investing manual for beginners. Teaches how to think like an investor, analyze and negotiate properties, and build wealth with real estate and passive income by combining financial strategy with emotional mindset management.'
+			},
+			{
+				title: 'The Art of Spending Money',
+				author: 'Morgan Housel',
+				takeaway: 'A reflection on the human side of money: not how to earn or invest it, but how to spend it meaningfully. Explores the psychology behind consumption decisions—envy, status, identity, fear—and offers keys to use money as a tool for a calmer, fuller life.'
+			},
+			{
 				title: 'Rich Dad Poor Dad',
 				author: 'Robert T. Kiyosaki',
 				takeaway: 'Contrasts two financial mindsets—employee vs. investor. Stresses financial literacy, building assets, and entrepreneurship as paths to financial freedom.'
@@ -137,6 +152,21 @@ const content = {
 				title: 'La psicología del dinero',
 				author: 'Morgan Housel',
 				takeaway: 'Explica cómo el comportamiento y la mentalidad influyen en el éxito financiero más que el conocimiento técnico. Destaca paciencia, gestión de riesgos y pensamiento a largo plazo.'
+			},
+			{
+				title: 'Antes de renunciar a tu empleo',
+				author: 'Robert T. Kiyosaki',
+				takeaway: 'Guía práctica para quienes están considerando el salto de empleado a emprendedor. Comparte lecciones extraídas de sus propios éxitos y fracasos empresariales, cubriendo temas como encontrar buenos clientes, los distintos tipos de dinero y cómo prepararse antes de dejar la seguridad de un salario fijo.'
+			},
+			{
+				title: 'Un inmueble al año no hace daño',
+				author: 'Carlos Devis',
+				takeaway: 'Manual de inversión inmobiliaria pensado para quien empieza desde cero. Enseña a pensar como inversionista, analizar y negociar propiedades, y construir patrimonio con bienes raíces e ingresos pasivos, combinando estrategia financiera con manejo de la mentalidad y las emociones.'
+			},
+			{
+				title: 'El arte de gastar dinero',
+				author: 'Morgan Housel',
+				takeaway: 'Reflexión sobre el lado humano del dinero: no cómo ganarlo o invertirlo, sino cómo gastarlo con sentido. Explora la psicología detrás de nuestras decisiones de consumo (envidia, estatus, identidad, miedo) y ofrece claves para usar el dinero como herramienta de una vida más tranquila y plena.'
 			},
 			{
 				title: 'Padre Rico, Padre Pobre',

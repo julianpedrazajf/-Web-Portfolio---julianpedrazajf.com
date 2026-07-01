@@ -16,6 +16,15 @@ const content = {
 				certificate: 'greenwich-english.pdf'
 			},
 			{
+				institution: 'ACBI Australian College of Business Intelligence',
+				program: 'Diploma of Information Technology (Front end web development)',
+				graduation: '2025',
+				duration: '78 weeks (16 Apr 2024 – 14 Oct 2025)',
+				mode: '12 hours/week, online',
+				outcome: 'Diploma of Information Technology (Front end web development)',
+				certificate: 'acbi-frontend-diploma.pdf'
+			},
+			{
 				institution: 'Universidad Nacional de Colombia',
 				program: 'Programming Diploma (3 Cycles)',
 				graduation: '2022',
@@ -64,6 +73,15 @@ const content = {
 				mode: '20 horas/semana, presencial',
 				outcome: 'Certificado de Logro y Asistencia',
 				certificate: 'greenwich-english.pdf'
+			},
+			{
+				institution: 'ACBI Australian College of Business Intelligence',
+				program: 'Diploma de Tecnología de la Información (Desarrollo web Front End)',
+				graduation: '2025',
+				duration: '78 semanas (16 Abr 2024 – 14 Oct 2025)',
+				mode: '12 horas/semana, en línea',
+				outcome: 'Diploma de Tecnología de la Información (Desarrollo web Front End)',
+				certificate: 'acbi-frontend-diploma.pdf'
 			},
 			{
 				institution: 'Universidad Nacional de Colombia',

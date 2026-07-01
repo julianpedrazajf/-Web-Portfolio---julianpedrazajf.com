@@ -18,6 +18,13 @@ const content = {
 				tools: 'JavaScript (ES6), HTML, CSS, Canvas API',
 				github: 'https://github.com/julianpedrazajf/26-taller-practico-javascript-videogames',
 				demo: 'https://julianpedrazajf.github.io/26-taller-practico-javascript-videogames/'
+			},
+			{
+				name: 'Comuna League App',
+				description: 'A web application that centralizes registration and organization of amateur soccer tournaments in Colombia. It makes it easy for individual players and entire teams to join tournaments, while streamlining tournament setup and participant management in one platform.',
+				tools: 'React.js, JavaScript, HTML, CSS',
+				github: 'https://github.com/julianpedrazajf/comunaleague',
+				demo: 'https://comunaleague.vercel.app/'
 			}
 		]
 	},
@@ -37,6 +44,13 @@ const content = {
 				tools: 'JavaScript (ES6), HTML, CSS, Canvas API',
 				github: 'https://github.com/julianpedrazajf/26-taller-practico-javascript-videogames',
 				demo: 'https://julianpedrazajf.github.io/26-taller-practico-javascript-videogames/'
+			},
+			{
+				name: 'Comuna League App',
+				description: 'Centraliza el registro y la organización de torneos de fútbol amateur en Colombia. La app permite que tanto jugadores individuales como equipos completos se unan fácilmente a los torneos, agilizando la configuración, gestión de equipos y registro de participantes en una sola plataforma.',
+				tools: 'React.js, JavaScript, HTML, CSS',
+				github: 'https://github.com/julianpedrazajf/comunaleague',
+				demo: 'https://comunaleague.vercel.app/'
 			}
 		]
 	}
