@@ -22,7 +22,7 @@ const content = {
 				duration: '78 weeks (16 Apr 2024 – 14 Oct 2025)',
 				mode: '12 hours/week, online',
 				outcome: 'Diploma of Information Technology (Front end web development)',
-				certificate: 'acbi-frontend-diploma.pdf'
+				certificate: 'Diploma of Information Technology.pdf'
 			},
 			{
 				institution: 'Universidad Nacional de Colombia',
@@ -81,7 +81,7 @@ const content = {
 				duration: '78 semanas (16 Abr 2024 – 14 Oct 2025)',
 				mode: '12 horas/semana, en línea',
 				outcome: 'Diploma de Tecnología de la Información (Desarrollo web Front End)',
-				certificate: 'acbi-frontend-diploma.pdf'
+				certificate: 'Diploma of Information Technology.pdf'
 			},
 			{
 				institution: 'Universidad Nacional de Colombia',
