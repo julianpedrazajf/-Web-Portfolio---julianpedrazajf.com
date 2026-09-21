@@ -4,7 +4,6 @@ import Disclaimer from './Disclaimer.jsx';
 import Home from './Home.jsx';
 import FullTime from './pages/work/FullTime.jsx';
 import PartTime from './pages/work/PartTime.jsx';
-import References from './pages/work/References.jsx';
 import UniversityDegrees from './pages/diplomas/UniversityDegrees.jsx';
 import OnlineBootcamps from './pages/diplomas/OnlineBootcamps.jsx';
 import Books from './pages/education/Books.jsx';
@@ -57,8 +56,6 @@ function App() {
     page = <FullTime language={language} />;
   } else if (route === '#/parttime' || route === '#parttime') {
     page = <PartTime language={language} />;
-  } else if (route === '#/references' || route === '#references') {
-    page = <References language={language} />;
   } else if (route === '#/diplomas/university' || route === '#/diplomas-university' || route === '#diplomas-university') {
     page = <UniversityDegrees language={language} />;
   } else if (route === '#/diplomas/bootcamps' || route === '#/diplomas-bootcamps' || route === '#diplomas-bootcamps') {

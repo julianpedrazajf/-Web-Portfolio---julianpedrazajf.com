@@ -7,8 +7,7 @@ const navContent = {
     work: "Work Experience",
     workSubmenu: {
       fulltime: "Full-Time",
-      parttime: "Part-Time",
-      references: "References"
+      parttime: "Part-Time"
     },
     portfolio: "Portfolio",
     diplomas: "Diplomas",
@@ -28,8 +27,7 @@ const navContent = {
     work: "Experiencia Laboral",
     workSubmenu: {
       fulltime: "Tiempo Completo",
-      parttime: "Tiempo Parcial",
-      references: "Referencias"
+      parttime: "Tiempo Parcial"
     },
     portfolio: "Portafolio",
     diplomas: "Diplomas",
@@ -163,11 +161,6 @@ export default function Navbar({ language = 'en' }) {
             <li className="submenu-item">
               <a href="#/parttime" className="submenu-link">
                 {t.workSubmenu.parttime}
-              </a>
-            </li>
-            <li className="submenu-item">
-              <a href="#/references" className="submenu-link">
-                {t.workSubmenu.references}
               </a>
             </li>
           </ul>
@@ -368,11 +361,6 @@ export default function Navbar({ language = 'en' }) {
               <li>
                 <a href="#/parttime" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
                   {t.workSubmenu.parttime}
-                </a>
-              </li>
-              <li>
-                <a href="#/references" onClick={toggleMenu} className="submenu-link mobile-submenu-link">
-                  {t.workSubmenu.references}
                 </a>
               </li>
             </ul>
